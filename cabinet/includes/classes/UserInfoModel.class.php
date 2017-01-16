@@ -31,4 +31,15 @@ class UserInfoModel
     public  function getMaxExp(){
         return floor(1000 * (pow(1.1, $this -> lvl) -1));
     }
+
+    public function serializeDataToArray(){
+        return array(
+            'avatar' => $this->avatar,
+            'login' => $this->login,
+            'level' => $this->lvl,
+            'curExp' => $this->exp,
+            'prevLvlExp' => $this->getMinExp(),
+            'nextLvlExp' => $this->getMaxExp()
+        );
+    }
 }

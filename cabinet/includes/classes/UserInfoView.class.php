@@ -1,11 +1,11 @@
 <?php
 class UserInfoView
 {
-    public function printUserInfo($avatar, $user, $userLevel, $currentExp, $prevLvlExp, $nextLvlExp){
-        $avatar = $this->formAvatarBlock($avatar);
-        $userNameBlock = $this->formUserName($user);
-        $userLevelBlock = $this->formUserLevelBlockInfo($userLevel);
-        $progressBlock = $this->formProgressBolock($currentExp, $prevLvlExp, $nextLvlExp);
+    public function printUserInfo(array $userData){
+        $avatar = $this->formAvatarBlock($userData['avatar']);
+        $userNameBlock = $this->formUserName($userData['login']);
+        $userLevelBlock = $this->formUserLevelBlockInfo($userData['level']);
+        $progressBlock = $this->formProgressBolock($userData['curExp'], $userData['prevLvlExp'], $userData['nextLvlExp']);
 
         echo $avatar . $userNameBlock . $userLevelBlock . $progressBlock;
     }

@@ -19,14 +19,14 @@ class Controller{
     public function printUserInfoBlock(){
         $userInfo = $this->model->user;
 
-        $this->view->userInfo->printUserInfo($userInfo->avatar, $userInfo->login, $userInfo->lvl, $userInfo->exp, $userInfo->getMinExp(), $userInfo->getMaxExp());
+        $this->view->userInfo->printUserInfo($userInfo->serializeDataToArray());
 
     }
 
     public function printGameBox(){
         $gameInfo = $this->model->gameCatalog;
         while ($game = $gameInfo->getPublicGame()){
-            $this->view->gameCatalog->printGamebox($game->id, $game->rules, $game->name, $game->path);
+            $this->view->gameCatalog->printGamebox($game->serializeDataToArray());
         }
     }
 }
