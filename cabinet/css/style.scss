@@ -1,0 +1,73 @@
+@import "../../_style/colors";
+
+@font-face {
+  font-family: 'RupsterScriptFree';
+  src: url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix') format('embedded-opentype'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff') format('woff'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf') format('truetype'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.affix{
+  top:20px;
+  @media (min-width: 768px){
+    width: 160px;
+  }
+  @media (max-width: 768px){
+    width: 100px;
+  }
+}
+
+.player-info {
+  padding-top: 15px;
+  .progress {
+    background-color: $background;
+    .progress-bar{
+      background-color: $strong;
+    }
+    > span {
+      z-index: 999;
+      position: absolute;
+      color: $text;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.game-catalog{
+  >.container-fluid {
+    > .row {
+      margin-bottom: 15px;
+    }
+    .game-search{
+      margin: 30px auto;
+    }
+  }
+
+  .btn-gameinfo-block{
+    position: relative;
+    ul{
+      display: inline-block;
+    }
+    .btn-start{
+      position: absolute;
+      right: 15px;
+      height: 40px;
+      line-height: 25px;
+    }
+    @media (max-width: 680px) {
+      .btn-start{
+        position: static;
+        width: 130px;
+      }
+      li{
+        display: block;
+        margin: 5px auto;
+        width: 130px;
+        text-align: center;
+      }
+    }
+  }
+}
+

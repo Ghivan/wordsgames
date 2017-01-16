@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'RupsterScriptFree';
+  src: url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix") format("embedded-opentype"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff") format("woff"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf") format("truetype"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.affix {
+  top: 20px; }
+  @media (min-width: 768px) {
+    .affix {
+      width: 160px; } }
+  @media (max-width: 768px) {
+    .affix {
+      width: 100px; } }
+
+.player-info {
+  padding-top: 15px; }
+  .player-info .progress {
+    background-color: #E0F7FA; }
+    .player-info .progress .progress-bar {
+      background-color: #4DD0E1; }
+    .player-info .progress > span {
+      z-index: 999;
+      position: absolute;
+      color: #006064;
+      left: 0;
+      width: 100%;
+      text-align: center; }
+
+.game-catalog > .container-fluid > .row {
+  margin-bottom: 15px; }
+.game-catalog > .container-fluid .game-search {
+  margin: 30px auto; }
+.game-catalog .btn-gameinfo-block {
+  position: relative; }
+  .game-catalog .btn-gameinfo-block ul {
+    display: inline-block; }
+  .game-catalog .btn-gameinfo-block .btn-start {
+    position: absolute;
+    right: 15px;
+    height: 40px;
+    line-height: 25px; }
+  @media (max-width: 680px) {
+    .game-catalog .btn-gameinfo-block .btn-start {
+      position: static;
+      width: 130px; }
+    .game-catalog .btn-gameinfo-block li {
+      display: block;
+      margin: 5px auto;
+      width: 130px;
+      text-align: center; } }
+
+/*# sourceMappingURL=style.css.map */

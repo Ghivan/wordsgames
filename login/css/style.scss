@@ -1,0 +1,73 @@
+@import "../../_style/_colors";
+
+@font-face {
+  font-family: 'RupsterScriptFree';
+  src: url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix') format('embedded-opentype'),
+       url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff') format('woff'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf') format('truetype'),
+       url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//noinspection CssInvalidFunction
+body{
+  background-image: linear-gradient(to left, $background, $accent 40%,$background);
+  color: $text;
+}
+
+h1{
+  font-family: RupsterScriptFree, sans-serif;
+  text-align: center;
+}
+
+.inner-alignment-vertical {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  padding: 10px 30px;
+  background-color: $strong;
+  border: 1px solid $borders;
+  border-top: none;
+  margin-bottom: 0;
+
+  >*{
+    padding-bottom: 30px;
+  }
+  .help-block{
+    margin-bottom: 5px;
+  }
+  @media (min-width: 768px) {
+    padding: 30px 60px;
+  }
+}
+
+.panel{
+  background-color: $accent;
+  padding: 30px;
+  margin-top: 5%;
+  box-shadow: 5px 5px 5px 5px $shadow;
+  @media (min-width: 768px) {
+    margin-top: 10%;
+  }
+}
+
+.nav-tabs{
+  border-bottom-color: $borders;
+
+  >li.active{
+    >a, >a:focus, >a:hover{
+      background-color: $strong;
+      border-color: $borders;
+      border-bottom-color: transparent;
+    }
+  }
+  >li{
+    >a:hover{
+      background-color: $background;
+      border-color: transparent;
+    }
+  }
+}
