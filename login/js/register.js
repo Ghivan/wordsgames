@@ -1,25 +1,25 @@
-var validator = {
+let validator = {
     string: function(str){
         str = str.trim();
 
-        if (str.length == 0){
+        if (str.length === 0){
             return {
                 state: false,
                 error: 'Ничего не введено'
-            }
+            };
         }
 
         if (str.length < 4){
             return {
                 state: false,
                 error: 'Введено менее 4 символов'
-            }
+            };
         }
 
         return  {
             state: true,
             error: 'None'
-        }
+        };
     },
 
     email: function(str){
@@ -30,37 +30,37 @@ var validator = {
             return {
                 state: false,
                 error: 'Неверный email'
-            }
+            };
         }
 
         return {
             state: true,
             error: 'None'
-        }
+        };
     },
 
     password: function(str){
 
         str = str.trim();
 
-        if (str.length == 0){
+        if (str.length === 0){
             return {
                 state: false,
                 error: 'Ничего не введено'
-            }
+            };
         }
 
         if (str.length < 6){
             return {
                 state: false,
                 error: 'Введено менее 6 символов'
-            }
+            };
         }
 
         return {
             state: true,
             error: 'None'
-        }
+        };
     },
 
     displayError: function(elem, errMsg) {
@@ -120,13 +120,13 @@ var validator = {
             validator.displayError(pswrd, check.error);
         }
 
-        if (pswrd.val() != cpswrd.val()){
+        if (pswrd.val() !== cpswrd.val()){
             hasErrors = true;
             validator.displayError(cpswrd, 'Введенные пароли не совпадают.');
         }
 
         check = validator.email(email.val());
-        if (!check.state && email.val().trim() != ''){
+        if (!check.state && email.val().trim() !== ''){
             hasErrors = true;
             validator.displayError(email, check.error);
         }
@@ -147,7 +147,7 @@ var validator = {
                 } else {
                     alert(data.message);
                 }
-            })
+            });
         }
 
     },
@@ -183,7 +183,7 @@ var validator = {
                 } else {
                     alert(data.message);
                 }
-            })
+            });
         }
 
     }
@@ -234,7 +234,7 @@ $(document).ready(function() {
 
     $('#c-new-pswrd').on('change', function(){
         let check = validator.password($(this).val());
-        if ($(this).val() != $('#new-pswrd').val()){
+        if ($(this).val() !== $('#new-pswrd').val()){
             validator.displayError($(this), 'Введенные пароли не совпадают.')
         } else {
             validator.resetErrorState($(this));
@@ -249,7 +249,7 @@ $(document).ready(function() {
 
     $('#new-email').on('change', function(){
         let check = validator.email($(this).val());
-        if (!check.state && $(this).val().trim() != ''){
+        if (!check.state && $(this).val().trim() !== ''){
             validator.displayError($(this), check.error);
         } else {
             validator.resetErrorState($(this));
