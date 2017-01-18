@@ -100,14 +100,60 @@ $controller = new Controller();
                 ?>
             </div>
             <div class="container-fluid tab-pane fade" id="profile-configure">
-                Настройки профиля
+                <div class="row">
+                    <div class="h1 center-block text-center">
+                        Настройки профиля
+                    </div>
+                    <div class="row">
+
+
+                    </div>
+                </div>
             </div>
             <div class="container-fluid tab-pane fade" id="feedback">
-                Обратная связь
+                <div class="row">
+                    <div class="h1 center-block text-center">
+                        Обратная связь
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
+
+    <script>
+
+
+        $('document').ready(function () {
+
+            setTimeout(function () {
+                let nav = $('.nav')[0],
+                    offset = $(nav).offset().top;
+                nav.setAttribute('data-offset-top', offset);
+            }, 1000);
+
+
+
+            $('#unregister').on('click', function (e) {
+                e.preventDefault();
+                e.cancelBubble =true;
+                e.stopImmediatePropagation();
+
+                $.post("/login/includes/unregister.php", function(data) {
+                    if (data.state){
+                        window.location.href = '/login/';
+                    } else {
+                        alert('Нет соединения с сервером!');
+                    }
+                })
+            });
+        });
+
+
+    </script>
 </body>
 
 </html>

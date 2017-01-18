@@ -7,7 +7,7 @@ spl_autoload_register('my_autoloader');
 
 
 class Controller{
-    private $model;
+    public $model;
     private $view;
 
     function __construct()

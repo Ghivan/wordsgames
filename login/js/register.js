@@ -1,32 +1,33 @@
-let validator = {
-    string: function(str){
+let validator;
+validator = {
+    string: function (str) {
         str = str.trim();
 
-        if (str.length === 0){
+        if (str.length === 0) {
             return {
                 state: false,
                 error: 'Ничего не введено'
             };
         }
 
-        if (str.length < 4){
+        if (str.length < 4) {
             return {
                 state: false,
                 error: 'Введено менее 4 символов'
             };
         }
 
-        return  {
+        return {
             state: true,
             error: 'None'
         };
     },
 
-    email: function(str){
+    email: function (str) {
 
         let regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if (!str.match(regExp)) {
+        if (!str.match(regExp) && str !== '') {
             return {
                 state: false,
                 error: 'Неверный email'
@@ -39,18 +40,18 @@ let validator = {
         };
     },
 
-    password: function(str){
+    password: function (str) {
 
         str = str.trim();
 
-        if (str.length === 0){
+        if (str.length === 0) {
             return {
                 state: false,
                 error: 'Ничего не введено'
             };
         }
 
-        if (str.length < 6){
+        if (str.length < 6) {
             return {
                 state: false,
                 error: 'Введено менее 6 символов'
@@ -63,27 +64,50 @@ let validator = {
         };
     },
 
-    displayError: function(elem, errMsg) {
+    check: function (type, value) {
+        let message = {
+            state: null,
+            error: 'Нет данных'
+        };
+        switch (type){
+            case 'text':
+                message = this.string(value);
+                break;
+            case 'email':
+                message = this.email(value);
+                break;
+            case 'password':
+                message = this.password(value);
+                break;
+        }
 
-        if (!(elem instanceof jQuery)){
+        return message;
+    },
+
+    displayError: function (elem, errMsg) {
+
+        if (!(elem instanceof jQuery)) {
             console.warn(elem + ' не является объектом jQuery');
             return false;
         }
+
+        elem.val(elem.val().trim());
 
         elem.parent().addClass('has-error');
 
         let glAlert = elem.parent().find('.glyphicon-alert'),
             errBox = elem.parent().next();
 
+
         glAlert.removeClass('hidden');
-        errBox.text('Ошибка! '+ errMsg.trim());
+        errBox.text('Ошибка! ' + errMsg.trim());
         errBox.parent().css('padding-bottom', 0);
         errBox.removeClass('hidden');
     },
 
-    resetErrorState: function() {
-        for (let i = 0; i < arguments.length; i++){
-            if (!(arguments[i] instanceof jQuery)){
+    resetErrorState: function () {
+        for (let i = 0; i < arguments.length; i++) {
+            if (!(arguments[i] instanceof jQuery)) {
                 console.warn(arguments[i] + ' не является объектом jQuery');
                 return false;
             }
@@ -98,90 +122,94 @@ let validator = {
             errBox.parent().css('padding-bottom', 30);
         }
     },
-    registerUser: function() {
-        let username = $('#new-user'),
-            pswrd = $('#new-pswrd'),
-            cpswrd = $('#c-new-pswrd'),
-            email = $('#new-email'),
+
+    registerUser: function () {
+        let fields ={
+                username: $('#new-user'),
+                pswrd: $('#new-pswrd'),
+                cpswrd: $('#c-new-pswrd'),
+                email: $('#new-email'),
+        },
             hasErrors = false,
-            check;
+            check = validator.check.bind(validator);
 
-        validator.resetErrorState(username, pswrd,cpswrd,email);
+        validator.resetErrorState(fields.username, fields.pswrd, fields.cpswrd, fields.email);
+        fields.email.val(fields.email.val().trim());
 
-        check = validator.string(username.val());
-        if (!check.state){
-            hasErrors = true;
-            validator.displayError(username, check.error);
+        for (let key in fields){
+            if (fields.hasOwnProperty(key)){
+                let validation = check(fields[key].prop('type'), fields[key].val());
+                if (validation.state !== null){
+                    if (!validation.state){
+                        validator.displayError(fields[key], validation.error);
+                        hasErrors = true;
+                    }
+                }
+            }
         }
 
-        check = validator.password(pswrd.val());
-        if (!check.state){
+        if (fields.pswrd.val() !== fields.cpswrd.val()) {
             hasErrors = true;
-            validator.displayError(pswrd, check.error);
+            validator.displayError(fields.cpswrd, 'Введенные пароли не совпадают.');
         }
 
-        if (pswrd.val() !== cpswrd.val()){
-            hasErrors = true;
-            validator.displayError(cpswrd, 'Введенные пароли не совпадают.');
-        }
-
-        check = validator.email(email.val());
-        if (!check.state && email.val().trim() !== ''){
-            hasErrors = true;
-            validator.displayError(email, check.error);
-        }
-
-        if (!hasErrors){
+        if (!hasErrors) {
             let data = {
-                login: username.val().trim(),
-                pswrd: pswrd.val().trim(),
-                cpswrd: cpswrd.val().trim(),
+                login: fields.username.val().trim(),
+                pswrd: fields.pswrd.val().trim(),
+                cpswrd: fields.cpswrd.val().trim(),
+                email: fields.email.val().trim(),
                 submit: true
             };
-            if (email.val().trim()){
-                data.email = email.val().trim();
-            }
-            $.post("/login/includes/register.php", data, function(data) {
-                if (data.state){
+
+            $.post("/login/includes/register.php", data, function (data) {
+                if (data.state) {
                     window.location.href = '/cabinet/';
                 } else {
                     alert(data.message);
+                    fields.pswrd.val('');
+                    fields.cpswrd.val('');
                 }
             });
         }
 
     },
-    loginUser: function() {
-        let username = $('#user'),
-            pswrd = $('#pswrd'),
+
+    loginUser: function () {
+        let fields ={
+                username: $('#user'),
+                pswrd: $('#pswrd'),
+            },
             hasErrors = false,
-            check;
+            check = validator.check.bind(validator);
 
-        validator.resetErrorState(username, pswrd);
+        validator.resetErrorState(fields.username, fields.pswrd);
 
-        check = validator.string(username.val());
-        if (!check.state){
-            hasErrors = true;
-            validator.displayError(username, check.error);
+        for (let key in fields){
+            if (fields.hasOwnProperty(key)){
+                let validation = check(fields[key].prop('type'), fields[key].val());
+                if (validation.state !== null){
+                    if (!validation.state){
+                        validator.displayError(fields[key], validation.error);
+                        hasErrors = true;
+                    }
+                }
+            }
         }
 
-        check = validator.password(pswrd.val());
-        if (!check.state){
-            hasErrors = true;
-            validator.displayError(pswrd, check.error);
-        }
-
-        if (!hasErrors){
+        if (!hasErrors) {
             let data = {
-                login: username.val().trim(),
-                pswrd: pswrd.val().trim(),
+                login: fields.username.val().trim(),
+                pswrd: fields.pswrd.val().trim(),
                 submit: true
             };
-            $.post("/login/includes/login.php", data, function(data) {
-                if (data.state){
+
+            $.post("/login/includes/login.php", data, function (data) {
+                if (data.state) {
                     window.location.href = '/cabinet/';
                 } else {
                     alert(data.message);
+                    fields.pswrd.val('');
                 }
             });
         }
@@ -194,67 +222,25 @@ $(document).ready(function() {
 
     $("#login-button").on('click',validator.loginUser);
 
-    //Проверка налету
-    $('#user').on('change', function(){
-        let check = validator.string($(this).val());
-        if (!check.state){
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
+
+    $('input').each(function () {
+        "use strict";
+        let check = validator.check.bind(validator);
+        $(this).on('change', function(){
+            let validation = check($(this).prop('type'), $(this).val());
+            if (validation.state !== null){
+                if (!validation.state){
+                    validator.displayError($(this), validation.error);
+                } else {
+                    validator.resetErrorState($(this));
+                }
+
+            }
+        });
+
     });
 
-    $('#new-user').on('change', function(){
-        let check = validator.string($(this).val());
-        if (!check.state){
-            $(this).paddingBottom -= 35;
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
-    });
 
-    $('#pswrd').on('change', function(){
-        let check = validator.password($(this).val());
-        if (!check.state){
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
-    });
-
-    $('#new-pswrd').on('change', function(){
-        let check = validator.password($(this).val());
-        if (!check.state){
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
-    });
-
-    $('#c-new-pswrd').on('change', function(){
-        let check = validator.password($(this).val());
-        if ($(this).val() !== $('#new-pswrd').val()){
-            validator.displayError($(this), 'Введенные пароли не совпадают.')
-        } else {
-            validator.resetErrorState($(this));
-        }
-
-        if (!check.state){
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
-    });
-
-    $('#new-email').on('change', function(){
-        let check = validator.email($(this).val());
-        if (!check.state && $(this).val().trim() !== ''){
-            validator.displayError($(this), check.error);
-        } else {
-            validator.resetErrorState($(this));
-        }
-    });
 
     $(document).keyup(function(e) {
         if (e.keyCode === 13){
