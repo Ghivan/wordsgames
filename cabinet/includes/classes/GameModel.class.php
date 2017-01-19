@@ -27,7 +27,8 @@ class GameModel
             'id' => $this->id,
             'rules'=> $this->rules,
             'name'=> $this->name,
-            'path' => $this->path
+            'path' => $this->path,
+            'author' => $this->author
         );
     }
 

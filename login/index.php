@@ -39,9 +39,10 @@ if (checkLogin()){
             </ul>
 
             <div class="tab-content cleafix">
-
+                <!--Форма входа-->
                 <div class="tab-pane in fade active" id="login">
-<form id="login-form" class="form-horizontal">
+
+                    <form id="login-form" class="form-horizontal">
                     <div>
                         <div class="input-group">
                             <label for="user"  class="sr-only">Введите логин</label>

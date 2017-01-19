@@ -166,7 +166,7 @@ validator = {
                 if (data.state) {
                     window.location.href = '/cabinet/';
                 } else {
-                    alert(data.message);
+                    validator.showAlertBlock(data.message);
                     fields.pswrd.val('');
                     fields.cpswrd.val('');
                 }
@@ -208,15 +208,26 @@ validator = {
                 if (data.state) {
                     window.location.href = '/cabinet/';
                 } else {
-                    alert(data.message);
+                    validator.showAlertBlock(data.message);
                     fields.pswrd.val('');
                 }
             });
         }
 
+    },
+
+    showAlertBlock: function (message) {
+        // <div class="alert alert-success alert-dismissable">
+        //     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        // <strong>Success!</strong> Indicates a successful or positive action.
+        // </div>
+            let alertBox = $('<div class="alert alert-danger alert-dismissible" role="alert" id="registerError"></div>');
+            alertBox.append('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>');
+            alertBox.append('<strong>Ошибка!</strong>');
+            alertBox.append(' ' + message);
+            $('h1').after(alertBox);
     }
 };
-
 $(document).ready(function() {
     $("#register-button").on('click',validator.registerUser);
 

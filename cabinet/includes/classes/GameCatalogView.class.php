@@ -1,15 +1,15 @@
 <?php
 class GameCatalogView{
     public function printGamebox(array $gameData){
-        $panel = $this->formPanel($gameData['id'], $gameData['rules'], $gameData['name'], $gameData['path']);
+        $panel = $this->formPanel($gameData['id'], $gameData['rules'], $gameData['name'], $gameData['path'], $gameData['author']);
         $gameBox = '<div class="row">' .
             $panel .
             '</div>';
         echo $gameBox;
     }
 
-    private function formPanel($gameId, $gameRules, $gameName, $gamePath){
-        $heading = $this->formPanelHeading($gameName);
+    private function formPanel($gameId, $gameRules, $gameName, $gamePath, $gameAuthor){
+        $heading = $this->formPanelHeading($gameName, $gameAuthor);
         $body = $this->formPanelBody($gameId, $gameRules);
         $footer = $this->formPanelFooter($gameId, $gamePath);
         $panel = '<div class="panel panel-info">' .
@@ -20,9 +20,12 @@ class GameCatalogView{
         return $panel;
     }
 
-    private function formPanelHeading($gameName){
+    private function formPanelHeading($gameName, $gameAuthor){
         $panelHeading = '<div class="panel-heading">' .
             $gameName .
+            ' <br><small>Разработчик: '.
+            $gameAuthor.
+            '</small>'.
             '</div>';
 
         return $panelHeading;
