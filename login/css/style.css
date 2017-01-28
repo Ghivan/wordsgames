@@ -1,52 +1,105 @@
 @font-face {
-  font-family: 'RupsterScriptFree';
-  src: url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix") format("embedded-opentype"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff") format("woff"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf") format("truetype"), url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree") format("svg");
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "Rupster";
+  src: url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 body {
-  background-image: linear-gradient(to left, #E0F7FA, #B2EBF2 40%, #E0F7FA);
-  color: #006064; }
+  font-family: "RobotoCondensed", sans-serif;
+  background: #E9E9E9;
+  background: -moz-radial-gradient(center, ellipse cover, #E9E9E9 0%, #CDCDCD 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #E9E9E9), color-stop(100%, #CDCDCD));
+  background: -webkit-radial-gradient(center, ellipse cover, #E9E9E9 0%, #CDCDCD 100%);
+  background: -o-radial-gradient(center, ellipse cover, #E9E9E9 0%, #CDCDCD 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #E9E9E9 0%, #CDCDCD 100%);
+  background: radial-gradient(ellipse at center, #E9E9E9 0%, #CDCDCD 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  color: #FFF; }
 
-h1 {
-  font-family: RupsterScriptFree, sans-serif;
-  text-align: center; }
-
-.inner-alignment-vertical {
+.container {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
-form {
-  padding: 10px 30px;
-  background-color: #4DD0E1;
-  border: 1px solid #006064;
-  border-top: none;
-  margin-bottom: 0; }
-  form > * {
-    padding-bottom: 30px; }
-  form .help-block {
-    margin-bottom: 5px; }
-  @media (min-width: 768px) {
-    form {
-      padding: 30px 60px; } }
+  justify-content: space-around;
+  align-items: center;
+  align-content: center; }
+  .container .panel-container {
+    margin: auto;
+    width: 45%; }
 
 .panel {
-  background-color: #B2EBF2;
-  padding: 30px;
-  margin-top: 5%;
-  box-shadow: 5px 5px 5px 5px rgba(0, 96, 100, 0.5); }
-  @media (min-width: 768px) {
-    .panel {
-      margin-top: 10%; } }
+  width: 100%;
+  padding: 20px;
+  background-color: #E9E9E9;
+  border: 3px solid #FFF; }
 
-.nav-tabs {
-  border-bottom-color: #006064; }
-  .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-    background-color: #4DD0E1;
-    border-color: #006064;
-    border-bottom-color: transparent; }
-  .nav-tabs > li > a:hover {
-    background-color: #E0F7FA;
-    border-color: transparent; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  border: 3px solid #FFF;
+  margin-bottom: -3px;
+  border-bottom: transparent;
+  background-color: #E9E9E9;
+  font-weight: bold;
+  font-size: 1.2em; }
+
+#login-button {
+  width: 30%;
+  background-color: #8DCC57;
+  border-color: #82b443; }
+
+#register-button {
+  width: 75%;
+  background-color: #99D3DF;
+  border-color: #88BBD6; }
+
+h1 {
+  font-family: "Rupster";
+  color: #88BBD6;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 3em; }
+
+.tab-content {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .tab-content form > div {
+    padding-bottom: 30px; }
+  .tab-content .input-group, .tab-content .btn {
+    margin: auto;
+    width: 75%; }
+    .tab-content .input-group input, .tab-content .btn input {
+      font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */

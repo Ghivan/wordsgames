@@ -169,6 +169,7 @@ validator = {
                     validator.showAlertBlock(data.message);
                     fields.pswrd.val('');
                     fields.cpswrd.val('');
+                    fields.pswrd.focus();
                 }
             });
         }
@@ -210,22 +211,34 @@ validator = {
                 } else {
                     validator.showAlertBlock(data.message);
                     fields.pswrd.val('');
+                    fields.pswrd.focus();
                 }
             });
         }
 
     },
 
+    alertBlock: null,
     showAlertBlock: function (message) {
         // <div class="alert alert-success alert-dismissable">
         //     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         // <strong>Success!</strong> Indicates a successful or positive action.
         // </div>
+        if (!validator.alertBlock){
             let alertBox = $('<div class="alert alert-danger alert-dismissible" role="alert" id="registerError"></div>');
             alertBox.append('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>');
             alertBox.append('<strong>Ошибка!</strong>');
             alertBox.append(' ' + message);
             $('h1').after(alertBox);
+            alertBox.on('closed.bs.alert', function(){
+                "use strict";
+                validator.alertBlock = null;
+            });
+            validator.alertBlock = alertBox;
+        } else {
+            validator.alertBlock.html('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Ошибка!</strong> '+ message);
+        }
+
     }
 };
 $(document).ready(function() {

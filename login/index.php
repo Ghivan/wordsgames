@@ -29,20 +29,32 @@ if (checkLogin()){
 
 <body>
 
+<!--Контейнер-->
 <div class="container">
-    <div class="row">
-        <div class="panel col-xs-12 col-sm-6 col-md-5 col-sm-offset-3 col-md-offset-4">
-            <h1>Игры со словами</h1>
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#login" data-toggle="tab">Войти</a></li>
-                <li><a href="#register" data-toggle="tab">Зарегистрироваться</a></li>
-            </ul>
+    <div class="panel-container">
+    <!--Кнопки переключения режима панели-->
+    <div class="panel-header">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#login" data-toggle="tab">Вход</a></li>
+            <li><a href="#register" data-toggle="tab">Регистрация</a></li>
+        </ul>
+    </div>
+<!--Панель-->
+    <div class="panel panel-default">
 
-            <div class="tab-content cleafix">
+        <!--Заголовок-->
+        <h1>Игры со словами</h1>
+
+        <!--Содержимое панели (основное)-->
+        <div class="panel-body tab-content clearfix">
+
+            <!--Режим входа-->
+            <div class="tab-pane in fade active" id="login">
+
                 <!--Форма входа-->
-                <div class="tab-pane in fade active" id="login">
+                <form id="login-form" class="form-horizontal">
 
-                    <form id="login-form" class="form-horizontal">
+                    <!--Ввод логина-->
                     <div>
                         <div class="input-group">
                             <label for="user"  class="sr-only">Введите логин</label>
@@ -64,74 +76,84 @@ if (checkLogin()){
                         </div>
                         <span class="help-block text-center text-danger hidden">Текст ошибки</span>
                     </div>
-    <input type="button" class="btn btn-success btn-block" id="login-button" value="Войти">
 
-</form>
+                    <!--Кнопка входа-->
+                    <input type="button" class="btn btn-block" id="login-button" value="Войти">
 
-                </div>
-
-                <div class="tab-pane" id="register">
-
-                    <!--Регистрационная форма-->
-
-                    <form id="register-form" class="form-horizontal">
-
-                        <!--Ввод логина-->
-                        <div>
-                            <div class="input-group">
-                                <label for="new-user"  class="sr-only">Придумайте логин</label>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" class="form-control" id="new-user" placeholder="Придумайте логин..." required>
-                                <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
-                            </div>
-                            <span class="help-block text-center text-danger hidden">Текст ошибки</span>
-                        </div>
-
-                        <!--Ввод пароля-->
-                        <div>
-                            <div class="input-group">
-                                <label for="new-pswrd"  class="sr-only">Придумайте пароль</label>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                <input type="password" class="form-control" id="new-pswrd" placeholder="Придумайте пароль..." required>
-                                <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
-                                <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
-                            </div>
-                            <span class="help-block text-center text-danger hidden">Текст ошибки</span>
-                        </div>
-                        <!--Повтор пароля-->
-                        <div>
-                            <div class="input-group">
-                                <label for="c-new-pswrd" class="sr-only">Повторите пароль</label>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                <input type="password" class="form-control" id="c-new-pswrd" placeholder="Повторите пароль..." required>
-                                <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
-                                <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
-                            </div>
-                            <span class="help-block text-center text-danger hidden">Текст ошибки</span>
-                        </div>
-                        <!--Ввод электронной почты-->
-                        <div>
-                            <div class="input-group">
-                                <label for="new-email"  class="sr-only">Введите Ваш email</label>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                <input type="email" class="form-control" id="new-email" placeholder="Введите Ваш email..." required>
-                                <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
-                                <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
-                            </div>
-                            <span class="help-block text-center text-danger hidden">Текст ошибки</span>
-                        </div>
-
-
-                        <input type="button" class="btn btn-info btn-block" id="register-button" value="Зарегистрироваться">
-
-                    </form>
-                </div>
+                </form>
 
             </div>
+            <!--Конец режима входа-->
 
+            <!--Режим регистрации-->
+            <div class="tab-pane" id="register">
+
+                <!--Регистрационная форма-->
+                <form id="register-form" class="form-horizontal">
+
+                    <!--Ввод логина-->
+                    <div>
+                        <div class="input-group">
+                            <label for="new-user"  class="sr-only">Придумайте логин</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" class="form-control" id="new-user" placeholder="Придумайте логин..." required>
+                            <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                        </div>
+                        <span class="help-block text-center text-danger hidden">Текст ошибки</span>
+                    </div>
+
+                    <!--Ввод пароля-->
+                    <div>
+                        <div class="input-group">
+                            <label for="new-pswrd"  class="sr-only">Придумайте пароль</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" class="form-control" id="new-pswrd" placeholder="Придумайте пароль..." required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                            <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                        </div>
+                        <span class="help-block text-center text-danger hidden">Текст ошибки</span>
+                    </div>
+
+                    <!--Повтор пароля-->
+                    <div>
+                        <div class="input-group">
+                            <label for="c-new-pswrd" class="sr-only">Повторите пароль</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" class="form-control" id="c-new-pswrd" placeholder="Повторите пароль..." required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                            <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                        </div>
+                        <span class="help-block text-center text-danger hidden">Текст ошибки</span>
+                    </div>
+
+                    <!--Ввод электронной почты-->
+                    <div>
+                        <div class="input-group">
+                            <label for="new-email"  class="sr-only">Введите Ваш email</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <input type="email" class="form-control" id="new-email" placeholder="Введите Ваш email..." required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                            <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                        </div>
+                        <span class="help-block text-center text-danger hidden">Текст ошибки</span>
+                    </div>
+
+                    <!--Кнопка регистрации-->
+                    <input type="button" class="btn btn-block" id="register-button" value="Зарегистрироваться">
+
+                </form>
+                <!--Конец регистрационной формы-->
+            </div>
+            <!--Конец режима регистрации-->
         </div>
+        <!--Конец содержимого панели (основного)-->
+
     </div>
+    <!--Конец панели-->
+    </div>
+
 </div>
+<!--Конец контейнера-->
 
 </body>
 

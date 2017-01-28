@@ -104,29 +104,6 @@ $controller = new Controller();
                     <div class="h1 center-block text-center">
                         Настройки профиля
                     </div>
-                    <div class="row">
-                        <div>
-                            <p>Ваше имя: <span id="usernameLabel""><?=$controller->model->user->login ?> </span> <a class="btn btn-default" href="#" id="btn-user-changename">изменить</a></p>
-                            <script>
-                                $('document').ready(function () {
-                                    $('#btn-user-changename').on('click', function(){
-                                        let span = $('#usernameLabel'),
-                                            input = $('<input type="text" value=\"' + span.text() + '\">');
-                                        span.replaceWith(input);
-                                        input.focus();
-                                        input.on('focusout', function () {
-                                            span.text($(this).val());
-                                           $(this).replaceWith(span);
-                                        });
-                                        $(this).text('Сохранить');
-                                        return false;
-                                    })
-                                })
-                            </script>
-                        </div>
-
-
-                    </div>
                 </div>
             </div>
             <div class="container-fluid tab-pane fade" id="feedback">

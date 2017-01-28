@@ -1,73 +1,80 @@
-@import "../../_style/_colors";
+@import "../../_style/_config";
 
-@font-face {
-  font-family: 'RupsterScriptFree';
-  src: url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix') format('embedded-opentype'),
-       url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff') format('woff'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf') format('truetype'),
-       url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-//noinspection CssInvalidFunction
 body{
-  background-image: linear-gradient(to left, $background, $accent 40%,$background);
-  color: $text;
+  font-family: $bodyFont;
+  @include gradient($lightGray, $gray, radial);
+  color: $TextColor;
 }
 
-h1{
-  font-family: RupsterScriptFree, sans-serif;
-  text-align: center;
-}
-
-.inner-alignment-vertical {
+.container {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  .panel-container{
+    margin: auto;
+    width: 45%
+  }
 }
 
-form {
-  padding: 10px 30px;
-  background-color: $strong;
-  border: 1px solid $borders;
-  border-top: none;
-  margin-bottom: 0;
+//---- Панель входа/регистрации. Общий вид
+.panel {
+  width: 100%;
+  padding: 20px;
+  background-color: $BodyBackgroundColor;
+  border: 3px solid #FFF;
+}
 
-  >*{
+//---- Управляющие кнопки
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  border: 3px solid #FFF;
+  margin-bottom: -3px;
+  border-bottom: transparent;
+  background-color: $BodyBackgroundColor;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#login-button{
+  width: 30%;
+  background-color: $btnColor;
+  border-color: $btnBordersColor;
+}
+
+#register-button{
+  width: 75%;
+  background-color: $iceBlue;
+  border-color: $waterBlue;
+}
+
+
+//---- Заголовок
+h1{
+  font-family: $handwritingFont;
+  color: $HeadersColor;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 3em;
+}
+
+//----Панель входа/регистрации
+.tab-content{
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  form>div{
     padding-bottom: 30px;
   }
-  .help-block{
-    margin-bottom: 5px;
-  }
-  @media (min-width: 768px) {
-    padding: 30px 60px;
-  }
-}
 
-.panel{
-  background-color: $accent;
-  padding: 30px;
-  margin-top: 5%;
-  box-shadow: 5px 5px 5px 5px $shadow;
-  @media (min-width: 768px) {
-    margin-top: 10%;
-  }
-}
-
-.nav-tabs{
-  border-bottom-color: $borders;
-
-  >li.active{
-    >a, >a:focus, >a:hover{
-      background-color: $strong;
-      border-color: $borders;
-      border-bottom-color: transparent;
-    }
-  }
-  >li{
-    >a:hover{
-      background-color: $background;
-      border-color: transparent;
+  .input-group, .btn{
+    margin: auto;
+    width: 75%;
+        input{
+      font-style: italic;
     }
   }
 }
+

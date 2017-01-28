@@ -1,11 +1,33 @@
-@import "../../_style/colors";
+@import "../../_style/_config";
 
-@font-face {
-  font-family: 'RupsterScriptFree';
-  src: url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix') format('embedded-opentype'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.woff') format('woff'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf') format('truetype'), url('/_style/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree') format('svg');
-  font-weight: normal;
-  font-style: normal;
+$OpenSans: 'OpenSans';
+@include fontCreatorTTF($OpenSans-Bold, $OpenSans, normal, bold);
+@include fontCreatorTTF($OpenSans-Regular, $OpenSans, normal, normal);
+@include fontCreatorTTF($OpenSans-Italic, $OpenSans, italic, normal);
+@include fontCreatorTTF($OpenSans-BoldItalic, $OpenSans, italic, bold);
+
+$RobotoCondensed: 'RobotoCondensed';
+@include fontCreatorTTF($RobotoCondensed-Bold, $RobotoCondensed, normal, bold);
+@include fontCreatorTTF($RobotoCondensed-Regular, $RobotoCondensed, normal, normal);
+@include fontCreatorTTF($RobotoCondensed-Italic, $RobotoCondensed, italic, normal);
+
+$Rupster: 'Rupster';
+@include fontCreatorTTF($RupsterFontTTF, $Rupster, normal, normal);
+
+body{
+  font-family: $bodyFont, sans-serif;
+  background-color: $BodyBackgroundColor;
+
+  .h1{
+    font-family: $handwritingFont;
+  }
 }
+
+.container{
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+}
+
 
 .affix{
   top:20px;
@@ -19,15 +41,22 @@
 
 .player-info {
   padding-top: 15px;
+
+
+  .h2{
+font-family: $handwritingFont;
+  }
+
+  .progress-bar{}
   .progress {
-    background-color: $background;
+    background-color: $gray;
     .progress-bar{
-      background-color: $strong;
+      background-color: $iceBlue;
     }
     > span {
       z-index: 999;
       position: absolute;
-      color: $text;
+      color: #000;
       left: 0;
       width: 100%;
       text-align: center;
@@ -36,6 +65,9 @@
 }
 
 .game-catalog{
+  border-left: 2px solid #FFF;
+  box-shadow: inset 5px 0 5px $gray;
+  min-height: 100vh;
   >.container-fluid {
     > .row {
       margin-bottom: 15px;
