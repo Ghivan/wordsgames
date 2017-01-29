@@ -40,6 +40,20 @@ class Database{
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function chageDataQuery(string $query, array $params = null){
+        $stmt = $this->dbc->prepare($query);
+
+        if (!$stmt->execute($params)){
+            throw new Exception(
+                'Ошибка запроса к базе данных. Строка '
+                . __LINE__
+                . '. SQL Error '
+                . $stmt->errorInfo()[2]
+            );
+        }
+        return $stmt->rowCount();
+    }
+
     public function getLastId()
     {
         return $this->dbc->lastInsertId();

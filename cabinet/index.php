@@ -28,7 +28,8 @@ $controller = new Controller();
     <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
     <script src="/_libraries/jquery-3.1.1.min.js"></script>
     <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/cabinet/css/style.css?ver0.3">
+    <script src="js/cabinet.js"></script>
+    <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.2">
 
     <title>Личный кабинет</title>
 </head>
@@ -55,7 +56,7 @@ $controller = new Controller();
 
                 <li role="presentation">
                     <a href="#profile-configure"
-                       data-toggle="tab">
+                       data-toggle="modal">
                         Настройки профиля
                     </a>
                 </li>
@@ -77,46 +78,9 @@ $controller = new Controller();
 
         </div>
         <div class="col-xs-8 col-sm-9 game-catalog tab-content">
-            <div class="container-fluid tab-pane active in fade" id="game-list">
-                <div class="row">
-                    <div class="h1 center-block text-center">
-                        Доступные игры
-                    </div>
-                </div>
-
-                <div class="row game-search">
-                    <div class="form-horizontal col-md-5 col-md-offset-7">
-
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                            <input type="password" id="gm-search" name="gm-search" class="form-control" placeholder="Поиск по играм..." required>
-                        </div>
-
-                    </div>
-                </div>
-
-                <?php
-                $controller->printGameBox();
-                ?>
-            </div>
-            <div class="container-fluid tab-pane fade" id="profile-configure">
-                <div class="row">
-                    <div class="h1 center-block text-center">
-                        Настройки профиля
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid tab-pane fade" id="feedback">
-                <div class="row">
-                    <div class="h1 center-block text-center">
-                        Обратная связь
-                    </div>
-                    <div class="row">
-
-                    </div>
-                </div>
-            </div>
-
+           <?php include_once 'includes/tabs/game_list.php';?>
+           <?php include_once 'includes/tabs/profile_configure.php';?>
+           <?php include_once 'includes/tabs/feedback.php';?>
         </div>
     </div>
 

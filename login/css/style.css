@@ -59,12 +59,16 @@ body {
   .container .panel-container {
     margin: auto;
     width: 45%; }
+    @media only screen and (max-width: 700px) {
+      .container .panel-container {
+        width: 90%; } }
 
 .panel {
   width: 100%;
   padding: 20px;
   background-color: #E9E9E9;
-  border: 3px solid #FFF; }
+  border: 3px solid #FFF;
+  box-shadow: 5px 5px 5px #88BBD6; }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
   border: 3px solid #FFF;

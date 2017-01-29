@@ -33,6 +33,7 @@ class Login{
 
         if (mb_strlen($user) < LOGIN_MIN_LENGTH || mb_strlen($password) < PASSWORD_MIN_LENGTH){
             $this->errorMessage = 'Недостаточная длина логина или пароля';
+            $this -> state = false;
             return;
         }
 

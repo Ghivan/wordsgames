@@ -81,12 +81,26 @@
 body {
   font-family: "RobotoCondensed", sans-serif, sans-serif;
   background-color: #E9E9E9; }
-  body .h1 {
-    font-family: "Rupster"; }
 
 .container {
   border-left: 2px solid #FFF;
-  border-right: 2px solid #FFF; }
+  border-right: 2px solid #FFF;
+  min-width: 330px; }
+  @media (device-width: 1200px) {
+    .container {
+      border: none; } }
+  @media (device-width: 992px) {
+    .container {
+      border: none; } }
+  @media (max-width: 768px) {
+    .container {
+      border: none; } }
+
+.h1, .h2, h1, h2 {
+  font-family: "Rupster";
+  line-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .affix {
   top: 20px; }
@@ -99,8 +113,6 @@ body {
 
 .player-info {
   padding-top: 15px; }
-  .player-info .h2 {
-    font-family: "Rupster"; }
   .player-info .progress {
     background-color: #CDCDCD; }
     .player-info .progress .progress-bar {
@@ -131,13 +143,41 @@ body {
       height: 40px;
       line-height: 25px; }
     @media (max-width: 680px) {
-      .game-catalog .btn-gameinfo-block .btn-start {
+      .game-catalog .btn-gameinfo-block {
+        display: flex;
         position: static;
-        width: 130px; }
-      .game-catalog .btn-gameinfo-block li {
-        display: block;
-        margin: 5px auto;
-        width: 130px;
-        text-align: center; } }
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap; }
+        .game-catalog .btn-gameinfo-block .btn-start {
+          position: static;
+          width: 100%; }
+        .game-catalog .btn-gameinfo-block ul {
+          display: block;
+          width: 100%;
+          margin: auto; }
+        .game-catalog .btn-gameinfo-block li {
+          display: block;
+          width: 100%;
+          text-align: center; } }
+
+#profile-configure .modal-dialog {
+  width: 350px; }
+#profile-configure .modal-body > .btn {
+  margin: auto;
+  margin-bottom: 20px;
+  display: block;
+  width: 200px; }
+#profile-configure .userdata-change-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 20px; }
+  #profile-configure .userdata-change-group > .input-group {
+    width: 48%; }
+  #profile-configure .userdata-change-group > a {
+    margin-left: 20px; }
 
 /*# sourceMappingURL=style.css.map */

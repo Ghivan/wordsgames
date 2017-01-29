@@ -7,7 +7,7 @@ spl_autoload_register('my_autoloader');
 
 
 class Controller{
-    public $model;
+    private $model;
     private $view;
 
     function __construct()
@@ -29,4 +29,9 @@ class Controller{
             $this->view->gameCatalog->printGamebox($game->serializeDataToArray());
         }
     }
+
+    public function getUserDetails(string $prop){
+        return $this->model->user->$prop;
+    }
+
 }

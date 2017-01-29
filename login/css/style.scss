@@ -15,7 +15,10 @@ body{
 
   .panel-container{
     margin: auto;
-    width: 45%
+    width: 45%;
+    @media only screen and (max-width: 700px){
+      width: 90%;
+    }
   }
 }
 
@@ -25,6 +28,8 @@ body{
   padding: 20px;
   background-color: $BodyBackgroundColor;
   border: 3px solid #FFF;
+  box-shadow: 5px 5px 5px $HeadersColor;
+
 }
 
 //---- Управляющие кнопки

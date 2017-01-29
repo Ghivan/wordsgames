@@ -20,7 +20,7 @@ if (checkLogin()){
     <script src="/_libraries/jquery-3.1.1.min.js"></script>
     <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/login/css/style.css?ver0.17">
+    <link rel="stylesheet" href="/login/css/style.css?ver0.222">
 
     <script src="/login/js/register.js?ver0.19"></script>
     <title>Регистрация</title>
@@ -33,7 +33,7 @@ if (checkLogin()){
 <div class="container">
     <div class="panel-container">
     <!--Кнопки переключения режима панели-->
-    <div class="panel-header">
+    <div>
         <ul class="nav nav-tabs">
             <li class="active"><a href="#login" data-toggle="tab">Вход</a></li>
             <li><a href="#register" data-toggle="tab">Регистрация</a></li>
@@ -43,7 +43,7 @@ if (checkLogin()){
     <div class="panel panel-default">
 
         <!--Заголовок-->
-        <h1>Игры со словами</h1>
+            <h1>Игры со словами</h1>
 
         <!--Содержимое панели (основное)-->
         <div class="panel-body tab-content clearfix">

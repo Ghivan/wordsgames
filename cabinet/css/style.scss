@@ -17,15 +17,31 @@ $Rupster: 'Rupster';
 body{
   font-family: $bodyFont, sans-serif;
   background-color: $BodyBackgroundColor;
-
-  .h1{
-    font-family: $handwritingFont;
-  }
 }
 
 .container{
   border-left: 2px solid #FFF;
   border-right: 2px solid #FFF;
+  min-width: 330px;
+
+  @media (device-width: 1200px){
+    border: none;
+  }
+
+  @media (device-width: 992px){
+    border: none;
+  }
+
+  @media (max-width: 768px){
+    border: none;
+  }
+}
+
+.h1, .h2, h1, h2{
+  font-family: $handwritingFont;
+  line-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -41,11 +57,6 @@ body{
 
 .player-info {
   padding-top: 15px;
-
-
-  .h2{
-font-family: $handwritingFont;
-  }
 
   .progress-bar{}
   .progress {
@@ -68,10 +79,13 @@ font-family: $handwritingFont;
   border-left: 2px solid #FFF;
   box-shadow: inset 5px 0 5px $gray;
   min-height: 100vh;
+
   >.container-fluid {
+
     > .row {
       margin-bottom: 15px;
     }
+
     .game-search{
       margin: 30px auto;
     }
@@ -88,18 +102,60 @@ font-family: $handwritingFont;
       height: 40px;
       line-height: 25px;
     }
+
     @media (max-width: 680px) {
+      display: flex;
+      position: static;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      flex-wrap: wrap;
       .btn-start{
         position: static;
-        width: 130px;
+        width: 100%;
       }
+
+      ul{
+        display: block;
+        width: 100%;
+        margin: auto;
+      }
+
       li{
         display: block;
-        margin: 5px auto;
-        width: 130px;
+        width: 100%;
         text-align: center;
       }
+
     }
+  }
+}
+
+#profile-configure{
+  .modal-dialog {
+    width: 350px;
+  }
+  .modal-body>.btn{
+    margin: auto;
+    margin-bottom: 20px;
+    display: block;
+    width: 200px;
+  }
+  .userdata-change-group{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 20px;
+
+    >.input-group{
+      width: 48%;
+    }
+    >a{
+      margin-left: 20px;
+    }
+
   }
 }
 
