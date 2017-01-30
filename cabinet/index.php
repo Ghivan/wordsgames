@@ -28,7 +28,7 @@ $controller = new Controller();
     <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
     <script src="/_libraries/jquery-3.1.1.min.js"></script>
     <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/cabinet.js"></script>
+    <script src="js/cabinet.js?ver=9"></script>
     <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.2">
 
     <title>Личный кабинет</title>
@@ -82,6 +82,10 @@ $controller = new Controller();
            <?php include_once 'includes/tabs/profile_configure.php';?>
            <?php include_once 'includes/tabs/feedback.php';?>
         </div>
+    </div>
+    
+    <div id="loader">
+        <img src="/files/images/loading.gif" alt="Загрузка...">
     </div>
 
     <script>

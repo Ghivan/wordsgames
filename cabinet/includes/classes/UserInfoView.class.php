@@ -14,7 +14,7 @@ class UserInfoView
     {
         $block = '<img src="' .
             $pathToImage .
-            '" alt="Ваш аватар" class="img-responsive img-circle center-block">';
+            '" alt="Ваш аватар" class="img-responsive img-circle center-block" id="UserAvatar">';
 
         return $block;
     }
