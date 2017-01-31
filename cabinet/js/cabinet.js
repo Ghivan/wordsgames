@@ -1,21 +1,20 @@
 let userData ={
+        freeze: false,
         dataChanged: false,
         serverSuccess: false,
         login: '',
-        loginChanged: false,
+        newLogin: false,
         email: '',
-        emailChanged: false,
+        newEmail: false,
         updateReminder: function(){
-            let reminder = $('#changesReminder');
-            if (reminder.hasClass('text-success')){
-                reminder.removeClass('text-success');
-                reminder.text('Нажмите "Сохранить изменения", чтобы отправить данные на сервер');
-                reminder.addClass('text-danger');
-            }
-
+            $('#answerReminder').text('');
+            $('#changesReminder').text('Нажмите "Сохранить изменения", чтобы отправить данные на сервер');
         },
 
         changeLogin: function (btn) {
+            if (userData.freeze) {
+                return;
+            }
             let input = $('#user');
             switch (btn.text()){
                 case 'Изменить логин':
@@ -26,9 +25,8 @@ let userData ={
                     break;
                 case 'Подтвердить':
                     if (input.val().trim() !== '' && userData.login !== input.val()){
-                        userData.login = input.val();
+                        userData.newLogin = input.val();
                         userData.dataChanged = true;
-                        userData.loginChanged = true;
                         userData.updateReminder();
                     }
                     input.prop('disabled', true);
@@ -38,6 +36,9 @@ let userData ={
         },
 
         changeEmail: function (btn){
+            if (userData.freeze) {
+                return;
+            }
             let input = $('#email');
             switch (btn.text()){
                 case 'Изменить email':
@@ -48,9 +49,8 @@ let userData ={
                     break;
                 case 'Подтвердить':
                     if (input.val().trim() !== '' && userData.email !== input.val()){
-                        userData.email = input.val();
+                        userData.newEmail = input.val();
                         userData.dataChanged = true;
-                        userData.emailChanged = true;
                         userData.updateReminder();
                     }
                     input.prop('disabled', true);
@@ -126,17 +126,18 @@ let userData ={
                         success: function(data){
                             view.removeLoader();
                             if (data.state){
-                                errorBox.html('');
-                                errorBox.append($('<div class="text-success">Аватар изменен</div>'));
                                 $('#UserAvatar').prop('src', data.src);
                                 fileInput.val('');
                             }
+                            $('#avatarBox').modal('hide');
+                            $('#answerReminder').html('Аватар изменен');
 
                         },
 
                         error: function(data){
                             errorBox.text('Ошибка соединения с сервером');
                             view.removeLoader();
+
                         },
 
                         data: formData,
@@ -159,45 +160,78 @@ let userData ={
             reminder.html('');
             answerSuccess.html('');
 
-            if (userData.loginChanged){
+            if (userData.newLogin){
                 let data = {
-                    login: userData.login
+                    login: userData.newLogin
                 };
 
                 view.addLoader();
 
-                $.post("change_scripts/change_login.php", data, function (data) {
-                    view.removeLoader();
-                    if (!data.state) {
-                        reminder.html(reminder.html() + data.message + '<br>');
-                        reminder.addClass('text-danger');
-                    } else {
-                        answerSuccess.html(answerSuccess.html() + 'Логин изменен' + '<br>');
-                        userData.serverSuccess = true;
-                    }
+                $.ajax({
+                    url: 'change_scripts/change_login.php',
+
+                    type: 'POST',
+                    success: function(data){
+                        view.removeLoader();
+                        if (!data.state) {
+                            reminder.html(reminder.html() + data.message + '<br>');
+                            $('#user').val(userData.login);
+                            userData.newLogin = false;
+
+                        } else {
+                            answerSuccess.html(answerSuccess.html() + 'Логин изменен' + '<br>');
+                            userData.login = userData.newLogin;
+                            userData.newLogin = false;
+                            userData.serverSuccess = true;
+                        }
+                    },
+
+                    error: function(data){
+                        let reminder = $('#changesReminder');
+                        reminder.html('Ошибка соединения с сервером');
+                        view.removeLoader();
+                    },
+
+                    data: data,
                 });
             }
 
-            if (userData.emailChanged){
+            if (userData.newEmail){
                 let data = {
-                    email: userData.email
+                    email: userData.newEmail
                 };
                 view.addLoader();
 
-                $.post("change_scripts/change_email.php", data, function (data) {
-                    view.removeLoader();
-                    if (!data.state) {
-                        reminder.html(reminder.html() + data.message + '<br>');
-                        reminder.addClass('text-danger');
-                    }else {
-                        answerSuccess.html(answerSuccess.html() + 'Email изменен' + '<br>');
-                        userData.serverSuccess = true;
-                    }
+                $.ajax({
+                    url: 'change_scripts/change_email.php',
+                    type: 'POST',
+                    success: function(data){
+                        view.removeLoader();
+                        if (!data.state) {
+                            reminder.html(reminder.html() + data.message + '<br>');
+                            $('#email').val(userData.email);
+                            userData.newEmail = false;
+                        } else {
+                            answerSuccess.html(answerSuccess.html() + 'Email изменен' + '<br>');
+                            userData.email = userData.newEmail;
+                            userData.newEmail = false;
+                            userData.serverSuccess = true;
+                        }
+                    },
 
+                    error: function(data){
+                        let reminder = $('#changesReminder');
+                        if (reminder.hasClass('text-success')){
+                            reminder.removeClass('text-success');
+                            reminder.addClass('text-danger');
+                        }
+                        reminder.html('Ошибка соединения с сервером');
+                        view.removeLoader();
+                    },
+
+                    data: data,
                 });
             }
-
-
         }
     },
 
@@ -215,20 +249,37 @@ $('document').ready(function () {
     $('#loader').hide();
     let change_login_btn = $('#change-login-btn'),
         change_email_btn = $('#change-email-btn'),
-        serverSenderBtn = $('#ServerDataSender');
+        serverSenderBtn = $('#ServerDataSender'),
+        emailInput = $('#email'),
+        loginInput = $('#user');
 
     //установка начальных значений
-    userData.login = $('#user').prop('placeholder');
-    userData.email = $('#email').prop('placeholder');
+    userData.login = loginInput.prop('placeholder');
+    userData.email = emailInput.prop('placeholder');
 
     //изменение логина
     change_login_btn.on('click', function () {
         userData.changeLogin(change_login_btn);
     });
+    loginInput.on('focusout', function(){
+        userData.changeLogin(change_login_btn);
+        userData.freeze = true;
+        setTimeout(function () {
+            userData.freeze = false;
+        }, 500);
+
+    });
 
     //изменение email
     change_email_btn.on('click', function () {
         userData.changeEmail(change_email_btn);
+    });
+    emailInput.on('focusout', function(){
+        userData.changeEmail(change_email_btn);
+        userData.freeze = true;
+        setTimeout(function () {
+            userData.freeze = false;
+        }, 500);
     });
 
     //реакция на закрытие окна

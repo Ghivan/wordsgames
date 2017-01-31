@@ -58,6 +58,7 @@ body{
 .player-info {
   padding-top: 15px;
 
+
   .progress-bar{}
   .progress {
     background-color: $gray;
@@ -178,7 +179,7 @@ body{
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: rgba(0,0,0, 0.6);
+  background-color: rgba(0,0,0, 0.8);
 
   img{
     display: block;

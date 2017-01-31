@@ -42,3 +42,177 @@ Stack trace:
 #2 /var/www/html/cabinet/index.php(18): Controller->__construct()
 #3 {main}
   thrown in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[31-Jan-2017 22:09:12 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 3
+[31-Jan-2017 22:09:12 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:09:12 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:17:54 Europe/Minsk] PHP Notice:  Undefined index: login in /var/www/html/cabinet/change_scripts/change_login.php on line 71
+[31-Jan-2017 22:17:54 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:17:54 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_login.php:0
+[31-Jan-2017 22:18:07 Europe/Minsk] PHP Notice:  Undefined index: login in /var/www/html/cabinet/change_scripts/change_login.php on line 71
+[31-Jan-2017 22:18:07 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:18:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_login.php:0
+[31-Jan-2017 22:18:42 Europe/Minsk] PHP Notice:  Undefined index: login in /var/www/html/cabinet/change_scripts/change_login.php on line 71
+[31-Jan-2017 22:18:42 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:18:42 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_login.php:0
+[31-Jan-2017 22:20:11 Europe/Minsk] PHP Notice:  Undefined index: login in /var/www/html/cabinet/change_scripts/change_login.php on line 73
+[31-Jan-2017 22:20:11 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:20:11 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_login.php:0
+[31-Jan-2017 22:23:02 Europe/Minsk] PHP Notice:  Undefined index: login in /var/www/html/cabinet/change_scripts/change_login.php on line 73
+[31-Jan-2017 22:23:02 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:23:02 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_login.php:0
+[31-Jan-2017 22:43:56 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 3
+[31-Jan-2017 22:43:56 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:43:56 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:44:41 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 3
+[31-Jan-2017 22:44:41 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:44:41 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:45:14 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 3
+[31-Jan-2017 22:45:14 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:45:14 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:45:43 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 4
+[31-Jan-2017 22:45:43 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:45:43 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:47:46 Europe/Minsk] PHP Notice:  Undefined index: user_avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 4
+[31-Jan-2017 22:47:46 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:47:46 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:47:53 Europe/Minsk] PHP Notice:  Undefined index: user_avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 4
+[31-Jan-2017 22:47:53 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:47:53 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:48:20 Europe/Minsk] PHP Notice:  Undefined index: user_avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 4
+[31-Jan-2017 22:48:20 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:48:20 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 22:50:48 Europe/Minsk] PHP Notice:  Undefined index: userAvatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 21
+[31-Jan-2017 22:50:48 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 22:50:48 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:02:35 Europe/Minsk] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /var/www/html/cabinet/change_scripts/change_avatar.php on line 40
+[31-Jan-2017 23:02:35 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:02:35 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:02:35 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:76
+[31-Jan-2017 23:02:35 Europe/Minsk] PHP   3. mime_content_type() /var/www/html/cabinet/change_scripts/change_avatar.php:40
+[31-Jan-2017 23:04:12 Europe/Minsk] PHP Warning:  mime_content_type(ВАГНЕР!.pdf): failed to open stream: No such file or directory in /var/www/html/cabinet/change_scripts/change_avatar.php on line 40
+[31-Jan-2017 23:04:12 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:04:12 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:04:12 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:76
+[31-Jan-2017 23:04:12 Europe/Minsk] PHP   3. mime_content_type() /var/www/html/cabinet/change_scripts/change_avatar.php:40
+[31-Jan-2017 23:04:44 Europe/Minsk] PHP Warning:  exif_imagetype() expects parameter 1 to be string, array given in /var/www/html/cabinet/change_scripts/change_avatar.php on line 40
+[31-Jan-2017 23:04:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:04:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:04:44 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:76
+[31-Jan-2017 23:04:44 Europe/Minsk] PHP   3. exif_imagetype() /var/www/html/cabinet/change_scripts/change_avatar.php:40
+[31-Jan-2017 23:06:06 Europe/Minsk] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /var/www/html/cabinet/change_scripts/change_avatar.php on line 40
+[31-Jan-2017 23:06:06 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:06:06 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:06:06 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:76
+[31-Jan-2017 23:06:06 Europe/Minsk] PHP   3. mime_content_type() /var/www/html/cabinet/change_scripts/change_avatar.php:40
+[31-Jan-2017 23:06:19 Europe/Minsk] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /var/www/html/cabinet/change_scripts/change_avatar.php on line 40
+[31-Jan-2017 23:06:19 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:06:19 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:06:19 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:76
+[31-Jan-2017 23:06:19 Europe/Minsk] PHP   3. mime_content_type() /var/www/html/cabinet/change_scripts/change_avatar.php:40
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP TypeError:  finfo::finfo() expects parameter 1 to be integer, string given in /var/www/html/cabinet/change_scripts/change_avatar.php on line 41
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:83
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP   3. finfo->finfo() /var/www/html/cabinet/change_scripts/change_avatar.php:41
+[31-Jan-2017 23:20:39 Europe/Minsk] PHP Fatal error:  Uncaught TypeError: finfo::finfo() expects parameter 1 to be integer, string given in /var/www/html/cabinet/change_scripts/change_avatar.php:41
+Stack trace:
+#0 /var/www/html/cabinet/change_scripts/change_avatar.php(41): finfo->finfo('/tmp/phpcW0v6R')
+#1 /var/www/html/cabinet/change_scripts/change_avatar.php(83): ChangeAvatar->__construct(Array)
+#2 {main}
+  thrown in /var/www/html/cabinet/change_scripts/change_avatar.php on line 41
+[31-Jan-2017 23:31:38 Europe/Minsk] PHP Notice:  Array to string conversion in /var/www/html/cabinet/change_scripts/change_avatar.php on line 56
+[31-Jan-2017 23:31:38 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:31:38 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:31:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:80
+[31-Jan-2017 23:31:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:50
+[31-Jan-2017 23:34:43 Europe/Minsk] PHP Notice:  Undefined index: basename in /var/www/html/cabinet/change_scripts/change_avatar.php on line 55
+[31-Jan-2017 23:34:43 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:34:43 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:34:43 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:80
+[31-Jan-2017 23:34:43 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:50
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Notice:  Undefined variable: loginAttempt in /var/www/html/cabinet/change_scripts/change_avatar.php on line 81
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_avatar.php on line 81
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Notice:  Undefined variable: loginAttempt in /var/www/html/cabinet/change_scripts/change_avatar.php on line 82
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_avatar.php on line 82
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Notice:  Undefined variable: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 87
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /var/www/html/cabinet/change_scripts/change_avatar.php on line 41
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:87
+[31-Jan-2017 23:45:44 Europe/Minsk] PHP   3. mime_content_type() /var/www/html/cabinet/change_scripts/change_avatar.php:41
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[31-Jan-2017 23:47:33 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[31-Jan-2017 23:54:59 Europe/Minsk] PHP Warning:  Illegal string offset 'size' in /var/www/html/cabinet/change_scripts/change_avatar.php on line 49
+[31-Jan-2017 23:54:59 Europe/Minsk] PHP Stack trace:
+[31-Jan-2017 23:54:59 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[31-Jan-2017 23:54:59 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:87
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 79
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 79
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 80
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Warning:  unlink(/var/www/html): Is a directory in /var/www/html/cabinet/change_scripts/change_avatar.php on line 80
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:28 Europe/Minsk] PHP   4. unlink() /var/www/html/cabinet/change_scripts/change_avatar.php:80
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 79
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 79
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Notice:  Undefined index: avatar in /var/www/html/cabinet/change_scripts/change_avatar.php on line 80
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Warning:  unlink(/var/www/html): Is a directory in /var/www/html/cabinet/change_scripts/change_avatar.php on line 80
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP Stack trace:
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_avatar.php:0
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
+[01-Feb-2017 01:03:38 Europe/Minsk] PHP   4. unlink() /var/www/html/cabinet/change_scripts/change_avatar.php:80

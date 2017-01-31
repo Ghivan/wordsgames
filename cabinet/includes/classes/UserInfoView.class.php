@@ -12,6 +12,10 @@ class UserInfoView
 
     private function formAvatarBlock($pathToImage)
     {
+        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $pathToImage)){
+            $pathToImage = '/files/images/players/no_avatar.png';
+        }
+
         $block = '<img src="' .
             $pathToImage .
             '" alt="Ваш аватар" class="img-responsive img-circle center-block" id="UserAvatar">';

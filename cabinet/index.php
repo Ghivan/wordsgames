@@ -35,6 +35,9 @@ $controller = new Controller();
 </head>
 
 <body>
+<div id="loader">
+    <img src="/files/images/loading.gif" alt="Загрузка...">
+</div>
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-sm-3 player-info">
@@ -56,7 +59,8 @@ $controller = new Controller();
 
                 <li role="presentation">
                     <a href="#profile-configure"
-                       data-toggle="modal">
+                       data-toggle="modal"
+                    id="profile-configure-btn">
                         Настройки профиля
                     </a>
                 </li>
@@ -82,10 +86,6 @@ $controller = new Controller();
            <?php include_once 'includes/tabs/profile_configure.php';?>
            <?php include_once 'includes/tabs/feedback.php';?>
         </div>
-    </div>
-    
-    <div id="loader">
-        <img src="/files/images/loading.gif" alt="Загрузка...">
     </div>
 
     <script>

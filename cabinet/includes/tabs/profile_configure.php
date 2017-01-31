@@ -12,8 +12,8 @@
                 <h4 class="modal-title" id="myModalLabel">
                     Настройки профиля
                 </h4>
-                <div class="small text-success" id="changesReminder">Настройки не изменены</div>
-                <div class="small text-success" id="answerReminder"></div>
+                <div class="small text-danger" id="changesReminder"></div>
+                <div class="small text-success" id="answerReminder">Настройки не изменены</div>
             </div>
 
             <!-- Основное содержимое модального окна -->
