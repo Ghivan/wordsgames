@@ -42,11 +42,17 @@ body{
   line-height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 440px){
+    line-height: 40px;
+    font-size: 1.5em;
+  }
+
 }
 
 
 .affix{
-  top:20px;
+  top:100px;
   @media (min-width: 768px){
     width: 160px;
   }
@@ -166,6 +172,21 @@ body{
 
   #userAvatarPreview{
     max-width: 150px;
+  }
+}
+
+#newPasswordBox{
+
+  .modal-body{
+    padding: 30px 10%;
+  }
+
+  .input-group{
+    margin-bottom: 10px;
+  }
+
+  .input-group:not(:last-child){
+    margin-bottom: 20px;
   }
 }
 

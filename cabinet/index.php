@@ -7,7 +7,9 @@ define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
 require_once(MAIN_DIR  . '/login/includes/auth.php');
 if (!checkLogin()){
     header('Location: /login/');
+    exit;
 }
+header('Cache-Control: no-cache, must-revalidate');
 
 require_once(MAIN_DIR  . '/_config/config.php');
 require_once (MAIN_DIR  . '/_includes/database.php');
@@ -29,7 +31,7 @@ $controller = new Controller();
     <script src="/_libraries/jquery-3.1.1.min.js"></script>
     <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
     <script src="js/cabinet.js?ver=9"></script>
-    <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.2">
+    <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.22">
 
     <title>Личный кабинет</title>
 </head>

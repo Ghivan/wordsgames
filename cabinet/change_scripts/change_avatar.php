@@ -10,6 +10,7 @@ require_once MAIN_DIR . "/login/includes/auth.php";
 require_once(MAIN_DIR  . '/_config/config.php');
 require_once(MAIN_DIR  . '/_includes/database.php');
 header('Content-Type: application/json');
+header('Cache-Control: no-cache, must-revalidate');
 
 if (!checkLogin()){
     echo json_encode(

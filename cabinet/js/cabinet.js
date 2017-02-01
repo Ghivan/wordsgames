@@ -126,7 +126,7 @@ let userData ={
                         success: function(data){
                             view.removeLoader();
                             if (data.state){
-                                $('#UserAvatar').prop('src', data.src);
+                                $('#UserAvatar').prop('src', data.src + '?' + Date.now());
                                 fileInput.val('');
                             }
                             $('#avatarBox').modal('hide');
@@ -187,12 +187,11 @@ let userData ={
                     },
 
                     error: function(data){
-                        let reminder = $('#changesReminder');
                         reminder.html('Ошибка соединения с сервером');
                         view.removeLoader();
                     },
 
-                    data: data,
+                    data: data
                 });
             }
 
@@ -220,20 +219,94 @@ let userData ={
                     },
 
                     error: function(data){
-                        let reminder = $('#changesReminder');
-                        if (reminder.hasClass('text-success')){
-                            reminder.removeClass('text-success');
-                            reminder.addClass('text-danger');
-                        }
                         reminder.html('Ошибка соединения с сервером');
                         view.removeLoader();
                     },
 
-                    data: data,
+                    data: data
                 });
             }
+        },
+
+        verifyPasswords: function(oldPassword, newPassword, cNewPassword){
+            if (oldPassword.val() === newPassword.val()){
+                return {
+                    state: false,
+                    message: 'Старый и новый пароль одинаковы'
+                };
+            }
+
+            if (newPassword.val() !== cNewPassword.val()){
+                return {
+                    state: false,
+                    message: 'Новый пароль и подтверждение не совпадают'
+                };
+            }
+
+            return {
+                state: true
+            };
+        },
+
+        changePassword: function () {
+            let oldPassword = $('#old-pswrd'),
+                newPassword = $('#new-pswrd'),
+                cNewPassword = $('#с-new-pswrd'),
+                errorBox = $('#passwordError'),
+                answerSuccess = $('#answerReminder'),
+                check = false;
+
+            check = userData.verifyPasswords(oldPassword, newPassword, cNewPassword);
+
+
+            if (!check.state){
+                errorBox.html(check.message);
+                console.log('Verification failed!');
+                return false;
+            }
+
+
+
+            let data = {
+                oldPassword: oldPassword.val(),
+                newPassword: newPassword.val(),
+                cNewPassword: cNewPassword.val()
+
+            };
+
+            view.addLoader();
+
+            $.ajax({
+                url: 'change_scripts/change_password.php',
+                type: 'POST',
+                success: function(data){
+                    console.log(data);
+                    view.removeLoader();
+                    if (!data.state) {
+                        errorBox.html(data.message);
+                    } else {
+                        answerSuccess.html(answerSuccess.html() + 'Пароль изменен' + '<br>');
+                        userData.email = userData.newEmail;
+                        userData.newEmail = false;
+                        userData.serverSuccess = true;
+                    }
+                },
+
+                error: function(data){
+                    errorBox.html('Ошибка соединения с сервером');
+                    view.removeLoader();
+                },
+
+                data: data
+
+            });
+
+
         }
+
     },
+
+
 
     view = {
         addLoader: function () {
@@ -249,6 +322,7 @@ $('document').ready(function () {
     $('#loader').hide();
     let change_login_btn = $('#change-login-btn'),
         change_email_btn = $('#change-email-btn'),
+        change_password_btn = $('#change-password-btn'),
         serverSenderBtn = $('#ServerDataSender'),
         emailInput = $('#email'),
         loginInput = $('#user');
@@ -280,6 +354,11 @@ $('document').ready(function () {
         setTimeout(function () {
             userData.freeze = false;
         }, 500);
+    });
+
+    //изменение пароля
+    change_password_btn.on('click', function () {
+        userData.changePassword();
     });
 
     //реакция на закрытие окна

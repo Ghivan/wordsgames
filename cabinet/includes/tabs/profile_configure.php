@@ -49,7 +49,7 @@
                 <div class="btn btn-info" href="#avatarBox" data-toggle="modal">Изменить аватар</div>
 
                 <!--Ссылка на модальное окно изменения пароля-->
-                <div class="btn btn-info">Изменить пароль</div>
+                <div class="btn btn-info" href="#newPasswordBox" data-toggle="modal">Изменить пароль</div>
 
             </div>
             <!--Конец основного содержимого модального окна -->
@@ -108,3 +108,62 @@
 </div>
 <!--Конец окна изменения аватара-->
 
+<!--Окно изменения пароля-->
+<div id="newPasswordBox" class="modal fade">
+
+    <!-- Модальное окно -->
+    <div class="modal-dialog">
+
+        <!--Все содержимое модального окна -->
+        <div class="modal-content">
+
+            <!-- Заголовок модального окна -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Изменить пароль</h4>
+                <div id="passwordError" class="text-danger small"></div>
+            </div>
+
+            <!-- Основное содержимое модального окна -->
+            <div class="modal-body">
+
+                <label for="old-pswrd">Введите старый пароль:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" id="old-pswrd" placeholder="Старый пароль..." required>
+                    <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                    <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                </div>
+
+                <label for="new-pswrd">Придумайте новый пароль:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" id="new-pswrd" placeholder="Придумайте новый пароль..." required>
+                    <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                    <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                </div>
+
+                <label for="с-new-pswrd">Подтвердите новый пароль:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" id="с-new-pswrd" placeholder="Повторите новый пароль..." required>
+                    <span class="glyphicon glyphicon-ok form-control-feedback hidden"></span>
+                    <span class="glyphicon glyphicon-alert form-control-feedback hidden"></span>
+                </div>
+
+            </div>
+
+            <!-- Футер модального окна -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary" id="change-password-btn">Изменить пароль</button>
+            </div>
+
+        </div>
+        <!--Конец всего содержимого модального окна -->
+
+    </div>
+    <!--Конец модального окна -->
+
+</div>
+<!--Конец окна изменения пароля-->

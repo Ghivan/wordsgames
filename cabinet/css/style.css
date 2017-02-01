@@ -101,9 +101,13 @@ body {
   line-height: 80px;
   overflow: hidden;
   text-overflow: ellipsis; }
+  @media (max-width: 440px) {
+    .h1, .h2, h1, h2 {
+      line-height: 40px;
+      font-size: 1.5em; } }
 
 .affix {
-  top: 20px; }
+  top: 100px; }
   @media (min-width: 768px) {
     .affix {
       width: 160px; } }
@@ -184,6 +188,13 @@ body {
   margin-top: 20px; }
 #avatarBox #userAvatarPreview {
   max-width: 150px; }
+
+#newPasswordBox .modal-body {
+  padding: 30px 10%; }
+#newPasswordBox .input-group {
+  margin-bottom: 10px; }
+#newPasswordBox .input-group:not(:last-child) {
+  margin-bottom: 20px; }
 
 #loader {
   position: fixed;

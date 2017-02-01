@@ -216,3 +216,47 @@ Stack trace:
 [01-Feb-2017 01:03:38 Europe/Minsk] PHP   2. ChangeAvatar->__construct() /var/www/html/cabinet/change_scripts/change_avatar.php:97
 [01-Feb-2017 01:03:38 Europe/Minsk] PHP   3. ChangeAvatar->downloadNewAvatar() /var/www/html/cabinet/change_scripts/change_avatar.php:58
 [01-Feb-2017 01:03:38 Europe/Minsk] PHP   4. unlink() /var/www/html/cabinet/change_scripts/change_avatar.php:80
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Notice:  Undefined index: pl_id in /var/www/html/cabinet/includes/controller.php on line 15
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Notice:  Undefined offset: 0 in /var/www/html/cabinet/includes/model.php on line 17
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:15
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP TypeError:  Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 17 in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:15
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP   4. UserInfoModel->__construct() /var/www/html/cabinet/includes/model.php:17
+[02-Feb-2017 00:00:50 Europe/Minsk] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 17 and defined in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php:11
+Stack trace:
+#0 /var/www/html/cabinet/includes/model.php(17): UserInfoModel->__construct(NULL)
+#1 /var/www/html/cabinet/includes/controller.php(15): Model->__construct(NULL)
+#2 /var/www/html/cabinet/index.php(19): Controller->__construct()
+#3 {main}
+  thrown in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Notice:  Undefined index: pl_id in /var/www/html/cabinet/includes/controller.php on line 15
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Notice:  Undefined offset: 0 in /var/www/html/cabinet/includes/model.php on line 17
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:15
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP TypeError:  Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 17 in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:19
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:15
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP   4. UserInfoModel->__construct() /var/www/html/cabinet/includes/model.php:17
+[02-Feb-2017 00:17:48 Europe/Minsk] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 17 and defined in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php:11
+Stack trace:
+#0 /var/www/html/cabinet/includes/model.php(17): UserInfoModel->__construct(NULL)
+#1 /var/www/html/cabinet/includes/controller.php(15): Model->__construct(NULL)
+#2 /var/www/html/cabinet/index.php(19): Controller->__construct()
+#3 {main}
+  thrown in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
