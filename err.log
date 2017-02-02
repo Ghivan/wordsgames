@@ -260,3 +260,91 @@ Stack trace:
 #2 /var/www/html/cabinet/index.php(19): Controller->__construct()
 #3 {main}
   thrown in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP Notice:  Undefined index: password in /var/www/html/cabinet/change_scripts/change_password.php on line 85
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP TypeError:  Argument 1 passed to PasswordChanger::__construct() must be of the type string, null given, called in /var/www/html/cabinet/change_scripts/change_password.php on line 85 in /var/www/html/cabinet/change_scripts/change_password.php on line 43
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP   2. PasswordChanger->__construct() /var/www/html/cabinet/change_scripts/change_password.php:85
+[02-Feb-2017 21:52:36 Europe/Minsk] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to PasswordChanger::__construct() must be of the type string, null given, called in /var/www/html/cabinet/change_scripts/change_password.php on line 85 and defined in /var/www/html/cabinet/change_scripts/change_password.php:43
+Stack trace:
+#0 /var/www/html/cabinet/change_scripts/change_password.php(85): PasswordChanger->__construct(NULL, '123123123')
+#1 {main}
+  thrown in /var/www/html/cabinet/change_scripts/change_password.php on line 43
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Notice:  Undefined offset: 0 in /var/www/html/cabinet/change_scripts/change_password.php on line 72
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   2. PasswordChanger->__construct() /var/www/html/cabinet/change_scripts/change_password.php:85
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   3. PasswordChanger->checkPassword() /var/www/html/cabinet/change_scripts/change_password.php:48
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Notice:  Undefined variable: registrationAttempt in /var/www/html/cabinet/change_scripts/change_password.php on line 87
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_password.php on line 87
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Notice:  Undefined variable: registrationAttempt in /var/www/html/cabinet/change_scripts/change_password.php on line 88
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_password.php on line 88
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[02-Feb-2017 21:53:49 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Notice:  Undefined variable: registrationAttempt in /var/www/html/cabinet/change_scripts/change_password.php on line 89
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_password.php on line 89
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Notice:  Undefined variable: registrationAttempt in /var/www/html/cabinet/change_scripts/change_password.php on line 90
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Notice:  Trying to get property of non-object in /var/www/html/cabinet/change_scripts/change_password.php on line 90
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 21:54:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/change_scripts/change_password.php:0
+[02-Feb-2017 21:57:55 Europe/Minsk] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/cabinet/change_scripts/change_password.php on line 76
+[02-Feb-2017 23:44:00 Europe/Minsk] PHP Notice:  Undefined variable: message in /var/www/html/cabinet/test.php on line 4
+[02-Feb-2017 23:44:00 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:44:00 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/test.php:0
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/sql.php:0
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/sql.php:17
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/sql.php:0
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/sql.php:17
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/sql.php:0
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/sql.php:17
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/sql.php:0
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/sql.php:17
+[02-Feb-2017 23:48:08 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[02-Feb-2017 23:48:44 Europe/Minsk] PHP Notice:  Undefined variable: _SESSION in /var/www/html/cabinet/test.php on line 5
+[02-Feb-2017 23:48:44 Europe/Minsk] PHP Stack trace:
+[02-Feb-2017 23:48:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/test.php:0

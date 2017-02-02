@@ -59,7 +59,7 @@ class ChangeAvatar{
         $newPath = $this->downloadNewAvatar($newAvatar);
 
         if ($newPath){
-           $this->db->chageDataQuery('UPDATE `players` SET `avatar` = :newPath WHERE `id` = :userId', array(
+           $this->db->changeDataQuery('UPDATE `players` SET `avatar` = :newPath WHERE `id` = :userId', array(
                 ':newPath' => $newPath,
                 ':userId' => $_SESSION['pl_id']
             ));

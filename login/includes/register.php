@@ -34,13 +34,12 @@ class UserRegistration{
 
     function __construct(string $user, string $password, string $email = null)
     {
-        $this-> db = new Database();
-
         if (mb_strlen($user) < LOGIN_MIN_LENGTH || mb_strlen($password) < PASSWORD_MIN_LENGTH){
             $this->errorMessage = 'Недостаточная длина логина или пароля';
             return;
         }
 
+        $this-> db = new Database();
         $this->user =  $user;
 
         if (!empty($email)){

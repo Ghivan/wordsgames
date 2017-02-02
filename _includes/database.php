@@ -40,7 +40,7 @@ class Database{
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function chageDataQuery(string $query, array $params = null){
+    public function changeDataQuery(string $query, array $params = null){
         $stmt = $this->dbc->prepare($query);
 
         if (!$stmt->execute($params)){

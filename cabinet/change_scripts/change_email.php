@@ -49,7 +49,7 @@ class EmailUpdate{
     }
 
     private function updateEmail($newEmail, $userId){
-        $updateData = $this->db->chageDataQuery("UPDATE `players` SET `email`=:email WHERE  `id`=:userId", array(
+        $updateData = $this->db->changeDataQuery("UPDATE `players` SET `email`=:email WHERE  `id`=:userId", array(
             ':email' => $newEmail,
             ':userId' => $userId
         ));

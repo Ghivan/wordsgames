@@ -50,7 +50,7 @@ class LoginUpdate{
     }
 
     private function updateLogin($newLogin, $userId){
-        $updateData = $this->db->chageDataQuery("UPDATE `players` SET `login`=:login WHERE  `id`=:userId", array(
+        $updateData = $this->db->changeDataQuery("UPDATE `players` SET `login`=:login WHERE  `id`=:userId", array(
             ':login' => $newLogin,
             ':userId' => $userId
         ));

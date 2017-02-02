@@ -261,7 +261,6 @@ let userData ={
 
             if (!check.state){
                 errorBox.html(check.message);
-                console.log('Verification failed!');
                 return false;
             }
 
@@ -280,15 +279,19 @@ let userData ={
                 url: 'change_scripts/change_password.php',
                 type: 'POST',
                 success: function(data){
-                    console.log(data);
                     view.removeLoader();
                     if (!data.state) {
                         errorBox.html(data.message);
+                        oldPassword.val('');
+                        newPassword.val('');
+                        cNewPassword.val('');
                     } else {
-                        answerSuccess.html(answerSuccess.html() + 'Пароль изменен' + '<br>');
-                        userData.email = userData.newEmail;
-                        userData.newEmail = false;
+                        answerSuccess.html('Пароль изменен');
                         userData.serverSuccess = true;
+                        $('#newPasswordBox').modal('hide');
+                        oldPassword.val('');
+                        newPassword.val('');
+                        cNewPassword.val('');
                     }
                 },
 
