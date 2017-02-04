@@ -348,3 +348,442 @@ Stack trace:
 [02-Feb-2017 23:48:44 Europe/Minsk] PHP Notice:  Undefined variable: _SESSION in /var/www/html/cabinet/test.php on line 5
 [02-Feb-2017 23:48:44 Europe/Minsk] PHP Stack trace:
 [02-Feb-2017 23:48:44 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/test.php:0
+[04-Feb-2017 18:48:06 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:07 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:08 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:09 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:10 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:26 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:27 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/login/index.php on line 2
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:28 Europe/Minsk] PHP   1. {main}() /var/www/html/login/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Notice:  Use of undefined constant INVOKED_BY_SERVER_SCRIPT - assumed 'INVOKED_BY_SERVER_SCRIPT' in /var/www/html/_config/config.php on line 2
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[04-Feb-2017 18:48:51 Europe/Minsk] PHP   2. require_once() /var/www/html/cabinet/index.php:14
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Notice:  Use of undefined constant MAIN_DIR - assumed 'MAIN_DIR' in /var/www/html/login/includes/unregister.php on line 6
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP   1. {main}() /var/www/html/login/includes/unregister.php:0
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Warning:  require_once(MAIN_DIR/login/includes/auth.php): failed to open stream: No such file or directory in /var/www/html/login/includes/unregister.php on line 6
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP   1. {main}() /var/www/html/login/includes/unregister.php:0
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Fatal error:  require_once(): Failed opening required 'MAIN_DIR/login/includes/auth.php' (include_path='.:/usr/share/php') in /var/www/html/login/includes/unregister.php on line 6
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 19:03:16 Europe/Minsk] PHP   1. {main}() /var/www/html/login/includes/unregister.php:0
+[04-Feb-2017 19:09:04 Europe/Minsk] PHP Error:  Call to undefined function checkLogin() in /var/www/html/index.php on line 3
+[04-Feb-2017 19:09:04 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 19:09:04 Europe/Minsk] PHP   1. {main}() /var/www/html/index.php:0
+[04-Feb-2017 19:09:04 Europe/Minsk] PHP Fatal error:  Uncaught Error: Call to undefined function checkLogin() in /var/www/html/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/index.php on line 3
+[04-Feb-2017 22:33:07 Europe/Minsk] PHP Notice:  Undefined index: cNewPassword in /var/www/html/cabinet/includes/change_scripts/change_password.php on line 23
+[04-Feb-2017 22:33:07 Europe/Minsk] PHP Stack trace:
+[04-Feb-2017 22:33:07 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/includes/change_scripts/change_password.php:0

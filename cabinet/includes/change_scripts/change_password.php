@@ -6,8 +6,8 @@ if (session_status() !== PHP_SESSION_ACTIVE){
     session_start();
 }
 require_once MAIN_DIR . "/login/includes/auth.php";
-require_once(MAIN_DIR  . '/_config/config.php');
-require_once(MAIN_DIR  . '/_includes/database.php');
+require_once(MAIN_DIR . '/_config/config.php');
+require_once(MAIN_DIR . '/_includes/database.php');
 header('Content-Type: application/json');
 
 if (!checkLogin()){
@@ -20,7 +20,7 @@ if (!checkLogin()){
     exit();
 }
 
-if (!isset($_POST['oldPassword']) || !isset($_POST['newPassword']) || ($_POST['newPassword'] != $_POST['cNewPassword']) || (mb_strlen($_POST['newPassword']) < PASSWORD_MIN_LENGTH)){
+if (!isset($_POST['oldPassword']) || !isset($_POST['newPassword']) || ($_POST['newPassword'] != $_POST['confirmNewPassword']) || (mb_strlen($_POST['newPassword']) < PASSWORD_MIN_LENGTH)){
     echo json_encode(
         array(
             'state' => false,
@@ -48,7 +48,7 @@ class PasswordChanger{
         $this->newHash =  password_hash($newPassword, PASSWORD_DEFAULT);
 
         if (!$this->checkPassword()){
-            $this->errorMessage = 'Пароль введен не верно';
+            $this->errorMessage = 'Старый пароль введен не верно';
             $this->state = false;
             return;
         }

@@ -1,4 +1,5 @@
 <?php
+
 class Model{
     private $db;
     public $user;

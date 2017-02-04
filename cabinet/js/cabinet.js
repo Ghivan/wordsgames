@@ -7,15 +7,15 @@ let userData ={
         email: '',
         newEmail: false,
         updateReminder: function(){
-            $('#answerReminder').text('');
-            $('#changesReminder').text('Нажмите "Сохранить изменения", чтобы отправить данные на сервер');
+            $('#profile-configure-success-box').text('');
+            $('#profile-configure-error-box').text('Нажмите "Сохранить изменения", чтобы отправить данные на сервер');
         },
 
         changeLogin: function (btn) {
             if (userData.freeze) {
                 return;
             }
-            let input = $('#user');
+            let input = $('#change-login-input');
             switch (btn.text()){
                 case 'Изменить логин':
                     input.prop('disabled', false);
@@ -39,7 +39,7 @@ let userData ={
             if (userData.freeze) {
                 return;
             }
-            let input = $('#email');
+            let input = $('#change-email-input');
             switch (btn.text()){
                 case 'Изменить email':
                     input.prop('disabled', false);
@@ -68,6 +68,7 @@ let userData ={
                 convenientImage = true,
                 errorMessage = '';
 
+
             if (imageTypes.indexOf(type) < 0){
                 convenientImage = false;
                 errorMessage = 'Формат файла не jpg или png';
@@ -85,7 +86,7 @@ let userData ={
         },
 
         previewAvatar: function(){
-            let errorBox = $('#avatarError');
+            let errorBox = $('#change-avatar-error-box');
             errorBox.html('');
 
             if (this.files && this.files[0]){
@@ -97,7 +98,7 @@ let userData ={
                     reader.readAsDataURL(file);
                     view.addLoader();
                     reader.onload = function(){
-                        $('#userAvatarPreview').attr('src', reader.result);
+                        $('#avatar-preview-box').attr('src', reader.result);
                         view.removeLoader();
                     };
                 } else {
@@ -109,28 +110,30 @@ let userData ={
         },
 
         changeAvatar: function(){
-            let fileInput = $('#fileInputAvatar'),
+            let fileInput = $('#change-avatar-input'),
                 file = fileInput.prop('files')[0] || null;
             if (file){
                 view.addLoader();
                 let check = userData.verifyImage(file),
-                    errorBox = $('#avatarError');
+                    errorBox = $('#change-avatar-error-box');
 
                 if (check.state){
                     let formData = new FormData();
                     formData.append('userAvatar', file);
 
                     $.ajax({
-                        url: 'change_scripts/change_avatar.php',
+                        url: 'includes/change_scripts/change_avatar.php',
                         type: 'POST',
                         success: function(data){
                             view.removeLoader();
                             if (data.state){
                                 $('#UserAvatar').prop('src', data.src + '?' + Date.now());
                                 fileInput.val('');
+                            } else {
+                                $('#profile-configure-error-box').html(data.message);
                             }
-                            $('#avatarBox').modal('hide');
-                            $('#answerReminder').html('Аватар изменен');
+                            $('#change-avatar-box').modal('hide');
+                            $('#profile-configure-success-box').html('Аватар изменен');
 
                         },
 
@@ -154,8 +157,8 @@ let userData ={
         },
 
         sendChanges: function(){
-            let reminder = $('#changesReminder'),
-                answerSuccess = $('#answerReminder');
+            let reminder = $('#profile-configure-error-box'),
+                answerSuccess = $('#profile-configure-success-box');
 
             reminder.html('');
             answerSuccess.html('');
@@ -168,14 +171,14 @@ let userData ={
                 view.addLoader();
 
                 $.ajax({
-                    url: 'change_scripts/change_login.php',
+                    url: 'includes/change_scripts/change_login.php',
 
                     type: 'POST',
                     success: function(data){
                         view.removeLoader();
                         if (!data.state) {
                             reminder.html(reminder.html() + data.message + '<br>');
-                            $('#user').val(userData.login);
+                            $('#change-login-input').val(userData.login);
                             userData.newLogin = false;
 
                         } else {
@@ -202,13 +205,13 @@ let userData ={
                 view.addLoader();
 
                 $.ajax({
-                    url: 'change_scripts/change_email.php',
+                    url: 'includes/change_scripts/change_email.php',
                     type: 'POST',
                     success: function(data){
                         view.removeLoader();
                         if (!data.state) {
                             reminder.html(reminder.html() + data.message + '<br>');
-                            $('#email').val(userData.email);
+                            $('#change-email-input').val(userData.email);
                             userData.newEmail = false;
                         } else {
                             answerSuccess.html(answerSuccess.html() + 'Email изменен' + '<br>');
@@ -249,11 +252,11 @@ let userData ={
         },
 
         changePassword: function () {
-            let oldPassword = $('#old-pswrd'),
-                newPassword = $('#new-pswrd'),
-                cNewPassword = $('#с-new-pswrd'),
-                errorBox = $('#passwordError'),
-                answerSuccess = $('#answerReminder'),
+            let oldPassword = $('#old-password-input'),
+                newPassword = $('#new-password-input'),
+                cNewPassword = $('#сonfirm-new-password-input'),
+                errorBox = $('#change-password-error-box'),
+                answerSuccess = $('#profile-configure-success-box'),
                 check = false;
 
             check = userData.verifyPasswords(oldPassword, newPassword, cNewPassword);
@@ -269,14 +272,14 @@ let userData ={
             let data = {
                 oldPassword: oldPassword.val(),
                 newPassword: newPassword.val(),
-                cNewPassword: cNewPassword.val()
+                confirmNewPassword: cNewPassword.val()
 
             };
 
             view.addLoader();
 
             $.ajax({
-                url: 'change_scripts/change_password.php',
+                url: 'includes/change_scripts/change_password.php',
                 type: 'POST',
                 success: function(data){
                     view.removeLoader();
@@ -326,9 +329,9 @@ $('document').ready(function () {
     let change_login_btn = $('#change-login-btn'),
         change_email_btn = $('#change-email-btn'),
         change_password_btn = $('#change-password-btn'),
-        serverSenderBtn = $('#ServerDataSender'),
-        emailInput = $('#email'),
-        loginInput = $('#user');
+        serverSenderBtn = $('#send-changed-data-btn'),
+        emailInput = $('#change-email-input'),
+        loginInput = $('#change-login-input');
 
     //установка начальных значений
     userData.login = loginInput.prop('placeholder');
@@ -381,10 +384,10 @@ $('document').ready(function () {
     });
 
     //предпросмотр аватара
-    $('#fileInputAvatar').on('change', userData.previewAvatar);
+    $('#change-avatar-input').on('change', userData.previewAvatar);
 
     // загрузка автара
-    $('#loadAvatar').on( 'click', userData.changeAvatar);
+    $('#change-avatar-btn').on( 'click', userData.changeAvatar);
 
 
 });

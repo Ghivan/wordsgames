@@ -1,5 +1,4 @@
 <?php
-
 function my_autoloader($class) {
     include $_SERVER['DOCUMENT_ROOT'] . '/cabinet/includes/classes/' . $class . '.class.php';
 }

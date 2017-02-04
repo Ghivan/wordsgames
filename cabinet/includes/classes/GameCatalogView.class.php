@@ -1,4 +1,5 @@
 <?php
+
 class GameCatalogView{
     public function printGamebox(array $gameData){
         $panel = $this->formPanel($gameData['id'], $gameData['rules'], $gameData['name'], $gameData['path'], $gameData['author']);

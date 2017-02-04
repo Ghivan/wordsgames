@@ -79,7 +79,7 @@ body {
   font-size: 1.2em; }
 
 #login-button {
-  width: 30%;
+  width: 75%;
   background-color: #8DCC57;
   border-color: #82b443; }
 
@@ -98,12 +98,11 @@ h1 {
 .tab-content {
   padding-top: 30px;
   padding-bottom: 30px; }
-  .tab-content form > div {
-    padding-bottom: 30px; }
-  .tab-content .input-group, .tab-content .btn {
+  .tab-content .form-group {
     margin: auto;
+    padding-bottom: 30px;
     width: 75%; }
-    .tab-content .input-group input, .tab-content .btn input {
+    .tab-content .form-group input {
       font-style: italic; }
 
 /*# sourceMappingURL=style.css.map */

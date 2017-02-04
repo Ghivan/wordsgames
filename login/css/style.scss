@@ -44,7 +44,7 @@ body{
 }
 
 #login-button{
-  width: 30%;
+  width: 75%;
   background-color: $btnColor;
   border-color: $btnBordersColor;
 }
@@ -70,12 +70,9 @@ h1{
   padding-top: 30px;
   padding-bottom: 30px;
 
-  form>div{
-    padding-bottom: 30px;
-  }
-
-  .input-group, .btn{
+  .form-group{
     margin: auto;
+    padding-bottom: 30px;
     width: 75%;
         input{
       font-style: italic;

@@ -10,10 +10,6 @@
 --
 -- Описание для базы данных wordsgames
 --
-DROP DATABASE IF EXISTS wordsgames;
-CREATE DATABASE wordsgames
-	CHARACTER SET utf8
-	COLLATE utf8_general_ci;
 
 -- 
 -- Отключение внешних ключей
@@ -33,8 +29,6 @@ SET NAMES 'utf8';
 -- 
 -- Установка базы данных по умолчанию
 --
-USE wordsgames;
-
 --
 -- Описание для таблицы dictionary
 --
@@ -510,9 +504,7 @@ DELIMITER $$
 --
 -- Описание для триггера lvlCount
 --
-CREATE 
-	DEFINER = 'root'@'%'
-TRIGGER lvlCount
+CREATE TRIGGER lvlCount
 	BEFORE UPDATE
 	ON players
 	FOR EACH ROW

@@ -1,4 +1,5 @@
 <?php
+
 class UserInfoView
 {
     public function printUserInfo(array $userData){

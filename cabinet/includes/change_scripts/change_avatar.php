@@ -1,16 +1,15 @@
 <?php
 define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
-define('AVATAR_MAX_SIZE', 2097152);
+define('AVATAR_MAX_SIZE', 500);//kilobytes
 define('DEFAULT_AVATAR', '/files/images/players/no_avatar.png');
 
 if (session_status() !== PHP_SESSION_ACTIVE){
     session_start();
 }
 require_once MAIN_DIR . "/login/includes/auth.php";
-require_once(MAIN_DIR  . '/_config/config.php');
-require_once(MAIN_DIR  . '/_includes/database.php');
+require_once(MAIN_DIR . '/_config/config.php');
+require_once(MAIN_DIR . '/_includes/database.php');
 header('Content-Type: application/json');
-header('Cache-Control: no-cache, must-revalidate');
 
 if (!checkLogin()){
     echo json_encode(
@@ -21,6 +20,7 @@ if (!checkLogin()){
     );
     exit();
 }
+
 if (!isset($_FILES['userAvatar'])){
     echo json_encode(
         array(
@@ -48,8 +48,8 @@ class ChangeAvatar{
             return;
         }
 
-        if ($newAvatar['size'] > AVATAR_MAX_SIZE){
-            $this->errorMessage = 'Файл больше 2 Mb';
+        if ($newAvatar['size'] > AVATAR_MAX_SIZE*1024){
+            $this->errorMessage = 'Файл больше ' . AVATAR_MAX_SIZE . ' KB';
             $this -> state = false;
             return;
         }

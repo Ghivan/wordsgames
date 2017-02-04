@@ -184,16 +184,16 @@ body {
   #profile-configure .userdata-change-group > a {
     margin-left: 20px; }
 
-#avatarBox input {
+#change-avatar-box input {
   margin-top: 20px; }
-#avatarBox #userAvatarPreview {
+#change-avatar-box #avatar-preview-box {
   max-width: 150px; }
 
-#newPasswordBox .modal-body {
+#change-password-box .modal-body {
   padding: 30px 10%; }
-#newPasswordBox .input-group {
+#change-password-box .input-group {
   margin-bottom: 10px; }
-#newPasswordBox .input-group:not(:last-child) {
+#change-password-box .input-group:not(:last-child) {
   margin-bottom: 20px; }
 
 #loader {

@@ -1,6 +1,6 @@
 <?php
-define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
 
+define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
 require_once MAIN_DIR . "/login/includes/auth.php";
 
 if (checkLogin()){
@@ -55,7 +55,7 @@ if (checkLogin()){
                 <form id="login-form" class="form-horizontal">
 
                     <!--Ввод логина-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="user"  class="sr-only">Введите логин</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -66,7 +66,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Ввод пароля-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="pswrd"  class="sr-only">Введите пароль</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
@@ -78,7 +78,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Кнопка входа-->
-                    <input type="button" class="btn btn-block" id="login-button" value="Войти">
+                    <input type="button" class="btn center-block" id="login-button" value="Войти">
 
                 </form>
 
@@ -92,7 +92,7 @@ if (checkLogin()){
                 <form id="register-form" class="form-horizontal">
 
                     <!--Ввод логина-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="new-user"  class="sr-only">Придумайте логин</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -103,7 +103,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Ввод пароля-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="new-pswrd"  class="sr-only">Придумайте пароль</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
@@ -115,7 +115,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Повтор пароля-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="c-new-pswrd" class="sr-only">Повторите пароль</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
@@ -127,7 +127,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Ввод электронной почты-->
-                    <div>
+                    <div class="form-group">
                         <div class="input-group">
                             <label for="new-email"  class="sr-only">Введите Ваш email</label>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
@@ -139,7 +139,7 @@ if (checkLogin()){
                     </div>
 
                     <!--Кнопка регистрации-->
-                    <input type="button" class="btn btn-block" id="register-button" value="Зарегистрироваться">
+                    <input type="button" class="btn center-block" id="register-button" value="Зарегистрироваться">
 
                 </form>
                 <!--Конец регистрационной формы-->
