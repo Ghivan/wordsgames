@@ -10,7 +10,6 @@ if (!checkLogin()){
     header('Location: /login/');
     exit;
 }
-header('Cache-Control: no-cache, must-revalidate');
 
 require_once(MAIN_DIR  . '/_config/config.php');
 require_once (MAIN_DIR  . '/_includes/database.php');
@@ -31,8 +30,7 @@ $controller = new Controller();
     <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
     <script src="/_libraries/jquery-3.1.1.min.js"></script>
     <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/cabinet.js?ver=9"></script>
-    <script src="js/app.js?ver=9"></script>
+    <script src="js/app.js"></script>
     <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.22">
 
     <title>Личный кабинет</title>
@@ -100,24 +98,9 @@ $controller = new Controller();
             setTimeout(function () {
                 let nav = $('.nav')[0],
                     offset = $(nav).offset().top;
-                nav.setAttribute('data-offset-top', offset);
+                nav.setAttribute('data-offset-top', offset.toString());
             }, 1000);
 
-
-
-            $('#unregister').on('click', function (e) {
-                e.preventDefault();
-                e.cancelBubble =true;
-                e.stopImmediatePropagation();
-
-                $.post("/login/includes/unregister.php", function(data) {
-                    if (data.state){
-                        window.location.href = '/login/';
-                    } else {
-                        alert('Нет соединения с сервером!');
-                    }
-                })
-            });
         });
 
 

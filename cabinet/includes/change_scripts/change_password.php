@@ -1,6 +1,5 @@
 <?php
 define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
-define('PASSWORD_MIN_LENGTH', 6);
 
 if (session_status() !== PHP_SESSION_ACTIVE){
     session_start();
@@ -14,17 +13,28 @@ if (!checkLogin()){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Логин или пароль введены неправильно'
+            'message' => 'Логин или пароль введены неправильно'
         )
     );
     exit();
 }
 
-if (!isset($_POST['oldPassword']) || !isset($_POST['newPassword']) || ($_POST['newPassword'] != $_POST['confirmNewPassword']) || (mb_strlen($_POST['newPassword']) < PASSWORD_MIN_LENGTH)){
+if (!isset($_POST['oldPassword']) || !isset($_POST['newPassword']) || ($_POST['newPassword'] != $_POST['confirmNewPassword'])){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Переданные данные не корректны'
+            'message' => 'Переданные данные не корректны'
+        )
+    );
+    exit();
+}
+
+if (!preg_match(PASSWORD_REGEXP, $_POST['newPassword'])){
+    $this->errorMessage = 'Пароль должен состоять только из букв, цифр, дефисов и подчёркиваний, от 6 до 16 символов.';
+    echo json_encode(
+        array(
+            'state' => false,
+            'message' => 'Переданные данные не корректны'
         )
     );
     exit();

@@ -6,8 +6,6 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 header('Content-Type: application/json');
 define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
 
-define('LOGIN_MIN_LENGTH', 4);
-define('PASSWORD_MIN_LENGTH', 6);
 
 require_once(MAIN_DIR  . '/_config/config.php');
 require_once(MAIN_DIR  . '/_includes/database.php');
@@ -16,7 +14,7 @@ if (!isset($_POST['submit']) || !isset($_POST['login']) || !isset($_POST['pswrd'
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Переданные данные не корректны'
+            'message' => 'Переданные данные не корректны'
         )
     );
     exit();
@@ -34,8 +32,15 @@ class UserRegistration{
 
     function __construct(string $user, string $password, string $email = null)
     {
-        if (mb_strlen($user) < LOGIN_MIN_LENGTH || mb_strlen($password) < PASSWORD_MIN_LENGTH){
-            $this->errorMessage = 'Недостаточная длина логина или пароля';
+        if (!preg_match(LOGIN_REGEXP, $user)){
+            $this->state = false;
+            $this->errorMessage = 'Логин должен состоять только из букв, цифр, дефисов и подчёркиваний, от 3 до 16 символов.';
+            return;
+        }
+
+        if (!preg_match(PASSWORD_REGEXP, $password)){
+            $this->state = false;
+            $this->errorMessage = 'Пароль должен состоять только из букв, цифр, дефисов и подчёркиваний, от 6 до 16 символов.';
             return;
         }
 

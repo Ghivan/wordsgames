@@ -52,7 +52,7 @@ body{
 
 
 .affix{
-  top:100px;
+  top:20px;
   @media (min-width: 768px){
     width: 160px;
   }
@@ -157,12 +157,8 @@ body{
     margin-bottom: 20px;
 
     >.input-group{
-      width: 48%;
+      width: 50%;
     }
-    >a{
-      margin-left: 20px;
-    }
-
   }
 }
 #change-avatar-box{

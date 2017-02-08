@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES5",
     "removeComments": true,
     "preserveConstEnums": true,
-    "outFile": "../js/app.js",
+    "outFile": "../js/reg.js",
     "sourceRoot": "./src/",
     "rootDir": "./",
     "sourceMap": true

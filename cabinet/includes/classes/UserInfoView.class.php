@@ -6,7 +6,7 @@ class UserInfoView
         $avatar = $this->formAvatarBlock($userData['avatar']);
         $userNameBlock = $this->formUserName($userData['login']);
         $userLevelBlock = $this->formUserLevelBlockInfo($userData['level']);
-        $progressBlock = $this->formProgressBolock($userData['curExp'], $userData['prevLvlExp'], $userData['nextLvlExp']);
+        $progressBlock = $this->formProgressBolock($userData['curExp'] - $userData['prevLvlExp'], 0, $userData['nextLvlExp'] - $userData['prevLvlExp']);
 
         echo $avatar . $userNameBlock . $userLevelBlock . $progressBlock;
     }
@@ -17,6 +17,7 @@ class UserInfoView
             $pathToImage = '/files/images/players/no_avatar.png';
         }
 
+
         $block = '<img src="' .
             $pathToImage .
             '" alt="Ваш аватар" class="img-responsive img-circle center-block" id="UserAvatar">';
@@ -26,7 +27,7 @@ class UserInfoView
 
     private function formUserName($name)
     {
-        $block = '<div class="h2 text-center">' .
+        $block = '<div class="h2 text-center" id="userLoginLabel">' .
             $name .
             '</div>';
 

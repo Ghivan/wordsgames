@@ -13,7 +13,7 @@ if (!checkLogin()){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Логин или пароль введены неправильно'
+            'message' => 'Логин или пароль введены неправильно'
         )
     );
     exit();

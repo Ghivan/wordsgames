@@ -44,12 +44,14 @@ body{
 }
 
 #login-button{
-  width: 75%;
+  margin-top: 5px;
+  width: 55%;
   background-color: $btnColor;
   border-color: $btnBordersColor;
 }
 
 #register-button{
+  margin-top: 5px;
   width: 75%;
   background-color: $iceBlue;
   border-color: $waterBlue;
@@ -67,16 +69,25 @@ h1{
 
 //----Панель входа/регистрации
 .tab-content{
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 30px;
 
   .form-group{
     margin: auto;
-    padding-bottom: 30px;
     width: 75%;
         input{
       font-style: italic;
     }
+
+    label{
+      color: #555;
+    }
+
+    .help-block{
+      min-height: 20px;
+      margin-bottom: 0;
+    }
   }
+
 }
 

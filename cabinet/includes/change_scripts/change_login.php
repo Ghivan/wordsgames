@@ -1,6 +1,5 @@
 <?php
 define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
-define('LOGIN_MIN_LENGTH', 4);
 
 if (session_status() !== PHP_SESSION_ACTIVE){
     session_start();
@@ -14,7 +13,7 @@ if (!checkLogin()){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Логин или пароль введены неправильно'
+            'message' => 'Логин или пароль введены неправильно'
         )
     );
     exit();
@@ -27,9 +26,9 @@ class LoginUpdate{
 
     function __construct($newLogin)
     {
-        if (mb_strlen($newLogin) < LOGIN_MIN_LENGTH){
-            $this->errorMessage = 'Недостаточная длина логина';
-            $this -> state = false;
+        if (!preg_match(LOGIN_REGEXP, $newLogin)){
+            $this->state = false;
+            $this->errorMessage = 'Логин должен состоять из букв, цифр, дефисов и подчёркиваний, от 3 до 16 символов.';
             return;
         }
 

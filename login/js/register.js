@@ -150,6 +150,7 @@ validator = {
 
         if (fields.pswrd.val() !== fields.cpswrd.val()) {
             hasErrors = true;
+            console.log(fields.pswrd.val(), fields.cpswrd.val());
             validator.displayError(fields.cpswrd, 'Введенные пароли не совпадают.');
         }
 

@@ -15,7 +15,7 @@ if (!checkLogin()){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Логин или пароль введены неправильно'
+            'message' => 'Логин или пароль введены неправильно'
         )
     );
     exit();
@@ -25,7 +25,7 @@ if (!isset($_FILES['userAvatar'])){
     echo json_encode(
         array(
             'state' => false,
-            'errorMessage' => 'Ошибка передачи файла'
+            'message' => 'Ошибка передачи файла'
         )
     );
     exit();
