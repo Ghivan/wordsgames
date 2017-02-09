@@ -44,7 +44,7 @@ require_once (MAIN_DIR  . '/_includes/database.php');
 
 $to = 'admin@wordsgames.by';
 
-$subject = strip_tags($_POST['subject']).': '.strip_tags($_POST['message-header']);
+$subject =  '=?utf-8?B?'.base64_encode(strip_tags($_POST['subject']).': '.strip_tags($_POST['message-header'])).'?=';
 
 $message =  'Id игрока: ' .
     $_SESSION['pl_id'] .
@@ -55,9 +55,9 @@ $message = wordwrap($message, 70, "\r\n", true);
 
 $contentType = "Content-Type: text/html; charset=UTF-8";
 $fromEmail = (filter_var($_POST['player-email'], FILTER_VALIDATE_EMAIL)) ? $_POST['player-email'] : 'admin@wordsgames.by';
-$from = 'From: =?UTF-8?Q?'. strip_tags($_POST['player']). '?= <'. $fromEmail . '>';
+$from = 'From: '. mb_encode_mimeheader(strip_tags($_POST['player'])). '<'. $fromEmail . '>';
 $date= 'Date: '. date('r', time());
-$headers = $contentType. "\r\n" . $date . "\r\n" . $from;
+$headers = 'MIME-Version: 1.0' . "\r\n" . $contentType. "\r\n" . $date . "\r\n" . $from . "\r\n";
 
 if (mail($to,$subject,$message,$headers)){
     $_SESSION['SEND_MAIL_TIME'] = $curTime;
