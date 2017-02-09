@@ -1,5 +1,5 @@
-class Model {
-    constructor(login, email) {
+var Model = (function () {
+    function Model(login, email) {
         this.urlChangeLogin = 'includes/change_scripts/change_login.php';
         this.urlChangeEmail = 'includes/change_scripts/change_email.php';
         this.urlChangePassword = 'includes/change_scripts/change_password.php';
@@ -9,19 +9,19 @@ class Model {
         this.LOGIN_REG_EXP = /^[a-z0-9а-я_-]{3,16}$/i;
         this.EMAIL_REG_EXP = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         this.MAX_IMAGE_SIZE = 500;
-        let data = {
+        var data = {
             login: login,
             email: email
         };
         this.user = new User(data);
     }
-    getUserLogin() {
+    Model.prototype.getUserLogin = function () {
         return this.user.login;
-    }
-    getUserEmail() {
+    };
+    Model.prototype.getUserEmail = function () {
         return this.user.email;
-    }
-    checkInput(type, message) {
+    };
+    Model.prototype.checkInput = function (type, message) {
         switch (type) {
             case 'login':
                 return this.checkLogin(message);
@@ -34,15 +34,15 @@ class Model {
                     message: 'Неверные данные!'
                 };
         }
-    }
-    changeUserLogin(newLogin, success, error) {
-        let checking;
+    };
+    Model.prototype.changeUserLogin = function (newLogin, success, error) {
+        var checking;
         checking = this.checkLogin(newLogin);
         if (!checking.state) {
             error(checking.message);
             return;
         }
-        let data = {
+        var data = {
             login: newLogin
         }, user = this.user;
         $.ajax({
@@ -62,8 +62,8 @@ class Model {
                 error('Ошибка соединения с сервером');
             }
         });
-    }
-    checkLogin(login) {
+    };
+    Model.prototype.checkLogin = function (login) {
         if (login === '') {
             return {
                 state: false,
@@ -85,14 +85,14 @@ class Model {
         return {
             state: true
         };
-    }
-    changeUserEmail(newEmail, success, error) {
-        let checking = this.checkEmail(newEmail);
+    };
+    Model.prototype.changeUserEmail = function (newEmail, success, error) {
+        var checking = this.checkEmail(newEmail);
         if (!checking.state) {
             error(checking.message);
             return;
         }
-        let data = {
+        var data = {
             email: newEmail
         }, user = this.user;
         $.ajax({
@@ -112,8 +112,8 @@ class Model {
             },
             data: data
         });
-    }
-    checkEmail(email) {
+    };
+    Model.prototype.checkEmail = function (email) {
         if (email === '') {
             return {
                 state: false,
@@ -135,9 +135,9 @@ class Model {
         return {
             state: true
         };
-    }
-    changePassword(data, success, error) {
-        let checking = this.checkPassword(data);
+    };
+    Model.prototype.changePassword = function (data, success, error) {
+        var checking = this.checkPassword(data);
         if (!checking.state) {
             error(checking.message);
             return;
@@ -158,9 +158,9 @@ class Model {
                 error('Ошибка соединения с сервером');
             }
         });
-    }
-    checkPassword(data) {
-        for (let prop in data) {
+    };
+    Model.prototype.checkPassword = function (data) {
+        for (var prop in data) {
             if (data.hasOwnProperty(prop)) {
                 if (data[prop] === '') {
                     return {
@@ -191,14 +191,14 @@ class Model {
         return {
             state: true
         };
-    }
-    uploadAvatar(file, success, error) {
-        let checking = this.checkImage(file);
+    };
+    Model.prototype.uploadAvatar = function (file, success, error) {
+        var checking = this.checkImage(file);
         if (!checking.state) {
             error(checking.message);
             return;
         }
-        let data = new FormData();
+        var data = new FormData();
         data.append('userAvatar', file);
         $.ajax({
             url: this.urlChangeAvatar,
@@ -219,9 +219,9 @@ class Model {
             contentType: false,
             processData: false
         });
-    }
-    checkImage(img) {
-        let size = img.size, type = img.type, allowedImageTypes = ['image/jpeg', 'image/png'];
+    };
+    Model.prototype.checkImage = function (img) {
+        var size = img.size, type = img.type, allowedImageTypes = ['image/jpeg', 'image/png'];
         if (allowedImageTypes.indexOf(type) < 0) {
             return {
                 state: false,
@@ -237,8 +237,8 @@ class Model {
         return {
             state: true
         };
-    }
-    sendFeedBackMessage(data, success, error) {
+    };
+    Model.prototype.sendFeedBackMessage = function (data, success, error) {
         $.ajax({
             data: data,
             url: this.urlSendFeedback,
@@ -255,16 +255,18 @@ class Model {
                 error('Ошибка соединения с сервером');
             },
         });
-    }
-}
-class User {
-    constructor(data) {
+    };
+    return Model;
+}());
+var User = (function () {
+    function User(data) {
         this.login = data.login;
         this.email = data.email;
     }
-}
-class View {
-    constructor() {
+    return User;
+}());
+var View = (function () {
+    function View() {
         this.loader = new Loader();
         this.profileConfigureBox = new ProfileConfigureBox();
         this.changeAvatarBox = new ChangeAvatarBox();
@@ -273,20 +275,22 @@ class View {
         this.unregisterBtn = $('#unregister');
         this.sendFeedbackBox = new SendFeedbackBox();
     }
-}
-class Loader {
-    constructor() {
+    return View;
+}());
+var Loader = (function () {
+    function Loader() {
         this.box = $('#loader');
     }
-    show() {
+    Loader.prototype.show = function () {
         this.box.show();
-    }
-    hide() {
+    };
+    Loader.prototype.hide = function () {
         this.box.hide();
-    }
-}
-class ProfileConfigureBox {
-    constructor() {
+    };
+    return Loader;
+}());
+var ProfileConfigureBox = (function () {
+    function ProfileConfigureBox() {
         this.box = $('#profile-configure');
         this.errorBox = $('#profile-configure-error-box');
         this.successBox = $('#profile-configure-success-box');
@@ -297,7 +301,7 @@ class ProfileConfigureBox {
         this.sendChangesBtn = $('#send-changed-data-btn');
         this.cancelBtn = $('#profile-configure-cancel-btn');
     }
-    setChangeBtnTitle(btnFieldType, text) {
+    ProfileConfigureBox.prototype.setChangeBtnTitle = function (btnFieldType, text) {
         switch (btnFieldType) {
             case 'login':
                 this.changeLoginBtn.text(text);
@@ -309,8 +313,8 @@ class ProfileConfigureBox {
                 console.warn('Элемента ' + btnFieldType + ' не существует');
                 break;
         }
-    }
-    getChangeBtnTitle(btnFieldType) {
+    };
+    ProfileConfigureBox.prototype.getChangeBtnTitle = function (btnFieldType) {
         switch (btnFieldType) {
             case 'login':
                 return this.changeLoginBtn.text().trim();
@@ -320,9 +324,9 @@ class ProfileConfigureBox {
                 console.warn('Элемента ' + btnFieldType + ' не существует');
                 return '';
         }
-    }
-    toggleInputState(inputType) {
-        let input;
+    };
+    ProfileConfigureBox.prototype.toggleInputState = function (inputType) {
+        var input;
         switch (inputType) {
             case 'login':
                 input = this.changeLoginInput;
@@ -334,7 +338,7 @@ class ProfileConfigureBox {
                 console.warn('Элемента ' + inputType + ' не существует');
                 return;
         }
-        let state = input.prop('disabled');
+        var state = input.prop('disabled');
         if (state === true) {
             input.prop('disabled', false);
             input.focus();
@@ -343,9 +347,9 @@ class ProfileConfigureBox {
         if (state === false) {
             input.prop('disabled', true);
         }
-    }
-    setChangeInputValue(inputType, text) {
-        let input;
+    };
+    ProfileConfigureBox.prototype.setChangeInputValue = function (inputType, text) {
+        var input;
         switch (inputType) {
             case 'login':
                 input = this.changeLoginInput;
@@ -358,9 +362,9 @@ class ProfileConfigureBox {
                 return;
         }
         input.val(text);
-    }
-    getChangeInputValue(inputType) {
-        let input;
+    };
+    ProfileConfigureBox.prototype.getChangeInputValue = function (inputType) {
+        var input;
         switch (inputType) {
             case 'login':
                 input = this.changeLoginInput;
@@ -373,24 +377,25 @@ class ProfileConfigureBox {
                 return '';
         }
         return input.val().trim();
-    }
-    displayError(errorMessage) {
+    };
+    ProfileConfigureBox.prototype.displayError = function (errorMessage) {
         this.errorBox.html(errorMessage);
-    }
-    displaySuccessMessage(message) {
+    };
+    ProfileConfigureBox.prototype.displaySuccessMessage = function (message) {
         this.successBox.html(message);
-    }
-    reset(login, email) {
+    };
+    ProfileConfigureBox.prototype.reset = function (login, email) {
         this.changeLoginInput.val(login);
         this.changeLoginInput.prop('disabled', true);
         this.changeEmailInput.val(email);
         this.changeEmailInput.prop('disabled', true);
         this.errorBox.html('');
         this.successBox.html('');
-    }
-}
-class ChangeAvatarBox {
-    constructor() {
+    };
+    return ProfileConfigureBox;
+}());
+var ChangeAvatarBox = (function () {
+    function ChangeAvatarBox() {
         this.box = $('#change-avatar-box');
         this.errorBox = $('#change-avatar-error-box');
         this.previewBox = $('#avatar-preview-box');
@@ -399,32 +404,33 @@ class ChangeAvatarBox {
         this.cancelBtn = $('#change-avatar-cancel-btn');
         this.userAvatarBox = $('#UserAvatar');
     }
-    displayError(errorMessage) {
+    ChangeAvatarBox.prototype.displayError = function (errorMessage) {
         this.errorBox.text(errorMessage);
-    }
-    hideError() {
+    };
+    ChangeAvatarBox.prototype.hideError = function () {
         this.errorBox.text('');
-    }
-    showAvatarPreview(file, loader) {
-        let reader = new FileReader(), previewBox = this.previewBox;
+    };
+    ChangeAvatarBox.prototype.showAvatarPreview = function (file, loader) {
+        var reader = new FileReader(), previewBox = this.previewBox;
         loader.show();
         reader.readAsDataURL(file);
         reader.onload = function () {
             previewBox.attr('src', reader.result);
             loader.hide();
         };
-    }
-    getFileFromInput() {
+    };
+    ChangeAvatarBox.prototype.getFileFromInput = function () {
         return this.avatarFileInput.prop('files')[0] || null;
-    }
-    reset() {
+    };
+    ChangeAvatarBox.prototype.reset = function () {
         this.hideError();
         this.previewBox.attr('src', this.userAvatarBox.attr('src'));
         this.avatarFileInput.val('');
-    }
-}
-class ChangePasswordBox {
-    constructor() {
+    };
+    return ChangeAvatarBox;
+}());
+var ChangePasswordBox = (function () {
+    function ChangePasswordBox() {
         this.box = $('#change-password-box');
         this.errorBox = $('#change-password-error-box');
         this.oldPasswordInput = $('#old-password-input');
@@ -433,54 +439,56 @@ class ChangePasswordBox {
         this.sendChangesBtn = $('#change-password-btn');
         this.cancelBtn = $('#change-password-cancel-btn');
     }
-    displayError(errorMessage) {
+    ChangePasswordBox.prototype.displayError = function (errorMessage) {
         this.errorBox.text(errorMessage);
-    }
-    hideError() {
+    };
+    ChangePasswordBox.prototype.hideError = function () {
         this.errorBox.text('');
-    }
-    getOldPasswordFromInput() {
+    };
+    ChangePasswordBox.prototype.getOldPasswordFromInput = function () {
         return this.oldPasswordInput.val().trim();
-    }
-    getNewPasswordFromInput() {
+    };
+    ChangePasswordBox.prototype.getNewPasswordFromInput = function () {
         return this.newPasswordInput.val().trim();
-    }
-    getConfirmNewPasswordFromInput() {
+    };
+    ChangePasswordBox.prototype.getConfirmNewPasswordFromInput = function () {
         return this.confirmNewPasswordInput.val().trim();
-    }
-    reset() {
+    };
+    ChangePasswordBox.prototype.reset = function () {
         this.oldPasswordInput.val('');
         this.newPasswordInput.val('');
         this.confirmNewPasswordInput.val('');
         this.errorBox.text('');
-    }
-}
-class SendFeedbackBox {
-    constructor() {
+    };
+    return ChangePasswordBox;
+}());
+var SendFeedbackBox = (function () {
+    function SendFeedbackBox() {
         this.form = $('#feedbackForm');
         this.feedbackErrorBox = $('#feedback-error-box');
         this.feedbackErrorMessage = $('#feedback-error-message');
         this.feedbackSuccessBox = $('#feedback-success-box');
         this.feedbackSuccessMessage = $('#feedback-success-message');
     }
-    displayError(message) {
+    SendFeedbackBox.prototype.displayError = function (message) {
         this.feedbackErrorMessage.text(message);
         this.feedbackErrorBox.modal('show');
-    }
-    displaySuccessMessage(message) {
+    };
+    SendFeedbackBox.prototype.displaySuccessMessage = function (message) {
         this.feedbackSuccessMessage.text(message);
         this.feedbackSuccessBox.modal('show');
-    }
-}
-class Controller {
-    constructor() {
+    };
+    return SendFeedbackBox;
+}());
+var Controller = (function () {
+    function Controller() {
         this.updateState = {
             login: false,
             email: false
         };
         this.successMessage = '';
         this.freezeState = false;
-        let data = $('#profile-configure').data();
+        var data = $('#profile-configure').data();
         this.model = new Model(data.login, data.email);
         this.view = new View();
         this.errors = new Errors();
@@ -497,70 +505,70 @@ class Controller {
                 }
             });
         });
-        let mainBox = this.view.profileConfigureBox;
+        var mainBox = this.view.profileConfigureBox;
         mainBox.changeLoginBtn.on('click', this.prepareChange.bind(this, mainBox.changeLoginBtn));
         mainBox.changeEmailBtn.on('click', this.prepareChange.bind(this, mainBox.changeEmailBtn));
         mainBox.changeLoginInput.on('focusout', this.prepareChange.bind(this, mainBox.changeLoginBtn));
         mainBox.changeEmailInput.on('focusout', this.prepareChange.bind(this, mainBox.changeEmailBtn));
         mainBox.sendChangesBtn.on('click', this.sendChangesToServer.bind(this));
         mainBox.box.on('hide.bs.modal', this.resetProfileBox.bind(this));
-        let changeAvatarBox = this.view.changeAvatarBox;
+        var changeAvatarBox = this.view.changeAvatarBox;
         changeAvatarBox.avatarFileInput.on('change', this.activatePreviewAvatar.bind(this));
         changeAvatarBox.uploadAvatarBtn.on('click', this.uploadAvatar.bind(this));
         changeAvatarBox.box.on('hide.bs.modal', changeAvatarBox.reset.bind(changeAvatarBox));
-        let passwordBox = this.view.changePasswordBox;
+        var passwordBox = this.view.changePasswordBox;
         passwordBox.sendChangesBtn.on('click', this.sendNewPasswordToServer.bind(this));
         passwordBox.box.on('hide.bs.modal', passwordBox.reset.bind(passwordBox));
         this.view.sendFeedbackBox.form.on('submit', this.sendFeedback.bind(this));
     }
-    sendFeedback(e) {
+    Controller.prototype.sendFeedback = function (e) {
         e.preventDefault();
         this.view.loader.show();
-        let data = $(e.target).serialize().split("&").reduce(function (prev, curr) {
-            let p = curr.split("=");
+        var data = $(e.target).serialize().split("&").reduce(function (prev, curr) {
+            var p = curr.split("=");
             prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]).trim();
             return prev;
         }, {});
         this.model.sendFeedBackMessage(data, this.onSuccessFeedback.bind(this), this.onFailFeedback.bind(this));
         return false;
-    }
-    onSuccessFeedback(message) {
+    };
+    Controller.prototype.onSuccessFeedback = function (message) {
         this.view.loader.hide();
         this.view.sendFeedbackBox.displaySuccessMessage(message);
-    }
-    onFailFeedback(message) {
+    };
+    Controller.prototype.onFailFeedback = function (message) {
         this.view.loader.hide();
         this.view.sendFeedbackBox.displayError(message);
-    }
-    freeze() {
+    };
+    Controller.prototype.freeze = function () {
         this.freezeState = true;
         (function (context) {
             setTimeout(function () {
                 context.freezeState = false;
             }, 200);
         })(this);
-    }
-    resetProfileBox() {
-        let mainBox = this.view.profileConfigureBox;
+    };
+    Controller.prototype.resetProfileBox = function () {
+        var mainBox = this.view.profileConfigureBox;
         mainBox.reset(this.model.getUserLogin(), this.model.getUserEmail());
         this.view.loginLabel.text(this.model.getUserLogin());
         this.errors.clearErrors();
         this.successMessage = '';
         mainBox.displaySuccessMessage('Настройки не изменены.');
         mainBox.displayError('');
-    }
-    prepareChange(btn) {
+    };
+    Controller.prototype.prepareChange = function (btn) {
         if (this.freezeState)
             return;
         this.freeze();
-        let type = btn.data().fieldtype, stage = btn.text().toLowerCase(), mainBox = this.view.profileConfigureBox;
+        var type = btn.data().fieldtype, stage = btn.text().toLowerCase(), mainBox = this.view.profileConfigureBox;
         switch (stage) {
             case 'изменить':
                 mainBox.toggleInputState(type);
                 btn.text('Подтвердить');
                 break;
             case 'подтвердить':
-                let check = this.model.checkInput(type, mainBox.getChangeInputValue(type));
+                var check = this.model.checkInput(type, mainBox.getChangeInputValue(type));
                 this.errors.clearErrors(type);
                 if (check.state) {
                     mainBox.displaySuccessMessage('');
@@ -576,9 +584,9 @@ class Controller {
                 btn.text('Изменить');
                 break;
         }
-    }
-    sendChangesToServer() {
-        let mainBox = this.view.profileConfigureBox;
+    };
+    Controller.prototype.sendChangesToServer = function () {
+        var mainBox = this.view.profileConfigureBox;
         this.errors.clearErrors('global');
         this.successMessage = '';
         if (this.updateState.login) {
@@ -591,9 +599,9 @@ class Controller {
             this.updateState.email = false;
             this.model.changeUserEmail(mainBox.getChangeInputValue('email'), this.successServerDataChange.bind(this, 'email'), this.errorServerDataChange.bind(this, 'email'));
         }
-    }
-    successServerDataChange(type) {
-        let mainBox = this.view.profileConfigureBox, view = this.view;
+    };
+    Controller.prototype.successServerDataChange = function (type) {
+        var mainBox = this.view.profileConfigureBox, view = this.view;
         switch (type) {
             case 'login':
                 this.errors.clearErrors('login');
@@ -608,9 +616,9 @@ class Controller {
         mainBox.displaySuccessMessage(this.successMessage);
         mainBox.displayError(this.errors.toString());
         view.loader.hide();
-    }
-    errorServerDataChange(type, message) {
-        let mainBox = this.view.profileConfigureBox, view = this.view;
+    };
+    Controller.prototype.errorServerDataChange = function (type, message) {
+        var mainBox = this.view.profileConfigureBox, view = this.view;
         switch (type) {
             case 'login':
                 this.errors.clearErrors(type);
@@ -626,12 +634,12 @@ class Controller {
         mainBox.displaySuccessMessage(this.successMessage);
         mainBox.displayError(this.errors.toString());
         view.loader.hide();
-    }
-    activatePreviewAvatar() {
-        let changeAvatarBox = this.view.changeAvatarBox, file = changeAvatarBox.getFileFromInput();
+    };
+    Controller.prototype.activatePreviewAvatar = function () {
+        var changeAvatarBox = this.view.changeAvatarBox, file = changeAvatarBox.getFileFromInput();
         if (!file)
             return;
-        let checking = this.model.checkImage(file);
+        var checking = this.model.checkImage(file);
         if (checking.state) {
             changeAvatarBox.hideError();
             changeAvatarBox.showAvatarPreview(file, this.view.loader);
@@ -640,30 +648,30 @@ class Controller {
             changeAvatarBox.reset();
             changeAvatarBox.displayError(checking.message);
         }
-    }
-    uploadAvatar() {
-        let changeAvatarBox = this.view.changeAvatarBox, file = changeAvatarBox.getFileFromInput();
+    };
+    Controller.prototype.uploadAvatar = function () {
+        var changeAvatarBox = this.view.changeAvatarBox, file = changeAvatarBox.getFileFromInput();
         if (file) {
             this.view.loader.show();
             this.model.uploadAvatar(file, this.successUploadAvatar.bind(this), this.errorUploadAvatar.bind(this));
         }
-    }
-    successUploadAvatar(pathToImg) {
-        let changeAvatarBox = this.view.changeAvatarBox, profileConfigureBox = this.view.profileConfigureBox;
+    };
+    Controller.prototype.successUploadAvatar = function (pathToImg) {
+        var changeAvatarBox = this.view.changeAvatarBox, profileConfigureBox = this.view.profileConfigureBox;
         changeAvatarBox.userAvatarBox.attr('src', pathToImg + '?' + Date.now());
         changeAvatarBox.reset();
         changeAvatarBox.box.modal('hide');
         profileConfigureBox.displaySuccessMessage('Аватар был изменен');
         this.view.loader.hide();
-    }
-    errorUploadAvatar(message) {
-        let changeAvatarBox = this.view.changeAvatarBox;
+    };
+    Controller.prototype.errorUploadAvatar = function (message) {
+        var changeAvatarBox = this.view.changeAvatarBox;
         changeAvatarBox.reset();
         changeAvatarBox.displayError(message);
         this.view.loader.hide();
-    }
-    sendNewPasswordToServer() {
-        let passwordBox = this.view.changePasswordBox, data, checking;
+    };
+    Controller.prototype.sendNewPasswordToServer = function () {
+        var passwordBox = this.view.changePasswordBox, data, checking;
         data = {
             oldPassword: passwordBox.getOldPasswordFromInput(),
             newPassword: passwordBox.getNewPasswordFromInput(),
@@ -678,31 +686,32 @@ class Controller {
             passwordBox.reset();
             passwordBox.displayError(checking.message);
         }
-    }
-    successServerChangePassword() {
-        let passwordBox = this.view.changePasswordBox, profileConfigureBox = this.view.profileConfigureBox;
+    };
+    Controller.prototype.successServerChangePassword = function () {
+        var passwordBox = this.view.changePasswordBox, profileConfigureBox = this.view.profileConfigureBox;
         this.view.loader.hide();
         profileConfigureBox.displaySuccessMessage('Пароль был изменен. ');
         passwordBox.box.modal('hide');
-    }
-    errorServerChangePassword(message) {
-        let passwordBox = this.view.changePasswordBox;
+    };
+    Controller.prototype.errorServerChangePassword = function (message) {
+        var passwordBox = this.view.changePasswordBox;
         this.view.loader.hide();
         passwordBox.reset();
         passwordBox.displayError(message);
-    }
-    hideLoader() {
+    };
+    Controller.prototype.hideLoader = function () {
         this.view.loader.hide();
-    }
-}
-class Errors {
-    constructor() {
+    };
+    return Controller;
+}());
+var Errors = (function () {
+    function Errors() {
         this.global = [];
         this.login = [];
         this.email = [];
     }
-    toString() {
-        let totalErrors = [], cacheString, resultString = '';
+    Errors.prototype.toString = function () {
+        var totalErrors = [], cacheString, resultString = '';
         if (this.login.length > 0)
             totalErrors.push(this.login.join('<br>'));
         if (this.email.length > 0)
@@ -722,10 +731,10 @@ class Errors {
         if (cacheString !== '')
             return cacheString;
         return '';
-    }
-    addError(type, message) {
+    };
+    Errors.prototype.addError = function (type, message) {
         if (Array.isArray(this[type])) {
-            for (let i = 0; i < this[type].length; i++) {
+            for (var i = 0; i < this[type].length; i++) {
                 if (this[type][i] === message)
                     return true;
             }
@@ -736,8 +745,8 @@ class Errors {
             console.warn('Такого типа ошибок не существует.');
             return false;
         }
-    }
-    clearErrors(type) {
+    };
+    Errors.prototype.clearErrors = function (type) {
         if (type) {
             if (this[type]) {
                 this[type] = [];
@@ -748,16 +757,21 @@ class Errors {
                 return false;
             }
         }
-        for (let prop in this) {
+        for (var prop in this) {
             if (this.hasOwnProperty(prop) && Array.isArray(this[prop])) {
                 this[prop].length = 0;
             }
         }
         return true;
-    }
-}
+    };
+    return Errors;
+}());
 $('document').ready(function () {
-    let app = new Controller();
+    var app = new Controller();
     app.hideLoader();
+    setTimeout(function () {
+        var nav = $('.nav')[0], offset = $(nav).offset().top;
+        nav.setAttribute('data-offset-top', offset.toString());
+    }, 1000);
 });
 //# sourceMappingURL=app.js.map

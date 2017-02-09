@@ -192,7 +192,7 @@ class Model{
             };
         }
 
-        if (!password.match(this.LOGIN_REG_EXP)){
+        if (!password.match(this.PASSWORD_REG_EXP)){
             return {
                 state: false,
                 message: 'Пароль должен состоять из букв, цифр, дефисов и подчёркиваний, от 6 до 16 символов.'

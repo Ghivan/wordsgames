@@ -75,6 +75,10 @@ h1{
   .form-group{
     margin: auto;
     width: 75%;
+
+    @media (max-width:500px) {
+width: 100%;
+  }
         input{
       font-style: italic;
     }

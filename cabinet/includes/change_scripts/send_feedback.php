@@ -53,10 +53,11 @@ $message =  'Id игрока: ' .
     htmlspecialchars($_POST['message-body']);
 $message = wordwrap($message, 70, "\r\n", true);
 
+$contentType = "Content-Type: text/html; charset=UTF-8";
 $fromEmail = (filter_var($_POST['player-email'], FILTER_VALIDATE_EMAIL)) ? $_POST['player-email'] : 'admin@wordsgames.by';
 $from = 'From: =?UTF-8?Q?'. strip_tags($_POST['player']). '?= <'. $fromEmail . '>';
 $date= 'Date: '. date('r', time());
-$headers = $date . "\r\n" . $from;
+$headers = $contentType. "\r\n" . $date . "\r\n" . $from;
 
 if (mail($to,$subject,$message,$headers)){
     $_SESSION['SEND_MAIL_TIME'] = $curTime;

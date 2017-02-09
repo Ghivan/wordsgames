@@ -103,6 +103,9 @@ h1 {
   .tab-content .form-group {
     margin: auto;
     width: 75%; }
+    @media (max-width: 500px) {
+      .tab-content .form-group {
+        width: 100%; } }
     .tab-content .form-group input {
       font-style: italic; }
     .tab-content .form-group label {

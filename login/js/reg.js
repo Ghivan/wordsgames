@@ -168,7 +168,7 @@ var Model = (function () {
                 message: 'Поле пароля не должно быть пустым!'
             };
         }
-        if (!password.match(this.LOGIN_REG_EXP)) {
+        if (!password.match(this.PASSWORD_REG_EXP)) {
             return {
                 state: false,
                 message: 'Пароль должен состоять из букв, цифр, дефисов и подчёркиваний, от 6 до 16 символов.'
@@ -451,6 +451,8 @@ var Controller = (function () {
         var input = context.field, checking = this.model.checkInput(context.field, this.view[context.pane].getInputVal(input));
         this.view.hideError(context);
         this.model.removeErrors(input);
+        console.log(input);
+        console.log(checking);
         if (!checking.state) {
             this.view.showError(context, checking.message);
             this.model.addError(input, checking.message);

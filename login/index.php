@@ -14,18 +14,12 @@ if (checkLogin()){
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
-
-    <script src="/_libraries/jquery-3.1.1.min.js"></script>
-    <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="/login/css/style.css?ver0.222">
-
-<!--    <script src="/login/js/register.js?ver0.19"></script>-->
-    <script src="/login/js/reg.js"></script>
+    <meta name="description" content="Регистрация на игровом сайте 'Игра со словами'." />
+    <meta property="og:type" content="Страница авторизации" />
     <title>Регистрация</title>
-
+    <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/login/css/style.css?ver2.34">
+    <?php include_once MAIN_DIR . '/_config/links_amd_meta.php'?>
 </head>
 
 <body>
@@ -161,7 +155,9 @@ if (checkLogin()){
 
 </div>
 <!--Конец контейнера-->
-
+<script src="/_libraries/jquery-3.1.1.min.js"></script>
+<script src="/_libraries/bootstrap/bootstrap.min.js"></script>
+<script src="/login/js/reg.js"></script>
 </body>
 
 </html>

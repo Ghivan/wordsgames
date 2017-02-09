@@ -10,7 +10,7 @@ if (!checkLogin()){
     header('Location: /login/');
     exit;
 }
-
+header("Cache-Control: no-cache, must-revalidate");
 require_once(MAIN_DIR  . '/_config/config.php');
 require_once (MAIN_DIR  . '/_includes/database.php');
 require_once "includes/model.php";
@@ -26,14 +26,13 @@ $controller = new Controller();
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Личный кабинет игрока. Доступ к каталогу игр и настройкам профиля" />
+    <meta property="og:type" content="Личный кабинет пользователя" />
 
     <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
-    <script src="/_libraries/jquery-3.1.1.min.js"></script>
-    <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
     <link rel="stylesheet" href="/cabinet/css/style.css?ver=0.22">
-
     <title>Личный кабинет</title>
+    <?php include_once MAIN_DIR . '/_config/links_amd_meta.php'?>
 </head>
 
 <body>
@@ -89,22 +88,9 @@ $controller = new Controller();
            <?php include_once 'includes/tabs/feedback.php';?>
         </div>
     </div>
-
-    <script>
-
-
-        $('document').ready(function () {
-
-            setTimeout(function () {
-                let nav = $('.nav')[0],
-                    offset = $(nav).offset().top;
-                nav.setAttribute('data-offset-top', offset.toString());
-            }, 1000);
-
-        });
-
-
-    </script>
+    <script src="/_libraries/jquery-3.1.1.min.js"></script>
+    <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
