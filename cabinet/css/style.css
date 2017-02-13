@@ -80,7 +80,7 @@
   font-style: normal; }
 body {
   font-family: "RobotoCondensed", sans-serif, sans-serif;
-  background-color: #E9E9E9; }
+  background-image: url("/files/paper.png"); }
 
 .container {
   border-left: 2px solid #FFF;

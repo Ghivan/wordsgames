@@ -16,7 +16,7 @@ $Rupster: 'Rupster';
 
 body{
   font-family: $bodyFont, sans-serif;
-  background-color: $BodyBackgroundColor;
+  background-image: url("/files/paper.png");
 }
 
 .container{
@@ -65,7 +65,6 @@ body{
   padding-top: 15px;
 
 
-  .progress-bar{}
   .progress {
     background-color: $gray;
     .progress-bar{

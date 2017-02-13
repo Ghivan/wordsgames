@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("/_style/fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("/_style/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: "Rupster";
+  src: url("/_style/fonts/RupsterScriptFree/RupsterScriptFree.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-family: "RobotoCondensed", sans-serif;
+  background-image: url("/files/paper.png"); }
+
+.container {
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  background-color: rgba(204, 204, 204, 0.2); }
+
+.player-info {
+  min-height: 100vh;
+  padding: 15px; }
+  .player-info img.avatar {
+    max-width: 80%;
+    margin-bottom: 30px; }
+  .player-info h2 {
+    font-family: "Rupster";
+    text-align: center; }
+  .player-info .tablescore {
+    display: flex;
+    justify-content: space-around; }
+    .player-info .tablescore div {
+      margin: 10px;
+      min-width: 45%;
+      text-align: center;
+      font-style: italic; }
+      .player-info .tablescore div span {
+        font-size: 1.2em;
+        font-weight: bold;
+        font-style: normal; }
+  .player-info .progress {
+    background-color: #CDCDCD; }
+    .player-info .progress .progress-bar {
+      background-color: #99D3DF; }
+    .player-info .progress > span {
+      z-index: 999;
+      position: absolute;
+      color: #000;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em; }
+  .player-info .menus {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap; }
+    .player-info .menus .label {
+      text-align: center;
+      font-size: 1.2em; }
+    .player-info .menus > div {
+      margin: 10px;
+      cursor: pointer; }
+      .player-info .menus > div .label {
+        display: block; }
+    .player-info .menus .tips .btn-group-sm, .player-info .menus .level-map-box .btn-group-sm {
+      display: none;
+      position: absolute;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      width: 100%;
+      background-color: rgba(204, 204, 204, 0.7);
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      .player-info .menus .tips .btn-group-sm > .btn, .player-info .menus .level-map-box .btn-group-sm > .btn {
+        margin: 5px; }
+    .player-info .menus .tips:hover > .label, .player-info .menus .level-map-box:hover > .label {
+      box-shadow: inset 2px 2px #808080; }
+    .player-info .menus .tips:hover > .btn-group-sm {
+      display: flex;
+      right: 0; }
+    .player-info .menus .level-map-box:hover > .btn-group-sm {
+      display: flex;
+      left: 0; }
+    .player-info .menus .tips .btn {
+      width: 45%;
+      padding: 0; }
+      .player-info .menus .tips .btn img {
+        max-width: 80%; }
+
+.gamefield {
+  border-left: 2px solid #FFF;
+  box-shadow: inset 5px 0 5px #CDCDCD;
+  min-height: 100vh;
+  background-color: rgba(204, 204, 204, 0.4);
+  padding: 15px; }
+  .gamefield .missions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%; }
+    .gamefield .missions img {
+      width: 50px;
+      height: 50px;
+      margin: 10px; }
+  .gamefield #user-input-word {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-family: "Rupster"; }
+  .gamefield #level-main-word {
+    display: flex;
+    justify-content: center; }
+    .gamefield #level-main-word > span {
+      display: block;
+      font-size: 1.5em;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.5em;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid gray;
+      margin: 15px; }
+    .gamefield #level-main-word > span.active {
+      background-color: #2e6da4;
+      color: #FFF; }
+  .gamefield #user-found-words-box {
+    padding: 15px; }
+    .gamefield #user-found-words-box .found-word {
+      text-transform: uppercase;
+      padding: 5px;
+      border: 1px solid black;
+      display: inline-block;
+      border-radius: 5px; }
+
+.rotate {
+  animation-name: rotateLetters;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes rotateLetters {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg); }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+    font-weight: normal;
+    background-color: inherit;
+    color: black; } }
+
+/*# sourceMappingURL=style.css.map */

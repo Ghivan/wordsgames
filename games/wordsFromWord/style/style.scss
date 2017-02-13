@@ -1,0 +1,199 @@
+@import "../../../_style/_config";
+
+body{
+  font-family: $bodyFont;
+  background-image: url("/files/paper.png");
+}
+
+.container{
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  background-color: hsla(0,0,80%, 0.2);
+
+}
+
+.player-info{
+  min-height: 100vh;
+  padding: 15px;
+
+
+  img.avatar{
+    max-width: 80%;
+    margin-bottom: 30px;
+  }
+
+  h2{
+    font-family: $handwritingFont;
+    text-align: center;
+  }
+
+  .tablescore{
+    display: flex;
+    justify-content: space-around;
+
+    div{
+      margin: 10px;
+      min-width: 45%;
+      text-align: center;
+      font-style: italic;
+
+      span{
+        font-size: 1.2em;
+        font-weight: bold;
+        font-style: normal;
+      }
+    }
+  }
+
+  .progress {
+    background-color: $gray;
+    .progress-bar{
+      background-color: $iceBlue;
+    }
+    > span {
+      z-index: 999;
+      position: absolute;
+      color: #000;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  }
+
+  .menus{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+
+    .label{
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    >div{
+      margin: 10px;
+      cursor: pointer;
+
+      .label{
+        display: block;
+      }
+    }
+
+    .tips .btn-group-sm, .level-map-box .btn-group-sm{
+      display: none;
+      position: absolute;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      width: 100%;
+      background-color: hsla(0,0,80%, 0.7);
+      flex-wrap: wrap;
+      justify-content: space-around;
+      >.btn{
+        margin: 5px;
+      }
+    }
+
+    .tips:hover>.label, .level-map-box:hover>.label{
+      box-shadow: inset 2px 2px #808080;
+    }
+
+    .tips:hover>.btn-group-sm{
+      display: flex;
+      right: 0;
+    }
+
+    .level-map-box:hover>.btn-group-sm{
+      display: flex;
+      left: 0;
+    }
+
+
+
+    .tips .btn{
+      width: 45%;
+      padding: 0;
+      img{
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+.gamefield{
+  border-left: 2px solid #FFF;
+  box-shadow: inset 5px 0 5px $gray;
+  min-height: 100vh;
+  background-color: hsla(0,0,80%, 0.4);
+  padding: 15px;
+
+
+  .missions{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
+
+    img{
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+    }
+  }
+
+  #user-input-word{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-family: $handwritingFont;
+  }
+
+  #level-main-word{
+    display: flex;
+    justify-content: center;
+    >span{
+      display: block;
+      font-size: 1.5em;
+      width: 2.5em;
+      height: 2.5em;
+      line-height: 2.5em;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid gray;
+      margin: 15px;
+    }
+
+    >span.active{
+      background-color: #2e6da4;
+      color: $TextColor;
+    }
+  }
+
+  #user-found-words-box{
+    padding: 15px;
+    .found-word{
+      text-transform: uppercase;
+      padding: 5px;
+      border: 1px solid black;
+      display: inline-block;
+      border-radius: 5px;
+    }
+  }
+}
+
+.rotate{
+  animation-name: rotateLetters;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotateLetters {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+    font-weight: normal;
+    background-color: inherit;
+    color: black;
+  }
+}
