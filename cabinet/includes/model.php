@@ -7,7 +7,7 @@ class Model{
 
     function __construct($userId)
     {
-        $this->db = new Database();
+        $this->db = new DB();
 
         $userData = $this->db->execQuery(
             "SELECT id, login, avatar, email, exp, level FROM `players` WHERE `id` = :id",

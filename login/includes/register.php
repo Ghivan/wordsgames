@@ -44,7 +44,7 @@ class UserRegistration{
             return;
         }
 
-        $this-> db = new Database();
+        $this-> db = new DB();
         $this->user =  $user;
 
         if (!empty($email)){

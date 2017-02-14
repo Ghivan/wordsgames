@@ -32,7 +32,7 @@ class LoginUpdate{
             return;
         }
 
-        $this->db = new Database();
+        $this->db = new DB();
 
         if ($this->checkUserExistance($newLogin)){
             $this->errorMessage = 'Пользователь с таким именем уже зарегистрирован';

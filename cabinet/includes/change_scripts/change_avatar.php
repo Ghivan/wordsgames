@@ -54,7 +54,7 @@ class ChangeAvatar{
             return;
         }
 
-        $this->db = new Database();
+        $this->db = new DB();
 
         $newPath = $this->downloadNewAvatar($newAvatar);
 
