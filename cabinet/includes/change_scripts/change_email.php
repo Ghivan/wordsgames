@@ -32,7 +32,7 @@ class EmailUpdate{
             return;
         }
 
-        $this->db = new DB();
+        $this->db = new Database();
 
         if ($this->checkEmailExistance($newEmail)){
             $this->errorMessage = 'Пользователь с такoй электронной почтой уже зарегистрирован';

@@ -52,7 +52,7 @@ class PasswordChanger{
 
     function __construct(string $oldPassword, string $newPassword)
     {
-        $this-> db = new DB();
+        $this-> db = new Database();
         $this->oldPassword = $oldPassword;
         $this->userId = $_SESSION['pl_id'];
         $this->newHash =  password_hash($newPassword, PASSWORD_DEFAULT);

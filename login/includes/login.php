@@ -27,7 +27,7 @@ class Login{
 
     function __construct($user, $password)
     {
-        $this->db = new DB();
+        $this->db = new Database();
 
         if (!preg_match(LOGIN_REGEXP, $user)){
             $this->state = false;

@@ -80,3 +80,39 @@ Stack trace:
 [14-Feb-2017 15:23:29 Europe/Minsk] PHP Stack trace:
 [14-Feb-2017 15:23:29 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
 [14-Feb-2017 15:23:29 Europe/Minsk] PHP   2. DBGameInfo->getPlayersRecordsTable() /var/www/html/games/wordsfromword/server_scenarios/index.php:11
+[14-Feb-2017 16:48:42 Europe/Minsk] PHP Error:  Class 'DB' not found in /var/www/html/login/includes/login.php on line 30
+[14-Feb-2017 16:48:42 Europe/Minsk] PHP Stack trace:
+[14-Feb-2017 16:48:42 Europe/Minsk] PHP   1. {main}() /var/www/html/login/includes/login.php:0
+[14-Feb-2017 16:48:42 Europe/Minsk] PHP   2. Login->__construct() /var/www/html/login/includes/login.php:85
+[14-Feb-2017 16:48:42 Europe/Minsk] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /var/www/html/login/includes/login.php:30
+Stack trace:
+#0 /var/www/html/login/includes/login.php(85): Login->__construct('sdg', 'dfgdfg')
+#1 {main}
+  thrown in /var/www/html/login/includes/login.php on line 30
+[14-Feb-2017 16:51:34 Europe/Minsk] PHP Error:  Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_login.php on line 35
+[14-Feb-2017 16:51:34 Europe/Minsk] PHP Stack trace:
+[14-Feb-2017 16:51:34 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/includes/change_scripts/change_login.php:0
+[14-Feb-2017 16:51:34 Europe/Minsk] PHP   2. LoginUpdate->__construct() /var/www/html/cabinet/includes/change_scripts/change_login.php:70
+[14-Feb-2017 16:51:34 Europe/Minsk] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_login.php:35
+Stack trace:
+#0 /var/www/html/cabinet/includes/change_scripts/change_login.php(70): LoginUpdate->__construct('321321')
+#1 {main}
+  thrown in /var/www/html/cabinet/includes/change_scripts/change_login.php on line 35
+[14-Feb-2017 16:51:45 Europe/Minsk] PHP Error:  Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_login.php on line 35
+[14-Feb-2017 16:51:45 Europe/Minsk] PHP Stack trace:
+[14-Feb-2017 16:51:45 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/includes/change_scripts/change_login.php:0
+[14-Feb-2017 16:51:45 Europe/Minsk] PHP   2. LoginUpdate->__construct() /var/www/html/cabinet/includes/change_scripts/change_login.php:70
+[14-Feb-2017 16:51:45 Europe/Minsk] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_login.php:35
+Stack trace:
+#0 /var/www/html/cabinet/includes/change_scripts/change_login.php(70): LoginUpdate->__construct('321231')
+#1 {main}
+  thrown in /var/www/html/cabinet/includes/change_scripts/change_login.php on line 35
+[14-Feb-2017 16:52:43 Europe/Minsk] PHP Error:  Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_email.php on line 35
+[14-Feb-2017 16:52:43 Europe/Minsk] PHP Stack trace:
+[14-Feb-2017 16:52:43 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/includes/change_scripts/change_email.php:0
+[14-Feb-2017 16:52:43 Europe/Minsk] PHP   2. EmailUpdate->__construct() /var/www/html/cabinet/includes/change_scripts/change_email.php:70
+[14-Feb-2017 16:52:43 Europe/Minsk] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /var/www/html/cabinet/includes/change_scripts/change_email.php:35
+Stack trace:
+#0 /var/www/html/cabinet/includes/change_scripts/change_email.php(70): EmailUpdate->__construct('321312323@mail....')
+#1 {main}
+  thrown in /var/www/html/cabinet/includes/change_scripts/change_email.php on line 35
