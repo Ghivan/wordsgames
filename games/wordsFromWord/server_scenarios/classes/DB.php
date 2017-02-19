@@ -5,7 +5,7 @@ class DB
 {
     private static $dbc = null;
 
-    public static function getConnection()
+    protected static function getConnection()
     {
         if (!self::$dbc){
             self::$dbc = new PDO("mysql:host=".HOST.";dbname=".DB_NAME.";charset=UTF8", DB_USER, DB_PASSWORD);

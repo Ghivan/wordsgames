@@ -1,19 +1,13 @@
 <?php
 
-class DBDictionary
+class DBDictionary extends DB
 {
-    private $dbc = null;
-    private $queries = array(
+    private static $queries = array(
         'getDefinition' => 'SELECT `definition` FROM `dictionary` WHERE `word` = :word',
     );
 
-    function __construct()
-    {
-        $this->dbc = DB::getConnection();
-    }
-
-    public function getWordDefinition($word){
-        $stmt = $this->dbc->prepare($this->queries['getDefinition']);
+    static function getWordDefinition($word){
+        $stmt = parent::getConnection()->prepare(self::$queries['getDefinition']);
         $stmt->bindParam(':word', $word);
         if (!$stmt->execute()){
             throw new Exception(

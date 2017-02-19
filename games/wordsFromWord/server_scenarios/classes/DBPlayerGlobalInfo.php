@@ -1,22 +1,17 @@
 <?php
 
-class DBPlayerGlobalInfo
+class DBPlayerGlobalInfo extends DB
 {
-    private $dbc = null;
-    private $playerId;
-    private $queries = array(
-        'globalInfo' => 'SELECT id, login, avatar, exp, level FROM `players` WHERE `id` = :playerId'
+    private static $queries = array(
+        'globalInfo' => 'SELECT id, login, avatar, exp, level FROM `players` WHERE `id` = :playerId',
+
+        'augmentExperience' => 'UPDATE `players` SET `exp` = (`exp` + :delta) WHERE `id` = :playerId'
     );
 
-    function __construct($playerId)
-    {
-        $this->dbc = DB::getConnection();
-        $this->playerId = $playerId;
-    }
 
-    public function getGlobalInfo(){
-        $stmt = $this->dbc->prepare($this->queries['globalInfo']);
-        $stmt->bindParam(':playerId', $this->playerId);
+    static function getGlobalInfo($playerId){
+        $stmt = parent::getConnection()->prepare(self::$queries['globalInfo']);
+        $stmt->bindParam(':playerId', $playerId);
         if (!$stmt->execute()){
             throw new Exception(
                 'Ошибка запроса к базе данных. Строка '
@@ -27,5 +22,19 @@ class DBPlayerGlobalInfo
         }
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    static function augmentExperience($playerId, $delta){
+        $stmt = parent::getConnection()->prepare(self::$queries['augmentExperience']);
+        $stmt->bindParam(':playerId', $playerId);
+        $stmt->bindParam(':delta', $delta);
+        if (!$stmt->execute()){
+            throw new Exception(
+                'Ошибка запроса к базе данных. Строка '
+                . __LINE__
+                . '. SQL Error '
+                . $stmt->errorInfo()[2]
+            );
+        }
     }
 }

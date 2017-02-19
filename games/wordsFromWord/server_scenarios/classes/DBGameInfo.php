@@ -1,21 +1,21 @@
 <?php
 
-class DBGameInfo
+class DBGameInfo extends DB
 {
-    private $dbc = null;
-    private $queries = array(
+    private static $queries = array(
         'levelInfo' => 'SELECT `level`, `word`, `wordVariants`, `missionUnique` FROM `wfw_levels` WHERE `level` = :lvl',
+
+        'wordVariantsInfo' => 'SELECT `wordVariants` FROM `wfw_levels` WHERE `level` = :lvl',
+
         'levelsQuantity' => 'SELECT count(`level`) as totalNum FROM `wfw_levels`',
-        'playersRecordsTable' => 'SELECT `login`, `score` FROM `players`, `wfw_scoreTable` WHERE wfw_scoreTable.pl_id = players.id ORDER BY `score` DESC LIMIT 10'
+
+        'playersRecordsTable' => 'SELECT `login`, `score` FROM `players`, `wfw_scoreTable` WHERE wfw_scoreTable.pl_id = players.id ORDER BY `score` DESC LIMIT 10',
+
+        'uniqueMission' => 'SELECT `missionUnique` FROM `wfw_levels` WHERE `level` = :lvl'
     );
 
-    function __construct()
-    {
-        $this->dbc = DB::getConnection();
-    }
-
-    public function getGameLevelInfo($lvl){
-        $stmt = $this->dbc->prepare($this->queries['levelInfo']);
+    static function getGameLevelInfo($lvl){
+        $stmt = parent::getConnection()->prepare(self::$queries['levelInfo']);
         if (!$stmt->execute(array(
             ':lvl' => $lvl
         ))){
@@ -29,15 +29,35 @@ class DBGameInfo
 
         $result =  $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $result['missionUnique'] = json_decode($result['missionUnique']);
+        $result['missionUnique'] = json_decode($result['missionUnique'], true);
         $result['wordVariants'] = mb_split(',', $result['wordVariants']);
 
         return $result;
 
     }
 
-    public function getLevelsQuantity(){
-        $stmt = $this->dbc->prepare($this->queries['levelsQuantity']);
+    static function getWordVariantsOnLvl($lvl){
+        $stmt = parent::getConnection()->prepare(self::$queries['wordVariantsInfo']);
+        if (!$stmt->execute(array(
+            ':lvl' => $lvl
+        ))){
+            throw new Exception(
+                'Ошибка запроса к базе данных. Строка '
+                . __LINE__
+                . '. SQL Error '
+                . $stmt->errorInfo()[2]
+            );
+        }
+
+        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $result = mb_split(',', $result['wordVariants']);
+
+        return $result;
+    }
+
+    static function getLevelsQuantity(){
+        $stmt = parent::getConnection()->prepare(self::$queries['levelsQuantity']);
         if (!$stmt->execute()){
             throw new Exception(
                 'Ошибка запроса к базе данных. Строка '
@@ -52,8 +72,8 @@ class DBGameInfo
         return intval($result['totalNum']);
     }
 
-    public function getPlayersRecordsTable(){
-        $stmt = $this->dbc->prepare($this->queries['playersRecordsTable']);
+    static function getPlayersRecordsTable(){
+        $stmt = parent::getConnection()->prepare(self::$queries['playersRecordsTable']);
         if (!$stmt->execute()){
             throw new Exception(
                 'Ошибка запроса к базе данных. Строка '
@@ -71,5 +91,23 @@ class DBGameInfo
         }
 
         return $tablescore;
+    }
+
+    static function getUniqueMission($lvl){
+        $stmt = parent::getConnection()->prepare(self::$queries['uniqueMission']);
+        if (!$stmt->execute(array(
+            ':lvl' => $lvl
+        ))){
+            throw new Exception(
+                'Ошибка запроса к базе данных. Строка '
+                . __LINE__
+                . '. SQL Error '
+                . $stmt->errorInfo()[2]
+            );
+        }
+
+        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return json_decode($result['missionUnique'], true);
     }
 }
