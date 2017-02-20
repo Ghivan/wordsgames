@@ -1,10 +1,10 @@
 interface ServerAnswerInitialData{
-    login: string,
-    avatar: string,
-    level: number;
-    totalLevelsNumber: number;
-    levelsPassedNumber: number;
-    levelWord: string;
+    login: any,
+    avatar: any,
+    level: any;
+    totalLevelsNumber: any;
+    levelsPassedNumber: any;
+    levelWord: any;
     wordVariants: Array<string>;
     foundWords: Array<string>;
     score: number;

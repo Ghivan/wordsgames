@@ -103,13 +103,26 @@ WHERE pl_res.pl_id = :playerId AND pl_res.word = gm_lvl.word AND gm_lvl.level = 
 
         $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (empty($playerProgressOnLvl) && $lvl == 1){
-            self::createProgressRecordForNewLvl($playerId, 1);
-            $stmt->execute();
-            $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
-            $playerProgressOnLvl['foundWords'] = array();
-            return $playerProgressOnLvl;
+        if (empty($playerProgressOnLvl)) {
+            if ($lvl == 1) {
+                self::createProgressRecordForNewLvl($playerId, 1);
+                $stmt->execute();
+                $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+                $playerProgressOnLvl['foundWords'] = array();
+                return $playerProgressOnLvl;
+            }
+
+            $previousLvlStatus = self::checkLvlPassageStatus($playerId, $lvl -1);
+            if ($previousLvlStatus){
+                self::createProgressRecordForNewLvl($playerId, $lvl);
+                $stmt->execute();
+                $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+                $playerProgressOnLvl['foundWords'] = array();
+                return $playerProgressOnLvl;
+            }
         }
+
+
 
         if (empty($playerProgressOnLvl)) return null;
 

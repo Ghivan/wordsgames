@@ -32,7 +32,7 @@ var Model = (function () {
         this.avatar = data.avatar;
         this.level = data.level;
         this.totalLevelsNumber = data.totalLevelsNumber;
-        this.levelsPassedNumber = data.levelsPassedNumber;
+        this.levelsPassedNumber = parseInt(data.levelsPassedNumber);
         this.levelWord = data.levelWord;
         this.wordVariants = data.wordVariants;
         this.foundWords = data.foundWords;
@@ -74,6 +74,7 @@ var Model = (function () {
         var model = this;
         if (this.foundWords.indexOf(word) > -1) {
             onAlreadyFound(word);
+            return;
         }
         if (this.wordVariants.indexOf(word) > -1) {
             $.ajax({
@@ -98,6 +99,9 @@ var Model = (function () {
                 }
             });
         }
+    };
+    Model.prototype.getCurrentLevel = function () {
+        return this.level;
     };
     return Model;
 }());
@@ -156,15 +160,23 @@ var PlayerInfo = (function () {
     };
     PlayerInfo.prototype.createLevelMap = function (totalLevelsNumber, currentLevel, levelsPassedNumber) {
         this.levelButtonsContainer.html('');
-        for (var i = 0; i < totalLevelsNumber; i++) {
-            var lvl = i + 1, button = $('<a class="btn btn-info">' + (i + 1) + '</a>');
-            button.appendTo(this.levelButtonsContainer);
+        var _loop_1 = function (i) {
+            var lvl = i + 1, button = $('<a class="btn btn-info" id="lvl-btn-' + lvl + '">' + lvl + '</a>');
+            button.appendTo(this_1.levelButtonsContainer);
+            var lvlBtnClick = new CustomEvent('lvlBtnClick', { detail: lvl });
+            button.on('click', function () {
+                document.dispatchEvent(lvlBtnClick);
+            });
             if (lvl === currentLevel) {
                 button.addClass('active');
             }
-            if (lvl > levelsPassedNumber && lvl !== currentLevel) {
+            if (lvl > levelsPassedNumber + 1) {
                 button.addClass('disabled');
             }
+        };
+        var this_1 = this;
+        for (var i = 0; i < totalLevelsNumber; i++) {
+            _loop_1(i);
         }
     };
     PlayerInfo.prototype.enableTip = function (tipName) {
@@ -212,16 +224,16 @@ var Gamefield = (function () {
     };
     Gamefield.prototype.printMainWordLetters = function (mainWord) {
         this.levelMainWord.html('');
-        var _loop_1 = function (i) {
+        var _loop_2 = function (i) {
             var letter = $('<span>' + mainWord[i] + '</span>'), letterClick = new CustomEvent('letterClick', { 'detail': letter });
             letter.on('click', function () {
                 document.dispatchEvent(letterClick);
             });
-            letter.appendTo(this_1.levelMainWord);
+            letter.appendTo(this_2.levelMainWord);
         };
-        var this_1 = this;
+        var this_2 = this;
         for (var i = 0; i < mainWord.length; i++) {
-            _loop_1(i);
+            _loop_2(i);
         }
     };
     Gamefield.prototype.clearFoundWordsBox = function () {
@@ -326,6 +338,9 @@ var View = (function () {
     View.prototype.removeActiveState = function (elem) {
         elem.removeClass('active');
     };
+    View.prototype.activateLevelLink = function (lvl) {
+        $('#lvl-btn-' + lvl).removeClass('disabled');
+    };
     return View;
 }());
 var Controller = (function () {
@@ -334,6 +349,7 @@ var Controller = (function () {
         this.view = new View();
         this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this));
         $(document).on('letterClick', this.onLetterClick.bind(this));
+        $(document).on('lvlBtnClick', this.changeLevel.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
     }
     Controller.prototype.freeze = function () {
@@ -351,7 +367,14 @@ var Controller = (function () {
     };
     Controller.prototype.onError = function (message) {
         console.log(message);
+        window.location.href = '/login/';
         this.view.loader.hide();
+    };
+    Controller.prototype.changeLevel = function (e) {
+        var lvl = e.detail;
+        if (lvl != this.model.getCurrentLevel()) {
+            this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl);
+        }
     };
     Controller.prototype.setLvl = function (lvl) {
         this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl);
@@ -382,8 +405,7 @@ var Controller = (function () {
         }
     };
     Controller.prototype.onNewFoundWord = function (data) {
-        this.clearUserInput();
-        this.view.addFoundWord(data.word);
+        this.showNewFoundWord(data.word);
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
         for (var prop in data.missions) {
@@ -394,11 +416,31 @@ var Controller = (function () {
             }
         }
         if (data.lvl_status) {
-            console.log(('passed'));
+            this.view.activateLevelLink(this.model.getCurrentLevel() + 1);
         }
     };
     Controller.prototype.onAlreadyFoundWord = function (word) {
-        console.log(word);
+        var wordBox = $('#' + word);
+        wordBox.addClass('alreadyFound');
+        setTimeout(function () {
+            wordBox.removeClass('alreadyFound');
+        }, 2000);
+    };
+    Controller.prototype.showNewFoundWord = function (word) {
+        this.view.updateUserInputWord('');
+        this.model.updateUserInputWord('');
+        $('#level-main-word').children().each(function () {
+            var letter = $(this);
+            if (letter.hasClass('active')) {
+                letter.removeClass('active');
+                letter.addClass('rotate');
+                setTimeout(function () {
+                    letter.removeClass('rotate');
+                }, 2000);
+            }
+        });
+        this.view.addFoundWord(word);
+        this.onAlreadyFoundWord(word);
     };
     Controller.prototype.keyControls = function (e) {
         if (e.keyCode === 27) {

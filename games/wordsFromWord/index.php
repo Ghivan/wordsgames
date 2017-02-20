@@ -50,6 +50,8 @@ session_start();
                 </div>
 
             </div>
+            <p class="link-to-cabinet"><a href="/cabinet/">Вернуться в личный кабинет</a></p>
+
 
         </div>
         <div class="col-xs-8 col-sm-9 gamefield">

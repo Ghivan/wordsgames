@@ -264,3 +264,20 @@ body{
     width: 50px;
   }
 }
+
+.alreadyFound{
+  animation-name: alreadyFound;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes alreadyFound {
+  from {
+    background-color: $iceBlue;
+    transform: scale(1.2,1.2);
+  }
+  to {
+    background-color: transparent;
+    transform: none;
+  }
+}

@@ -61,12 +61,17 @@ class PlayerInfo{
         this.levelButtonsContainer.html('');
         for (let i = 0; i < totalLevelsNumber; i++){
             let lvl = i+1,
-                button = $('<a class="btn btn-info">' + (i+1) + '</a>');
+                button = $('<a class="btn btn-info" id="lvl-btn-' + lvl + '">' + lvl + '</a>');
             button.appendTo(this.levelButtonsContainer);
+            let lvlBtnClick = new CustomEvent('lvlBtnClick', {detail: lvl});
+            button.on('click', function () {
+               document.dispatchEvent(lvlBtnClick);
+            });
             if (lvl === currentLevel){
                 button.addClass('active');
             }
-            if (lvl > levelsPassedNumber && lvl !== currentLevel){
+
+            if (lvl > levelsPassedNumber + 1){
                 button.addClass('disabled');
             }
         }

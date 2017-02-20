@@ -84,4 +84,8 @@ class View{
     public removeActiveState(elem: JQuery){
         elem.removeClass('active');
     }
+
+    public activateLevelLink(lvl){
+        $('#lvl-btn-'+lvl).removeClass('disabled');
+    }
 }

@@ -531,3 +531,49 @@ Stack trace:
 [19-Feb-2017 23:12:01 Europe/Minsk] PHP Stack trace:
 [19-Feb-2017 23:12:01 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
 [19-Feb-2017 23:12:01 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:29
+[20-Feb-2017 21:40:28 Europe/Minsk] PHP Warning:  Illegal string offset 'curLevel' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 45
+[20-Feb-2017 21:40:28 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 21:40:28 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 21:40:28 Europe/Minsk] PHP   2. DBPlayerProgress::getLastPlayedLevel() /var/www/html/games/wordsFromWord/server_scenarios/index.php:19
+[20-Feb-2017 21:45:07 Europe/Minsk] PHP Catchable fatal error:  Object of class AddingWordChecker could not be converted to string in /var/www/html/games/wordsFromWord/server_scenarios/classes/AddingWordChecker.php on line 56
+[20-Feb-2017 21:45:07 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 21:45:07 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 21:45:07 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:33
+[20-Feb-2017 21:45:07 Europe/Minsk] PHP   3. AddingWordChecker->__construct() /var/www/html/games/wordsFromWord/server_scenarios/tasks/checkWord.php:6
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:29
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 22:27:56 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:29
+[20-Feb-2017 22:28:06 Europe/Minsk] PHP Warning:  Illegal string offset 'curLevel' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 45
+[20-Feb-2017 22:28:06 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 22:28:06 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 22:28:06 Europe/Minsk] PHP   2. DBPlayerProgress::getLastPlayedLevel() /var/www/html/games/wordsFromWord/server_scenarios/index.php:19
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP Notice:  Use of undefined constant lvl - assumed 'lvl' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 117
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:29
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP   3. DBPlayerProgress::getProgressOnLvl() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:6
+[20-Feb-2017 22:37:19 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 145. SQL Error Column 'word' cannot be null in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:143
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(117): DBPlayerProgress::createProgressRecordForNewLvl('73', 'lvl')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php(6): DBPlayerProgress::getProgressOnLvl('73', '2')
+#2 /var/www/html/games/wordsFromWord/server_scenarios/index.php(29): include_once('/var/www/html/g...')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 143
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP Notice:  Use of undefined constant lvl - assumed 'lvl' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 117
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP Stack trace:
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:29
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP   3. DBPlayerProgress::getProgressOnLvl() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:6
+[20-Feb-2017 22:37:33 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 145. SQL Error Column 'word' cannot be null in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:143
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(117): DBPlayerProgress::createProgressRecordForNewLvl('73', 'lvl')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php(6): DBPlayerProgress::getProgressOnLvl('73', '2')
+#2 /var/www/html/games/wordsFromWord/server_scenarios/index.php(29): include_once('/var/www/html/g...')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 143

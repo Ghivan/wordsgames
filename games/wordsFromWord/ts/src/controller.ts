@@ -8,6 +8,7 @@ class Controller{
         this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this));
 
         $(document).on('letterClick', this.onLetterClick.bind(this));
+        $(document).on('lvlBtnClick',this.changeLevel.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
     }
 
@@ -28,7 +29,15 @@ class Controller{
 
     private onError(message: string){
         console.log(message);
+        window.location.href = '/login/';
         this.view.loader.hide();
+    }
+
+    private changeLevel(e){
+        let lvl = e.detail;
+        if (lvl != this.model.getCurrentLevel()){
+            this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl)
+        }
     }
 
     private setLvl(lvl: number){
@@ -62,8 +71,9 @@ class Controller{
     }
 
     private onNewFoundWord(data: ServerAnswerCheckWord){
-        this.clearUserInput();
-        this.view.addFoundWord(data.word);
+
+        this.showNewFoundWord(data.word);
+
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
         for (let prop in data.missions){
@@ -75,14 +85,35 @@ class Controller{
         }
 
         if (data.lvl_status){
-            console.log(('passed'));
+            this.view.activateLevelLink(this.model.getCurrentLevel() + 1);
         }
     }
 
     private onAlreadyFoundWord(word: string){
-        console.log(word);
+        let wordBox = $('#' + word);
+        wordBox.addClass('alreadyFound');
+        setTimeout(function(){
+            wordBox.removeClass('alreadyFound');
+        }, 2000)
     }
 
+
+    private showNewFoundWord(word){
+        this.view.updateUserInputWord('');
+        this.model.updateUserInputWord('');
+        $('#level-main-word').children().each(function(){
+            let letter = $(this);
+            if (letter.hasClass('active')){
+                letter.removeClass('active');
+                letter.addClass('rotate');
+                setTimeout(function(){
+                    letter.removeClass('rotate');
+                }, 2000)
+            }
+        });
+        this.view.addFoundWord(word);
+        this.onAlreadyFoundWord(word);
+    }
 
     private keyControls(e: KeyboardEvent){
         if (e.keyCode === 27) {

@@ -48,7 +48,7 @@ class Model{
         this.avatar = data.avatar;
         this.level = data.level;
         this.totalLevelsNumber = data.totalLevelsNumber;
-        this.levelsPassedNumber = data.levelsPassedNumber;
+        this.levelsPassedNumber = parseInt(data.levelsPassedNumber);
         this.levelWord = data.levelWord;
         this.wordVariants = data.wordVariants;
         this.foundWords = data.foundWords;
@@ -93,8 +93,10 @@ class Model{
 
     public checkUserWord(word: string, onAlreadyFound: (word) => any, onNewFound:(data: ServerAnswerCheckWord)=>any){
         let model = this;
+
         if (this.foundWords.indexOf(word) > -1){
             onAlreadyFound(word);
+            return;
         }
         if (this.wordVariants.indexOf(word) > -1){
             $.ajax({
@@ -119,6 +121,10 @@ class Model{
                 }
             })
         }
+    }
+
+    public getCurrentLevel(){
+        return this.level;
     }
 
 }

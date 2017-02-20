@@ -15,7 +15,7 @@ echo json_encode(array(
     'levelsPassedNumber' => DBPlayerProgress::getPassedLvlQuantity(PLAYER_ID),
     'levelWord' => $levelInfo['word'],
     'wordVariants' => $levelInfo['wordVariants'],
-    'foundWords' => $playerProgressInfo['foundWords'],
+    'foundWords' => (empty($playerProgressInfo['foundWords'])) ? array() : $playerProgressInfo['foundWords'],
     'score' => DBPlayerProgress::getScore(PLAYER_ID),
     'missions' => array(
         1 => (boolean) $playerProgressInfo['star1status'],
