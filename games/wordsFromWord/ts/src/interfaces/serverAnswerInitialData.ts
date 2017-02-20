@@ -7,7 +7,7 @@ interface ServerAnswerInitialData{
     levelWord: any;
     wordVariants: Array<string>;
     foundWords: Array<string>;
-    score: number;
+    score: any;
     missions: {
         1: boolean,
         2: boolean,

@@ -46,13 +46,13 @@ class Model{
     public initialize(data: ServerAnswerInitialData){
         this.login = data.login;
         this.avatar = data.avatar;
-        this.level = data.level;
-        this.totalLevelsNumber = data.totalLevelsNumber;
+        this.level = parseInt(data.level);
+        this.totalLevelsNumber = parseInt(data.totalLevelsNumber);
         this.levelsPassedNumber = parseInt(data.levelsPassedNumber);
         this.levelWord = data.levelWord;
         this.wordVariants = data.wordVariants;
         this.foundWords = data.foundWords;
-        this.score = data.score;
+        this.score = parseInt(data.score);
         this.missions = data.missions;
         this.missionUnique = data.missionUnique;
     }

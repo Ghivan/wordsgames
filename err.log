@@ -577,3 +577,27 @@ Stack trace:
 #2 /var/www/html/games/wordsFromWord/server_scenarios/index.php(29): include_once('/var/www/html/g...')
 #3 {main}
   thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 143
+[21-Feb-2017 00:36:46 Europe/Minsk] PHP Warning:  Illegal string offset 'curLevel' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 45
+[21-Feb-2017 00:36:46 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 00:36:46 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 00:36:46 Europe/Minsk] PHP   2. DBPlayerProgress::getLastPlayedLevel() /var/www/html/games/wordsfromword/server_scenarios/index.php:19
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 00:39:00 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77

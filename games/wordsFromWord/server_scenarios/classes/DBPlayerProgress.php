@@ -112,6 +112,11 @@ WHERE pl_res.pl_id = :playerId AND pl_res.word = gm_lvl.word AND gm_lvl.level = 
                 return $playerProgressOnLvl;
             }
 
+            $totalLvls = DBGameInfo::getLevelsQuantity();
+            if ($lvl > $totalLvls){
+                return null;
+            }
+
             $previousLvlStatus = self::checkLvlPassageStatus($playerId, $lvl -1);
             if ($previousLvlStatus){
                 self::createProgressRecordForNewLvl($playerId, $lvl);
@@ -136,9 +141,15 @@ WHERE pl_res.pl_id = :playerId AND pl_res.word = gm_lvl.word AND gm_lvl.level = 
     }
 
     static function createProgressRecordForNewLvl($playerId, $lvl){
+        $totalLvls = DBGameInfo::getLevelsQuantity();
+        if ($lvl > $totalLvls){
+            return null;
+        }
+
         $stmt = parent::getConnection()->prepare(self::$queries['progressRecordForNewLvl']);
         $stmt->bindParam(':playerId', $playerId);
         $stmt->bindParam(':lvl', $lvl);
+
         if (!$stmt->execute()){
             throw new Exception(
                 'Ошибка запроса к базе данных. Строка '

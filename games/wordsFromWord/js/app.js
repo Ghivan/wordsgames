@@ -30,13 +30,13 @@ var Model = (function () {
     Model.prototype.initialize = function (data) {
         this.login = data.login;
         this.avatar = data.avatar;
-        this.level = data.level;
-        this.totalLevelsNumber = data.totalLevelsNumber;
+        this.level = parseInt(data.level);
+        this.totalLevelsNumber = parseInt(data.totalLevelsNumber);
         this.levelsPassedNumber = parseInt(data.levelsPassedNumber);
         this.levelWord = data.levelWord;
         this.wordVariants = data.wordVariants;
         this.foundWords = data.foundWords;
-        this.score = data.score;
+        this.score = parseInt(data.score);
         this.missions = data.missions;
         this.missionUnique = data.missionUnique;
     };
@@ -239,8 +239,77 @@ var Gamefield = (function () {
     Gamefield.prototype.clearFoundWordsBox = function () {
         this.userFoundWordsBox.html('');
     };
-    Gamefield.prototype.addFoundWord = function (wordBox) {
-        wordBox.appendTo(this.userFoundWordsBox);
+    Gamefield.prototype.addFoundWord = function (newWord) {
+        var value = newWord.text().toLowerCase(), containerId = 'container-per-word-length-' + value.length, container = $('#' + containerId);
+        console.log('To insert: ', value);
+        if (container.length === 0) {
+            container = this.createSubContainer(containerId);
+        }
+        console.log('Container: ', container);
+        var wordToInsertBefore = null, existingWordsCollection = container.children();
+        if (existingWordsCollection.length === 0) {
+            newWord.appendTo(container);
+            console.log('Inserted to: ', container);
+            console.log('----------');
+            return;
+        }
+        for (var i = 0; i < existingWordsCollection.length; i++) {
+            if (existingWordsCollection[i].id.toLowerCase() > value) {
+                wordToInsertBefore = existingWordsCollection[i];
+                break;
+            }
+        }
+        if (wordToInsertBefore === null) {
+            newWord.appendTo(container);
+            console.log('Inserted to: ', container, 'on first position');
+            console.log('----------');
+        }
+        else {
+            newWord.insertBefore(wordToInsertBefore);
+            console.log('Inserted to: ', container, 'Before: ', wordToInsertBefore);
+            console.log('Inserted to: ', container, 'on first position');
+            console.log('----------');
+        }
+    };
+    Gamefield.prototype.createSubContainer = function (containerId) {
+        var container = $('<div id="' + containerId + '"></div>'), containerToIntsertBefore = null, userFoundWordsBox = this.userFoundWordsBox, collection = userFoundWordsBox.children('[id^=container-per-word-length-]'), newContainerWordsLength = parseInt(containerId.match(/\d/)[0]);
+        if (collection.length === 0) {
+            container.appendTo(userFoundWordsBox);
+        }
+        else {
+            for (var i = 0; i < collection.length; i++) {
+                var existingContainerWordsLength = parseInt(collection[i].id.match(/\d/)[0]);
+                if (existingContainerWordsLength > newContainerWordsLength) {
+                    containerToIntsertBefore = collection[i];
+                    break;
+                }
+            }
+            if (containerToIntsertBefore === null) {
+                container.appendTo(userFoundWordsBox);
+            }
+            else {
+                container.insertBefore($(containerToIntsertBefore).prev('label'));
+            }
+        }
+        var label;
+        if (newContainerWordsLength % 100 >= 11 && newContainerWordsLength % 100 <= 20) {
+            label = ' букв';
+        }
+        else if (newContainerWordsLength % 10 >= 5 || newContainerWordsLength % 10 === 0) {
+            label = ' букв';
+        }
+        else {
+            if (newContainerWordsLength % 10 >= 2) {
+                label = ' буквы';
+            }
+            else {
+                if (newContainerWordsLength % 10 === 1) {
+                    label = ' буква';
+                }
+            }
+        }
+        container.before('<label class="found-words-subcontainer-label">' + newContainerWordsLength + label + '</label>');
+        return container;
     };
     Gamefield.prototype.setUniqueMissionTitle = function (mission) {
         for (var letter in mission) {

@@ -13,5 +13,14 @@
             <input id="checkWord" type="radio" name="action" value="checkWord"> checkWord
         </label>
     </div>
+
+    <div>
+        <label for="createRecord">
+            CreateRecord: <input id="createRecord" type="text" name="createRecord" >
+        </label>
+        <label for="actionCreate">
+            <input id="actionCreate" type="radio" name="action" value="createRecord"> createRecord
+        </label>
+    </div>
     <button type="submit">Submit</button>
 </form>
