@@ -52,19 +52,15 @@ class Gamefield{
             containerId = 'container-per-word-length-' + value.length,
             container = $('#' + containerId);
 
-        console.log('To insert: ', value);
         if (container.length === 0) {
             container = this.createSubContainer(containerId);
         }
 
-        console.log('Container: ', container);
         let wordToInsertBefore = null,
             existingWordsCollection = container.children();
 
         if (existingWordsCollection.length === 0){
             newWord.appendTo(container);
-            console.log('Inserted to: ', container);
-            console.log( '----------');
             return;
         }
 
@@ -77,13 +73,8 @@ class Gamefield{
 
         if (wordToInsertBefore === null){
             newWord.appendTo(container);
-            console.log('Inserted to: ', container, 'on first position');
-            console.log( '----------');
         } else{
             newWord.insertBefore(wordToInsertBefore);
-            console.log('Inserted to: ', container, 'Before: ', wordToInsertBefore);
-            console.log('Inserted to: ', container, 'on first position');
-            console.log( '----------');
         }
     }
 

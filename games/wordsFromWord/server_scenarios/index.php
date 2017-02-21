@@ -35,4 +35,8 @@ if ($_POST['action'] === 'checkWord'){
     include_once 'tasks/checkWord.php';
 }
 
+if ($_POST['action'] === 'getWordDefinition'){
+    include_once 'tasks/getWordDefinition.php';
+}
+
 

@@ -116,11 +116,11 @@ class AddingWordChecker
                 $points *= 1.1;
                 $experience *= 2;
                 break;
-            case ($wordLength <= 7):
+            case (($wordLength > 5) && ($wordLength <= 7)):
                 $points *= 1.2;
                 $experience *= 3;
                 break;
-            case ($wordLength <= 9):
+            case (($wordLength > 7) && ($wordLength <= 9)):
                 $points *= 1.3;
                 $experience *= 4;
                 break;

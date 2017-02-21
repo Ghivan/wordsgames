@@ -68,7 +68,11 @@ class View{
     }
 
     public addFoundWord(word:string): JQuery{
-        let wordBox = $('<div class="found-word" id="' + word + '">' + word + '</div>');
+        let wordBox = $('<div class="found-word" title="Показать определение" id="' + word + '">' + word + '</div>'),
+            onFoundWordClick = new CustomEvent('foundWordClick', {detail: word});
+        wordBox.on('click', function () {
+            document.dispatchEvent(onFoundWordClick);
+        });
         this.gamefield.addFoundWord(wordBox);
         return wordBox;
     }
@@ -87,5 +91,23 @@ class View{
 
     public activateLevelLink(lvl){
         $('#lvl-btn-'+lvl).removeClass('disabled');
+    }
+
+    public showMessageInModalBox(header: string, message: string){
+        $('#message-modal-header').text(header.toUpperCase());
+        $('#message-modal-content').text(message);
+        $('#message-modal-box').modal('show');
+    }
+
+    public showFloatMessage(message:string){
+        let alertBox = $('<div id="float-message" class="alert alert-success fade in"></div>');
+        alertBox.html(message);
+        alertBox.appendTo('.gamefield');
+        alertBox.css('top', $(document).scrollTop() + 20 + 'px');
+
+
+        setTimeout(function () {
+            $("#float-message").alert('close');
+        }, 2000);
     }
 }

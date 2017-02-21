@@ -66,9 +66,37 @@ session_start();
             <div id="user-found-words-box" class="row"></div>
         </div>
     </div>
+    <!--окно сообщений-->
+    <div id="message-modal-box" class="modal fade">
+
+        <!-- Модальное окно -->
+        <div class="modal-dialog">
+
+            <!--Все содержимое модального окна -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="message-modal-header"></h4>
+                </div>
+
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+
+                    <p id="message-modal-content"></p>
+
+                </div>
+
+            </div>
+            <!--Конец всего содержимого модального окна -->
+
+        </div>
+        <!--Конец модального окна -->
+
+    </div>
+    <!--Конец окно сообщений-->
 </div>
 </body>
 </html>
 <script src="/_libraries/jquery-3.1.1.min.js"></script>
 <script src="/_libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/app.js"></script>
+<script src="js/app.js?ver=4.2"></script>

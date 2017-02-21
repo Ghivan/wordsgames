@@ -9,6 +9,7 @@ class Controller{
 
         $(document).on('letterClick', this.onLetterClick.bind(this));
         $(document).on('lvlBtnClick',this.changeLevel.bind(this));
+        $(document).on('foundWordClick',this.getWordDefinition.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
     }
 
@@ -19,6 +20,12 @@ class Controller{
                 context.freezeState = false;
             }, 200)
         })(this);
+    }
+
+    private getWordDefinition(e: CustomEventInit){
+        if (this.freezeState) return;
+        this.freeze();
+        this.model.getWordDefinition(e.detail, this.view.showMessageInModalBox);
     }
 
     private onReceiveInitialData(){
@@ -71,6 +78,8 @@ class Controller{
     }
 
     private onNewFoundWord(data: ServerAnswerCheckWord){
+        let message = 'Заработано опыта -&nbsp;' + data.experience +
+            ', очков -&nbsp;' + data.points + '.<br>';
 
         this.showNewFoundWord(data.word);
 
@@ -78,15 +87,21 @@ class Controller{
         this.view.updateScore(data.score);
         for (let prop in data.missions){
             if (data.missions.hasOwnProperty(prop)){
-               if (data.missions[prop]){
-                   this.view.showCompleteMissionStateIcon(parseInt(prop.match(/\d/)[0]));
-               }
+                if (data.missions[prop]){
+                    let missionNumber = parseInt(prop.match(/\d/)[0]);
+                    this.view.showCompleteMissionStateIcon(missionNumber);
+                    message += 'Выполнена ' + missionNumber + '-я миссия.<br>';
+                }
             }
         }
 
         if (data.lvl_status){
-            this.view.activateLevelLink(this.model.getCurrentLevel() + 1);
+            let nextLevel = this.model.getCurrentLevel() + 1;
+            this.view.activateLevelLink(nextLevel);
+            message += 'Открыт ' + nextLevel + '-й уровень.';
         }
+
+        this.view.showFloatMessage(message);
     }
 
     private onAlreadyFoundWord(word: string){
@@ -117,7 +132,7 @@ class Controller{
 
     private keyControls(e: KeyboardEvent){
         if (e.keyCode === 27) {
-           this.clearUserInput();
+            this.clearUserInput();
         }
 
         if (e.keyCode === 8) {

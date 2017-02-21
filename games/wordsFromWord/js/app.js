@@ -5,6 +5,7 @@ var Model = (function () {
             wordDefinition: 50
         };
         this.userWord = '';
+        this.dictionary = {};
         var that = this;
         $.ajax({
             url: 'server_scenarios/index.php',
@@ -88,12 +89,18 @@ var Model = (function () {
                     if (data.state) {
                         model.score = data.score;
                         model.foundWords = data.foundWords;
+                        var level_status = false;
+                        if ((data.lvl_status) && (model.totalLevelsNumber >= (model.level + 1))) {
+                            level_status = true;
+                        }
                         onNewFound({
                             word: data.word,
                             score: data.score,
+                            experience: data.experience,
+                            points: data.points,
                             missions: data.missions,
                             foundWordsNumber: data.foundWords.length,
-                            lvl_status: data.lvl_status || false
+                            lvl_status: level_status
                         });
                     }
                 }
@@ -102,6 +109,30 @@ var Model = (function () {
     };
     Model.prototype.getCurrentLevel = function () {
         return this.level;
+    };
+    Model.prototype.getWordDefinition = function (word, success) {
+        var model = this;
+        if (this.dictionary[word]) {
+            success(word, this.dictionary[word]);
+            return;
+        }
+        $.ajax({
+            url: 'server_scenarios/index.php',
+            type: 'post',
+            data: {
+                'action': 'getWordDefinition',
+                'word': word
+            },
+            success: function (data) {
+                if (data.state) {
+                    model.dictionary[word] = data.definition;
+                    success(word, data.definition);
+                }
+                else {
+                    console.warn('Word does not exist!');
+                }
+            }
+        });
     };
     return Model;
 }());
@@ -241,16 +272,12 @@ var Gamefield = (function () {
     };
     Gamefield.prototype.addFoundWord = function (newWord) {
         var value = newWord.text().toLowerCase(), containerId = 'container-per-word-length-' + value.length, container = $('#' + containerId);
-        console.log('To insert: ', value);
         if (container.length === 0) {
             container = this.createSubContainer(containerId);
         }
-        console.log('Container: ', container);
         var wordToInsertBefore = null, existingWordsCollection = container.children();
         if (existingWordsCollection.length === 0) {
             newWord.appendTo(container);
-            console.log('Inserted to: ', container);
-            console.log('----------');
             return;
         }
         for (var i = 0; i < existingWordsCollection.length; i++) {
@@ -261,14 +288,9 @@ var Gamefield = (function () {
         }
         if (wordToInsertBefore === null) {
             newWord.appendTo(container);
-            console.log('Inserted to: ', container, 'on first position');
-            console.log('----------');
         }
         else {
             newWord.insertBefore(wordToInsertBefore);
-            console.log('Inserted to: ', container, 'Before: ', wordToInsertBefore);
-            console.log('Inserted to: ', container, 'on first position');
-            console.log('----------');
         }
     };
     Gamefield.prototype.createSubContainer = function (containerId) {
@@ -394,7 +416,10 @@ var View = (function () {
         }
     };
     View.prototype.addFoundWord = function (word) {
-        var wordBox = $('<div class="found-word" id="' + word + '">' + word + '</div>');
+        var wordBox = $('<div class="found-word" title="Показать определение" id="' + word + '">' + word + '</div>'), onFoundWordClick = new CustomEvent('foundWordClick', { detail: word });
+        wordBox.on('click', function () {
+            document.dispatchEvent(onFoundWordClick);
+        });
         this.gamefield.addFoundWord(wordBox);
         return wordBox;
     };
@@ -410,6 +435,20 @@ var View = (function () {
     View.prototype.activateLevelLink = function (lvl) {
         $('#lvl-btn-' + lvl).removeClass('disabled');
     };
+    View.prototype.showMessageInModalBox = function (header, message) {
+        $('#message-modal-header').text(header.toUpperCase());
+        $('#message-modal-content').text(message);
+        $('#message-modal-box').modal('show');
+    };
+    View.prototype.showFloatMessage = function (message) {
+        var alertBox = $('<div id="float-message" class="alert alert-success fade in"></div>');
+        alertBox.html(message);
+        alertBox.appendTo('.gamefield');
+        alertBox.css('top', $(document).scrollTop() + 20 + 'px');
+        setTimeout(function () {
+            $("#float-message").alert('close');
+        }, 2000);
+    };
     return View;
 }());
 var Controller = (function () {
@@ -419,6 +458,7 @@ var Controller = (function () {
         this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this));
         $(document).on('letterClick', this.onLetterClick.bind(this));
         $(document).on('lvlBtnClick', this.changeLevel.bind(this));
+        $(document).on('foundWordClick', this.getWordDefinition.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
     }
     Controller.prototype.freeze = function () {
@@ -428,6 +468,12 @@ var Controller = (function () {
                 context.freezeState = false;
             }, 200);
         })(this);
+    };
+    Controller.prototype.getWordDefinition = function (e) {
+        if (this.freezeState)
+            return;
+        this.freeze();
+        this.model.getWordDefinition(e.detail, this.view.showMessageInModalBox);
     };
     Controller.prototype.onReceiveInitialData = function () {
         this.view.initializePlayerInfoBox(this.model.getUserInfoData());
@@ -474,19 +520,26 @@ var Controller = (function () {
         }
     };
     Controller.prototype.onNewFoundWord = function (data) {
+        var message = 'Заработано опыта -&nbsp;' + data.experience +
+            ', очков -&nbsp;' + data.points + '.<br>';
         this.showNewFoundWord(data.word);
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
         for (var prop in data.missions) {
             if (data.missions.hasOwnProperty(prop)) {
                 if (data.missions[prop]) {
-                    this.view.showCompleteMissionStateIcon(parseInt(prop.match(/\d/)[0]));
+                    var missionNumber = parseInt(prop.match(/\d/)[0]);
+                    this.view.showCompleteMissionStateIcon(missionNumber);
+                    message += 'Выполнена ' + missionNumber + '-я миссия.<br>';
                 }
             }
         }
         if (data.lvl_status) {
-            this.view.activateLevelLink(this.model.getCurrentLevel() + 1);
+            var nextLevel = this.model.getCurrentLevel() + 1;
+            this.view.activateLevelLink(nextLevel);
+            message += 'Открыт ' + nextLevel + '-й уровень.';
         }
+        this.view.showFloatMessage(message);
     };
     Controller.prototype.onAlreadyFoundWord = function (word) {
         var wordBox = $('#' + word);

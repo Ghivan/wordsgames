@@ -217,6 +217,7 @@ body{
     padding: 15px;
     .found-word{
       text-transform: uppercase;
+      cursor: pointer;
       padding: 5px;
       margin: 5px;
       border: 1px solid black;
@@ -286,4 +287,13 @@ body{
   width: 100%;
   margin-bottom: 0;
   margin-top: 10px;
+}
+
+#float-message{
+  position: absolute;
+  width: 36%;
+  border-radius: 10em;
+  left: 32%;
+  top: 10vh;
+  text-align: center;
 }

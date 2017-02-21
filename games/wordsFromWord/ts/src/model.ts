@@ -19,6 +19,7 @@ class Model{
         3: boolean
     };
     private missionUnique;
+    private dictionary = {};
 
     constructor(success: ()=> any, error: (message: string)=>any, lvl?: number){
         let that = this;
@@ -110,13 +111,20 @@ class Model{
                     if (data.state){
                         model.score = data.score;
                         model.foundWords = data.foundWords;
+                        let level_status = false;
+                        if ((data.lvl_status) && (model.totalLevelsNumber >= (model.level + 1))){
+                            level_status = true;
+                        }
+
                         onNewFound({
                             word: data.word,
                             score: data.score,
+                            experience: data.experience,
+                            points: data.points,
                             missions: data.missions,
                             foundWordsNumber: data.foundWords.length,
-                            lvl_status: data.lvl_status || false
-                        });
+                            lvl_status: level_status
+                    });
                     }
                 }
             })
@@ -125,6 +133,30 @@ class Model{
 
     public getCurrentLevel(){
         return this.level;
+    }
+
+    public getWordDefinition(word: string, success: (header: string, definition: string) => any){
+        let model = this;
+        if (this.dictionary[word]){
+            success(word, this.dictionary[word]);
+            return
+        }
+        $.ajax({
+            url: 'server_scenarios/index.php',
+            type: 'post',
+            data: {
+                'action': 'getWordDefinition',
+                'word' : word
+            },
+            success: function (data) {
+                if (data.state){
+                    model.dictionary[word] = data.definition;
+                    success(word, data.definition);
+                } else {
+                    console.warn('Word does not exist!');
+                }
+            }
+        })
     }
 
 }

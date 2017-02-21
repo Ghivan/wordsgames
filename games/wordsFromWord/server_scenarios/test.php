@@ -22,5 +22,13 @@
             <input id="actionCreate" type="radio" name="action" value="createRecord"> createRecord
         </label>
     </div>
+    <div>
+        <label for="wordDefinition">
+            getDefinition: <input id="wordDefinition" type="text" name="word" >
+        </label>
+        <label for="getDefinition">
+            <input id="getDefinition" type="radio" name="action" value="getWordDefinition"> getDefinition
+        </label>
+    </div>
     <button type="submit">Submit</button>
 </form>
