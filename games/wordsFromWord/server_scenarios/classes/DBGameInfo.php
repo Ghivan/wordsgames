@@ -15,99 +15,95 @@ class DBGameInfo extends DB
     );
 
     static function getGameLevelInfo($lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['levelInfo']);
-        if (!$stmt->execute(array(
-            ':lvl' => $lvl
-        ))){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['levelInfo']);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString, __LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (уровень: ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+            $result['missionUnique'] = json_decode($result['missionUnique'], true);
+            $result['wordVariants'] = mb_split(',', $result['wordVariants']);
+            return $result;
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return null;
         }
-
-        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $result['missionUnique'] = json_decode($result['missionUnique'], true);
-        $result['wordVariants'] = mb_split(',', $result['wordVariants']);
-
-        return $result;
-
     }
 
     static function getWordVariantsOnLvl($lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['wordVariantsInfo']);
-        if (!$stmt->execute(array(
-            ':lvl' => $lvl
-        ))){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['wordVariantsInfo']);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString, __LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (уровень: ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = mb_split(',', $result['wordVariants']);
+            return $result;
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return array();
         }
-
-        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $result = mb_split(',', $result['wordVariants']);
-
-        return $result;
     }
 
     static function getLevelsQuantity(){
-        $stmt = parent::getConnection()->prepare(self::$queries['levelsQuantity']);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['levelsQuantity']);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (получение количества уровней)';
+                throw new Exception($message);
+            }
+            $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+            return intval($result['totalNum']);
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return null;
         }
 
-        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return intval($result['totalNum']);
     }
 
     static function getPlayersRecordsTable(){
-        $stmt = parent::getConnection()->prepare(self::$queries['playersRecordsTable']);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['playersRecordsTable']);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (получение таблицы рекордов)';
+                throw new Exception($message);
+            }
+
+            $result =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $tablescore = array();
+            foreach ($result as $record){
+                $tablescore[$record['login']] = $record['score'];
+            }
+            return $tablescore;
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return array();
         }
-
-        $result =  $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $tablescore = array();
-        foreach ($result as $record){
-            $tablescore[$record['login']] = $record['score'];
-        }
-
-        return $tablescore;
     }
 
     static function getUniqueMission($lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['uniqueMission']);
-        if (!$stmt->execute(array(
-            ':lvl' => $lvl
-        ))){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['uniqueMission']);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(),$stmt->queryString, __LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (уровень: ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            $result =  $stmt->fetch(PDO::FETCH_ASSOC);
+            return json_decode($result['missionUnique'], true);
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return null;
         }
 
-        $result =  $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return json_decode($result['missionUnique'], true);
     }
 }

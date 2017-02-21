@@ -29,236 +29,276 @@ WHERE pl_res.pl_id = :playerId AND pl_res.word = gm_lvl.word AND gm_lvl.level = 
     );
 
     static function getLastPlayedLevel($playerId){
-        $stmt = parent::getConnection()->prepare(self::$queries['maxPlayedLevel']);
-        $stmt->bindParam(':playerId', $playerId);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
-        }
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $result = $result['curLevel'];
-        if ($result !== null){
-            $curLevel = intval($result['curLevel']);
-        } else {
-            self::createNewScoreList($playerId);
-            self::createProgressRecordForNewLvl($playerId,1);
-            $curLevel = 1;
-        }
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['maxPlayedLevel']);
+            $stmt->bindParam(':playerId', $playerId);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                throw new Exception($message);
+            }
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = $result['curLevel'];
 
-        return $curLevel;
+            if ($result !== null){
+                $curLevel = intval($result);
+            } else {
+                self::createNewScoreList($playerId);
+                self::createProgressRecordForNewLvl($playerId,1);
+                $curLevel = 1;
+            }
+            return $curLevel;
+
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return null;
+        }
     }
 
     static function getScore($playerId){
-        $stmt = parent::getConnection()->prepare(self::$queries['scoreInfo']);
-        $stmt->bindParam(':playerId', $playerId);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try{
+            $stmt = parent::getConnection()->prepare(self::$queries['scoreInfo']);
+            $stmt->bindParam(':playerId', $playerId);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                throw new Exception($message);
+            }
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!empty($result)){
+                $userScore = intval($result['score']);
+            } else {
+                self::createNewScoreList($playerId);
+                if (!$stmt->execute()){
+                    ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                    $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                    throw new Exception($message);
+                }
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $userScore = intval($result['score']);
+            }
+            return $userScore;
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!empty($result)){
-            $userScore = intval($result['score']);
-        } else {
-           self::createNewScoreList($playerId);
-           $stmt->execute();
-           $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            $userScore = intval($result['score']);
-        }
-        return $userScore;
     }
 
     private static function createNewScoreList($playerId){
-        $stmt = parent::getConnection()->prepare(self::$queries['newScoreList']);
-        $stmt->bindParam(':playerId', $playerId);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['newScoreList']);
+            $stmt->bindParam(':playerId', $playerId);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(),$stmt->queryString, __LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                throw new Exception($message);
+            }
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
     }
 
     static function getProgressOnLvl($playerId, $lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['progressOnLvl']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
-        }
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['progressOnLvl']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
 
-        $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                throw new Exception($message);
+            }
 
-        if (empty($playerProgressOnLvl)) {
-            if ($lvl == 1) {
-                self::createProgressRecordForNewLvl($playerId, 1);
-                $stmt->execute();
-                $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+            $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (empty($playerProgressOnLvl)) {
+                if ($lvl == 1) {
+                    self::createProgressRecordForNewLvl($playerId, 1);
+                    if (!$stmt->execute()){
+                        ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                        $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                        throw new Exception($message);
+                    }
+                    $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $playerProgressOnLvl['foundWords'] = array();
+                    return $playerProgressOnLvl;
+                }
+
+                $totalLvls = DBGameInfo::getLevelsQuantity();
+                if ($lvl > $totalLvls){
+                    return null;
+                }
+
+                $previousLvlStatus = self::checkLvlPassageStatus($playerId, $lvl -1);
+                if ($previousLvlStatus){
+                    self::createProgressRecordForNewLvl($playerId, $lvl);
+                    if (!$stmt->execute()){
+                        ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                        $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                        throw new Exception($message);
+                    }
+                    $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $playerProgressOnLvl['foundWords'] = array();
+                    return $playerProgressOnLvl;
+                }
+            }
+
+            if (empty($playerProgressOnLvl)) return null;
+
+            if (empty($playerProgressOnLvl['foundWords'])){
                 $playerProgressOnLvl['foundWords'] = array();
-                return $playerProgressOnLvl;
+            } else {
+                $playerProgressOnLvl['foundWords'] = json_decode($playerProgressOnLvl['foundWords']);
             }
-
-            $totalLvls = DBGameInfo::getLevelsQuantity();
-            if ($lvl > $totalLvls){
-                return null;
-            }
-
-            $previousLvlStatus = self::checkLvlPassageStatus($playerId, $lvl -1);
-            if ($previousLvlStatus){
-                self::createProgressRecordForNewLvl($playerId, $lvl);
-                $stmt->execute();
-                $playerProgressOnLvl = $stmt->fetch(PDO::FETCH_ASSOC);
-                $playerProgressOnLvl['foundWords'] = array();
-                return $playerProgressOnLvl;
-            }
+            return $playerProgressOnLvl;
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
-
-
-
-        if (empty($playerProgressOnLvl)) return null;
-
-        if (empty($playerProgressOnLvl['foundWords'])){
-            $playerProgressOnLvl['foundWords'] = array();
-        } else {
-            $playerProgressOnLvl['foundWords'] = json_decode($playerProgressOnLvl['foundWords']);
-        }
-
-        return $playerProgressOnLvl;
     }
 
     static function createProgressRecordForNewLvl($playerId, $lvl){
-        $totalLvls = DBGameInfo::getLevelsQuantity();
-        if ($lvl > $totalLvls){
-            return null;
+        try{
+            $totalLvls = DBGameInfo::getLevelsQuantity();
+            if ($lvl > $totalLvls){
+                return false;
+            }
+
+            $stmt = parent::getConnection()->prepare(self::$queries['progressRecordForNewLvl']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
+
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            return true;
+
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return false;
         }
 
-        $stmt = parent::getConnection()->prepare(self::$queries['progressRecordForNewLvl']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
-        }
     }
 
     static function checkLvlPassageStatus($playerId, $lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['levelPassageStatus']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['levelPassageStatus']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (empty($result)) return false;
+            return ($result['lvl_status']) ? true : false;
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return false;
         }
 
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (empty($result)) return false;
-
-        return ($result['lvl_status']) ? true : false;
     }
 
     static function getPassedLvlQuantity($playerId){
-        $stmt = parent::getConnection()->prepare(self::$queries['levelPassedQuantity']);
-        $stmt->bindParam(':playerId', $playerId);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['levelPassedQuantity']);
+            $stmt->bindParam(':playerId', $playerId);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                throw new Exception($message);
+            }
+
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (empty($result)) return null;
+
+            return $result['quantity'];
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
 
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (empty($result)) return null;
-
-        return $result['quantity'];
     }
 
     static function updateFoundWords($playerId, $lvl, array $foundWords){
-        $stmt = parent::getConnection()->prepare(self::$queries['updateFoundWords']);
-        $foundWords = json_encode($foundWords);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-        $stmt->bindParam(':foundWords', $foundWords);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['updateFoundWords']);
+            $foundWords = json_encode($foundWords);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
+            $stmt->bindParam(':foundWords', $foundWords);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')' . ' Отгаданные слова: ' . json_encode($foundWords);
+                throw new Exception($message);
+            }
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
+
     }
 
     static function augmentScore($playerId, $delta){
-        $stmt = parent::getConnection()->prepare(self::$queries['augmentScore']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':delta', $delta);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try{
+            $stmt = parent::getConnection()->prepare(self::$queries['augmentScore']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':delta', $delta);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', изменение очков: '. $delta . ')';
+                throw new Exception($message);
+            }
+            return true;
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return false;
         }
     }
 
     static function setCompleteStatusOnMission($playerId, $lvl,  int $missionNumber){
-        if (($missionNumber > 3) || ($missionNumber < 1)) return;
-        $star = 'star'.$missionNumber.'status';
-        $query = str_replace('{{}}', $star, self::$queries['completeMission']);
-        $stmt = parent::getConnection()->prepare($query);
+        try {
+            if (($missionNumber > 3) || ($missionNumber < 1)) return false;
 
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-        if (!$stmt->execute()){
-            var_dump($stmt->queryString);
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+            $star = 'star'.$missionNumber.'status';
+            $query = str_replace('{{}}', $star, self::$queries['completeMission']);
+
+            $stmt = parent::getConnection()->prepare($query);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')' . ' Номер миссии: ' . $missionNumber;
+                throw new Exception($message);
+            }
+            return true;
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return false;
         }
+
     }
 
     static function completeLevel($playerId, $lvl){
-        $stmt = parent::getConnection()->prepare(self::$queries['completeLvl']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':lvl', $lvl);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['completeLvl']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':lvl', $lvl);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', уровень ' . $lvl . ')';
+                throw new Exception($message);
+            }
+            return true;
+        } catch (Throwable $e) {
+            ErrorLogger::logException($e);
+            return false;
         }
+
     }
 }

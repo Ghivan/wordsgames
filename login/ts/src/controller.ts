@@ -197,9 +197,6 @@ class Controller{
         this.view.hideError(context);
         this.model.removeErrors(input);
 
-        console.log(input);
-        console.log(checking);
-
         if (!checking.state){
             this.view.showError(context, checking.message);
             this.model.addError(input, checking.message)

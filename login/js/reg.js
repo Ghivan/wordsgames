@@ -451,8 +451,6 @@ var Controller = (function () {
         var input = context.field, checking = this.model.checkInput(context.field, this.view[context.pane].getInputVal(input));
         this.view.hideError(context);
         this.model.removeErrors(input);
-        console.log(input);
-        console.log(checking);
         if (!checking.state) {
             this.view.showError(context, checking.message);
             this.model.addError(input, checking.message);

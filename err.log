@@ -629,3 +629,381 @@ Stack trace:
 [21-Feb-2017 08:14:20 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
 [21-Feb-2017 08:14:20 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
 [21-Feb-2017 08:14:20 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 14:30:08 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 14:30:09 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 14:36:02 Europe/Minsk] PHP Warning:  Illegal string offset 'curLevel' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 46
+[21-Feb-2017 14:36:02 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:36:02 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:36:02 Europe/Minsk] PHP   2. DBPlayerProgress::getLastPlayedLevel() /var/www/html/games/wordsFromWord/server_scenarios/index.php:20
+[21-Feb-2017 14:51:06 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:06 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:06 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:06 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:06 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:07 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:07 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:07 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:07 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:11 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:12 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:13 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:13 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:13 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:13 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:13 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:14 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:14 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:14 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:14 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:15 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:16 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:17 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:18 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:19 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:20 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Notice:  Undefined index: wordVariants in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 33
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   3. DBGameInfo::getGameLevelInfo() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php:7
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Notice:  Undefined index: word in /var/www/html/games/wordsFromWord/server_scenarios/tasks/getInitialInfo.php on line 16
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 14:51:21 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:31
+[21-Feb-2017 14:55:04 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 88. SQL Error Duplicate entry '83' for key 'PRIMARY' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:86
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(48): DBPlayerProgress::createNewScoreList('83')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(20): DBPlayerProgress::getLastPlayedLevel('83')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 86
+[21-Feb-2017 14:55:06 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 88. SQL Error Duplicate entry '83' for key 'PRIMARY' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:86
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(48): DBPlayerProgress::createNewScoreList('83')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(20): DBPlayerProgress::getLastPlayedLevel('83')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 86
+[21-Feb-2017 14:55:07 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 88. SQL Error Duplicate entry '83' for key 'PRIMARY' in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:86
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(48): DBPlayerProgress::createNewScoreList('83')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(20): DBPlayerProgress::getLastPlayedLevel('83')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 86
+[21-Feb-2017 15:08:28 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных. Строка 162. SQL Error Cannot add or update a child row: a foreign key constraint fails (`wordsgames`.`wfw_levelsPassed`, CONSTRAINT `wfw_levelsPassed_ibfk_1` FOREIGN KEY (`pl_id`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:160
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(114): DBPlayerProgress::createProgressRecordForNewLvl('1', '1')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(51): DBPlayerProgress::getProgressOnLvl('1', '1')
+#2 /var/www/html/games/wordsFromWord/server_scenarios/index.php(20): DBPlayerProgress::getLastPlayedLevel('83')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php on line 160
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 16
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:16
+[21-Feb-2017 15:29:36 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487680176) at position 8 (7): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:17
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(17): DateTime->__construct('1487680176')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 17
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 25
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:25
+[21-Feb-2017 15:43:54 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487681034) at position 8 (3): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:26
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(26): DateTime->__construct('1487681034')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 26
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 25
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:25
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 26
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:26
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 27
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:27
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 28
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:28
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Notice:  Undefined offset: 3 in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 29
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  file_put_contents(errors/db_error_log.txt): failed to open stream: No such file or directory in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 29
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   4. file_put_contents() /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:29
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:26) in /var/www/html/games/wordsfromword/server_scenarios/index.php on line 9
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:47:15 Europe/Minsk] PHP   2. header() /var/www/html/games/wordsfromword/server_scenarios/index.php:9
+[21-Feb-2017 15:49:02 Europe/Minsk] PHP Notice:  Undefined offset: 3 in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 29
+[21-Feb-2017 15:49:02 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 15:49:02 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 15:49:02 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 15:49:02 Europe/Minsk] PHP   3. ErrorLogger::logFailedDBRequest() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:150
+[21-Feb-2017 15:51:37 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487681497) at position 8 (9): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:36
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(36): DateTime->__construct('1487681497')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 36
+[21-Feb-2017 15:51:42 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487681502) at position 8 (0): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:36
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(36): DateTime->__construct('1487681502')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 36
+[21-Feb-2017 15:51:42 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487681502) at position 8 (0): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:36
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(36): DateTime->__construct('1487681502')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 36
+[21-Feb-2017 15:51:43 Europe/Minsk] PHP Fatal error:  Uncaught Exception: DateTime::__construct(): Failed to parse time string (1487681503) at position 8 (0): Unexpected character in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php:36
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php(36): DateTime->__construct('1487681503')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php(150): ErrorLogger::logFailedDBRequest(Array)
+#2 /var/www/html/games/wordsfromword/server_scenarios/index.php(7): DBPlayerProgress::createProgressRecordForNewLvl('73', '1')
+#3 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 36
+[21-Feb-2017 19:37:15 Europe/Minsk] PHP Notice:  Array to string conversion in /var/www/html/games/wordsFromWord/server_scenarios/classes/ErrorLogger.php on line 26
+[21-Feb-2017 19:37:15 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 19:37:15 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsfromword/server_scenarios/index.php:0
+[21-Feb-2017 19:37:15 Europe/Minsk] PHP   2. DBPlayerProgress::createProgressRecordForNewLvl() /var/www/html/games/wordsfromword/server_scenarios/index.php:7
+[21-Feb-2017 19:37:15 Europe/Minsk] PHP   3. ErrorLogger::logException() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php:142
+[21-Feb-2017 21:05:44 Europe/Minsk] PHP Notice:  Undefined index: getDe6finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:05:44 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:05:44 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:05:44 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:05:44 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:06:00 Europe/Minsk] PHP Notice:  Undefined index: getDe6finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:06:00 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:06:00 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:06:00 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:06:00 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:06:01 Europe/Minsk] PHP Notice:  Undefined index: getDe6finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:06:01 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:06:01 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:06:01 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:06:01 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP Notice:  Undefined index: getDe6finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:06:22 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных (слово: дар) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php:16
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php(3): DBDictionary::getWordDefinition('\xD0\xB4\xD0\xB0\xD1\x80')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(39): include_once('/var/www/html/g...')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 16
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP Notice:  Undefined index: getDe6finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:06:23 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных (слово: дар) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php:16
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php(3): DBDictionary::getWordDefinition('\xD0\xB4\xD0\xB0\xD1\x80')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(39): include_once('/var/www/html/g...')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 16
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP Notice:  Undefined index: getDe7finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:09:27 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных (слово: дрон) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php:16
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php(3): DBDictionary::getWordDefinition('\xD0\xB4\xD1\x80\xD0\xBE\xD0\xBD')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(39): include_once('/var/www/html/g...')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 16
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP Notice:  Undefined index: getDe7finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:09:29 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных (слово: род) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php:16
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php(3): DBDictionary::getWordDefinition('\xD1\x80\xD0\xBE\xD0\xB4')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(39): include_once('/var/www/html/g...')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 16
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP Notice:  Undefined index: getDe7finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:09:52 Europe/Minsk] PHP Fatal error:  Uncaught Exception: Ошибка запроса к базе данных (слово: дрон) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php:16
+Stack trace:
+#0 /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php(3): DBDictionary::getWordDefinition('\xD0\xB4\xD1\x80\xD0\xBE\xD0\xBD')
+#1 /var/www/html/games/wordsFromWord/server_scenarios/index.php(39): include_once('/var/www/html/g...')
+#2 {main}
+  thrown in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 16
+[21-Feb-2017 21:10:33 Europe/Minsk] PHP Notice:  Undefined index: getDe7finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:10:33 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:10:33 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:10:33 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:10:33 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:10:37 Europe/Minsk] PHP Notice:  Undefined index: getDe7finition in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBDictionary.php on line 11
+[21-Feb-2017 21:10:37 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:10:37 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/index.php:0
+[21-Feb-2017 21:10:37 Europe/Minsk] PHP   2. include_once() /var/www/html/games/wordsFromWord/server_scenarios/index.php:39
+[21-Feb-2017 21:10:37 Europe/Minsk] PHP   3. DBDictionary::getWordDefinition() /var/www/html/games/wordsFromWord/server_scenarios/tasks/getWordDefinition.php:3
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[21-Feb-2017 21:29:55 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP Notice:  Undefined offset: 0 in /var/www/html/cabinet/includes/model.php on line 18
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:20
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:14
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP TypeError:  Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 18 in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP Stack trace:
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   2. Controller->__construct() /var/www/html/cabinet/index.php:20
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   3. Model->__construct() /var/www/html/cabinet/includes/controller.php:14
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP   4. UserInfoModel->__construct() /var/www/html/cabinet/includes/model.php:18
+[21-Feb-2017 21:33:03 Europe/Minsk] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to UserInfoModel::__construct() must be of the type array, null given, called in /var/www/html/cabinet/includes/model.php on line 18 and defined in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php:11
+Stack trace:
+#0 /var/www/html/cabinet/includes/model.php(18): UserInfoModel->__construct(NULL)
+#1 /var/www/html/cabinet/includes/controller.php(14): Model->__construct('82')
+#2 /var/www/html/cabinet/index.php(20): Controller->__construct()
+#3 {main}
+  thrown in /var/www/html/cabinet/includes/classes/UserInfoModel.class.php on line 11

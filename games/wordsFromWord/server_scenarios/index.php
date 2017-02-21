@@ -4,6 +4,7 @@ function class_autoloader($class) {
 }
 spl_autoload_register('class_autoloader');
 session_start();
+DBPlayerProgress::createProgressRecordForNewLvl(73,1);
 header('Content-Type: application/json');
 if (empty($_SESSION['pl_id']) || empty($_POST['action'])){
     echo json_encode(array(

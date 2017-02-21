@@ -10,31 +10,35 @@ class DBPlayerGlobalInfo extends DB
 
 
     static function getGlobalInfo($playerId){
-        $stmt = parent::getConnection()->prepare(self::$queries['globalInfo']);
-        $stmt->bindParam(':playerId', $playerId);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['globalInfo']);
+            $stmt->bindParam(':playerId', $playerId);
+            if (!$stmt->execute()){
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString,__LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ')';
+                throw new Exception($message);
+            }
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return null;
         }
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     static function augmentExperience($playerId, $delta){
-        $stmt = parent::getConnection()->prepare(self::$queries['augmentExperience']);
-        $stmt->bindParam(':playerId', $playerId);
-        $stmt->bindParam(':delta', $delta);
-        if (!$stmt->execute()){
-            throw new Exception(
-                'Ошибка запроса к базе данных. Строка '
-                . __LINE__
-                . '. SQL Error '
-                . $stmt->errorInfo()[2]
-            );
+        try {
+            $stmt = parent::getConnection()->prepare(self::$queries['augmentExperience']);
+            $stmt->bindParam(':playerId', $playerId);
+            $stmt->bindParam(':delta', $delta);
+            if (!$stmt->execute()) {
+                ErrorLogger::logFailedDBRequest($stmt->errorInfo(), $stmt->queryString, __LINE__, __FILE__);
+                $message = 'Ошибка запроса к базе данных (игрок(id): ' . $playerId . ', изменение опыта: '. $delta . ')';
+                throw new Exception($message);
+            }
+            return true;
+        } catch (Throwable $e){
+            ErrorLogger::logException($e);
+            return false;
         }
     }
 }
