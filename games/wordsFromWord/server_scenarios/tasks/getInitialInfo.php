@@ -4,7 +4,7 @@ if (!defined('PLAYER_ID') || !defined('CURRENT_LEVEL')) exit;
 
 $playerGlobalInfo = DBPlayerGlobalInfo::getGlobalInfo(PLAYER_ID);
 $playerProgressInfo = DBPlayerProgress::getProgressOnLvl(PLAYER_ID, CURRENT_LEVEL);
-$levelInfo = DBGameInfo::getGameLevelInfo(CURRENT_LEVEL);
+$levelInfo = DBGameInfo::getLevelInfo(CURRENT_LEVEL);
 
 echo json_encode(array(
     'state' => true,

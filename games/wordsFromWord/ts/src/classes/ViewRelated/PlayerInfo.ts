@@ -21,6 +21,15 @@ class PlayerInfo{
         this.levelButtonsContainer = $('#level-buttons-container');
         this.tipHoleWord = $('#hole-word-tip');
         this.tipWordDefinition = $('#word-definition-tip');
+
+        this.tipHoleWord.on('click', function (e) {
+            let tipClick = new CustomEvent('tipClick',{detail: 'holeWord'});
+            document.dispatchEvent(tipClick);
+        });
+        this.tipWordDefinition.on('click', function (e) {
+            let tipClick = new CustomEvent('tipClick',{detail: 'wordDefinition'});
+            document.dispatchEvent(tipClick);
+        })
     }
 
     public setNewAvatar(src: string): void{

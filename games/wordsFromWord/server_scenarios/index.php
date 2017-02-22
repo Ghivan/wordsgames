@@ -3,8 +3,9 @@ function class_autoloader($class) {
     include $_SERVER['DOCUMENT_ROOT'] . '/games/wordsFromWord/server_scenarios/classes/' . $class . '.php';
 }
 spl_autoload_register('class_autoloader');
-session_start();
-DBPlayerProgress::createProgressRecordForNewLvl(73,1);
+if (session_status() !== PHP_SESSION_ACTIVE){
+    session_start();
+}
 header('Content-Type: application/json');
 if (empty($_SESSION['pl_id']) || empty($_POST['action'])){
     echo json_encode(array(
@@ -38,6 +39,10 @@ if ($_POST['action'] === 'checkWord'){
 
 if ($_POST['action'] === 'getWordDefinition'){
     include_once 'tasks/getWordDefinition.php';
+}
+
+if ($_POST['action'] === 'useTip'){
+    include_once 'tasks/useTip.php';
 }
 
 

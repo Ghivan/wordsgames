@@ -77,31 +77,31 @@ class View{
         return wordBox;
     }
 
-    public updateScore(score){
+    public updateScore(score): void{
         this.playerInfo.setScoreLabel(score);
     }
 
-    public setActiveState(elem: JQuery){
+    public setActiveLetterState(elem: JQuery): void{
         elem.addClass('active');
     }
 
-    public removeActiveState(elem: JQuery){
+    public removeActiveLetterState(elem: JQuery): void{
         elem.removeClass('active');
     }
 
-    public activateLevelLink(lvl){
+    public activateLevelLink(lvl): void{
         $('#lvl-btn-'+lvl).removeClass('disabled');
     }
 
-    public showMessageInModalBox(header: string, message: string){
+    public showMessageInModalBox(header: string, message: string): void{
         $('#message-modal-header').text(header.toUpperCase());
         $('#message-modal-content').text(message);
         $('#message-modal-box').modal('show');
     }
 
-    public showFloatMessage(message:string){
-        let alertBox = $('<div id="float-message" class="alert alert-success fade in"></div>');
-        alertBox.html(message);
+    public showFloatMessage(message:string, type: string): void{
+        let alertBox = $('<div id="float-message" class="alert alert-'+ type +' fade in"></div>');
+        alertBox.html('<a href="#" class="close" data-dismiss="alert">&times;</a>' + message);
         alertBox.appendTo('.gamefield');
         alertBox.css('top', $(document).scrollTop() + 20 + 'px');
 
@@ -109,5 +109,13 @@ class View{
         setTimeout(function () {
             $("#float-message").alert('close');
         }, 2000);
+    }
+
+    public enableTip(tipType: string){
+        this.playerInfo.enableTip(tipType);
+    }
+
+    public disableTip(tipType: string){
+        this.playerInfo.disableTip(tipType);
     }
 }

@@ -10,12 +10,17 @@ if (checkLogin()){
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
+    <meta property="og:url" content="http://www.wordsgames.by/" />
+    <meta property="og:image" content="http://www.wordsgames.by/favicon/android-chrome-192x192.png" />
+    <meta property="og:description" content="Тематический сборник различных игр, направленных на развитие словарного запаса и расширение кругозора." />
+    <meta property="og:site_name" content="Игровой сайт 'Игры со словами'" />
+    <meta property="og:type" content="Страница авторизации" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Регистрация на игровом сайте 'Игра со словами'." />
-    <meta property="og:type" content="Страница авторизации" />
     <title>Регистрация</title>
     <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/login/css/style.css?ver2.34">

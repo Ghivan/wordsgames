@@ -124,7 +124,7 @@ class Model{
                             missions: data.missions,
                             foundWordsNumber: data.foundWords.length,
                             lvl_status: level_status
-                    });
+                        });
                     }
                 }
             })
@@ -155,6 +155,40 @@ class Model{
                 } else {
                     console.warn('Word does not exist!');
                 }
+            }
+        })
+    }
+
+    public useTip(tipType: string, success: (tipResult: string, score: number) => any, error: (message: string) => any,){
+        if (this.score < this.tipsCost[tipType]) {
+            error('Для использования данной подсказки необходимо ' + this.tipsCost[tipType] + ' очков');
+            return;
+        }
+
+        if (this.foundWords.length === this.wordVariants.length) {
+            error('Все слова уровня отгаданы');
+            return;
+        }
+
+        let model = this;
+        $.ajax({
+            url: 'server_scenarios/index.php',
+            type: 'post',
+            data: {
+                'action': 'useTip',
+                'tipType' : tipType
+            },
+            success: function (data) {
+                if (data.state){
+                    model.score = data.score;
+                    success(data.result, model.score);
+                } else {
+                    error(data.result);
+                }
+            },
+
+            error: function () {
+                error('Ошибка соединения с сервером!');
             }
         })
     }

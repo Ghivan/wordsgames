@@ -14,7 +14,7 @@ class DBGameInfo extends DB
         'uniqueMission' => 'SELECT `missionUnique` FROM `wfw_levels` WHERE `level` = :lvl'
     );
 
-    static function getGameLevelInfo($lvl){
+    static function getLevelInfo($lvl){
         try {
             $stmt = parent::getConnection()->prepare(self::$queries['levelInfo']);
             $stmt->bindParam(':lvl', $lvl);

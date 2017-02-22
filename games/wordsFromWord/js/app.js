@@ -134,6 +134,37 @@ var Model = (function () {
             }
         });
     };
+    Model.prototype.useTip = function (tipType, success, error) {
+        if (this.score < this.tipsCost[tipType]) {
+            error('Для использования данной подсказки необходимо ' + this.tipsCost[tipType] + ' очков');
+            return;
+        }
+        if (this.foundWords.length === this.wordVariants.length) {
+            error('Все слова уровня отгаданы');
+            return;
+        }
+        var model = this;
+        $.ajax({
+            url: 'server_scenarios/index.php',
+            type: 'post',
+            data: {
+                'action': 'useTip',
+                'tipType': tipType
+            },
+            success: function (data) {
+                if (data.state) {
+                    model.score = data.score;
+                    success(data.result, model.score);
+                }
+                else {
+                    error(data.result);
+                }
+            },
+            error: function () {
+                error('Ошибка соединения с сервером!');
+            }
+        });
+    };
     return Model;
 }());
 var Loader = (function () {
@@ -160,6 +191,14 @@ var PlayerInfo = (function () {
         this.levelButtonsContainer = $('#level-buttons-container');
         this.tipHoleWord = $('#hole-word-tip');
         this.tipWordDefinition = $('#word-definition-tip');
+        this.tipHoleWord.on('click', function (e) {
+            var tipClick = new CustomEvent('tipClick', { detail: 'holeWord' });
+            document.dispatchEvent(tipClick);
+        });
+        this.tipWordDefinition.on('click', function (e) {
+            var tipClick = new CustomEvent('tipClick', { detail: 'wordDefinition' });
+            document.dispatchEvent(tipClick);
+        });
     }
     PlayerInfo.prototype.setNewAvatar = function (src) {
         this.avatar.attr('src', src + '?' + Date.now());
@@ -426,10 +465,10 @@ var View = (function () {
     View.prototype.updateScore = function (score) {
         this.playerInfo.setScoreLabel(score);
     };
-    View.prototype.setActiveState = function (elem) {
+    View.prototype.setActiveLetterState = function (elem) {
         elem.addClass('active');
     };
-    View.prototype.removeActiveState = function (elem) {
+    View.prototype.removeActiveLetterState = function (elem) {
         elem.removeClass('active');
     };
     View.prototype.activateLevelLink = function (lvl) {
@@ -440,14 +479,20 @@ var View = (function () {
         $('#message-modal-content').text(message);
         $('#message-modal-box').modal('show');
     };
-    View.prototype.showFloatMessage = function (message) {
-        var alertBox = $('<div id="float-message" class="alert alert-success fade in"></div>');
-        alertBox.html(message);
+    View.prototype.showFloatMessage = function (message, type) {
+        var alertBox = $('<div id="float-message" class="alert alert-' + type + ' fade in"></div>');
+        alertBox.html('<a href="#" class="close" data-dismiss="alert">&times;</a>' + message);
         alertBox.appendTo('.gamefield');
         alertBox.css('top', $(document).scrollTop() + 20 + 'px');
         setTimeout(function () {
             $("#float-message").alert('close');
         }, 2000);
+    };
+    View.prototype.enableTip = function (tipType) {
+        this.playerInfo.enableTip(tipType);
+    };
+    View.prototype.disableTip = function (tipType) {
+        this.playerInfo.disableTip(tipType);
     };
     return View;
 }());
@@ -456,8 +501,9 @@ var Controller = (function () {
         this.freezeState = false;
         this.view = new View();
         this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this));
-        $(document).on('letterClick', this.onLetterClick.bind(this));
+        $(document).on('tipClick', this.useTip.bind(this));
         $(document).on('lvlBtnClick', this.changeLevel.bind(this));
+        $(document).on('letterClick', this.onLetterClick.bind(this));
         $(document).on('foundWordClick', this.getWordDefinition.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
     }
@@ -468,6 +514,22 @@ var Controller = (function () {
                 context.freezeState = false;
             }, 200);
         })(this);
+    };
+    Controller.prototype.useTip = function (e) {
+        this.model.useTip(e.detail, this.onTipUsed.bind(this), this.onTipFailed.bind(this));
+    };
+    Controller.prototype.onTipUsed = function (tipResult, score) {
+        this.view.updateScore(score);
+        if (score < this.model.tipsCost.wordDefinition) {
+            this.view.disableTip('wordDefinition');
+        }
+        if (score < this.model.tipsCost.holeWord) {
+            this.view.disableTip('holeWord');
+        }
+        this.view.showMessageInModalBox('Подсказка', tipResult);
+    };
+    Controller.prototype.onTipFailed = function (message) {
+        this.view.showFloatMessage(message, 'danger');
     };
     Controller.prototype.getWordDefinition = function (e) {
         if (this.freezeState)
@@ -491,9 +553,6 @@ var Controller = (function () {
             this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl);
         }
     };
-    Controller.prototype.setLvl = function (lvl) {
-        this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl);
-    };
     Controller.prototype.onLetterClick = function (e) {
         if (this.freezeState)
             return;
@@ -502,7 +561,7 @@ var Controller = (function () {
         if (!letter.hasClass('active')) {
             userWord += letter.text();
             letter.data('order', userWord.length);
-            this.view.setActiveState(letter);
+            this.view.setActiveLetterState(letter);
             this.view.updateUserInputWord(userWord);
             this.model.updateUserInputWord(userWord);
             if (userWord.length >= 3) {
@@ -513,18 +572,24 @@ var Controller = (function () {
             if (letter.data().order === userWord.length) {
                 letter.data('order', 0);
                 userWord = userWord.substr(0, userWord.length - 1);
-                this.view.removeActiveState(letter);
+                this.view.removeActiveLetterState(letter);
                 this.view.updateUserInputWord(userWord);
                 this.model.updateUserInputWord(userWord);
             }
         }
     };
     Controller.prototype.onNewFoundWord = function (data) {
-        var message = 'Заработано опыта -&nbsp;' + data.experience +
-            ', очков -&nbsp;' + data.points + '.<br>';
+        var message = 'Заработано опыта &mdash;&nbsp;' + data.experience +
+            ', очков &mdash;&nbsp;' + data.points + '.<br>';
         this.showNewFoundWord(data.word);
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
+        if (data.score > this.model.tipsCost.wordDefinition) {
+            this.view.enableTip('wordDefinition');
+        }
+        if (data.score > this.model.tipsCost.holeWord) {
+            this.view.enableTip('holeWord');
+        }
         for (var prop in data.missions) {
             if (data.missions.hasOwnProperty(prop)) {
                 if (data.missions[prop]) {
@@ -539,7 +604,7 @@ var Controller = (function () {
             this.view.activateLevelLink(nextLevel);
             message += 'Открыт ' + nextLevel + '-й уровень.';
         }
-        this.view.showFloatMessage(message);
+        this.view.showFloatMessage(message, 'success');
     };
     Controller.prototype.onAlreadyFoundWord = function (word) {
         var wordBox = $('#' + word);
@@ -592,7 +657,7 @@ var Controller = (function () {
         $('#level-main-word').children().each(function () {
             var letter = $(this);
             if (letter.data('order') === userWord.length) {
-                controller.view.removeActiveState(letter);
+                controller.view.removeActiveLetterState(letter);
                 letter.data('order', 0);
                 controller.view.updateUserInputWord(userWord.substr(0, userWord.length - 1));
                 controller.model.updateUserInputWord(userWord.substr(0, userWord.length - 1));
