@@ -1,9 +1,0 @@
-
- ------------------------------------- 
-Wed, 22 Feb 17 17:15:44 +0300
-Executing script: /games/wordsFromWord/server_scenarios/index.php
-File: /var/www/html/games/wordsFromWord/server_scenarios/classes/DBPlayerProgress.php
-Line: 50
-SQLSTATE error code: 23000 Driver specific error code: 1048
-Driver specific error message: Column 'pl_id' cannot be null
-Query string: INSERT INTO `wfw_scoreTable`(`pl_id`) VALUES(:playerId)

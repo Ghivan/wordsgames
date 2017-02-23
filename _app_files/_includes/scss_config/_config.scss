@@ -1,0 +1,136 @@
+//----Colors
+
+$iceBlue: #99D3DF;
+$waterBlue: #88BBD6;
+$gray: #CDCDCD;
+$lightGray: #E9E9E9;
+$green: #8DCC57;
+$darkGreen: #82b443;
+
+//---- Определение цветов
+$BodyBackgroundColor: $lightGray;
+$PanelBackgroundColor: $gray;
+$TextColor: #FFF;
+$HeadersColor: $waterBlue;
+$btnColor: $green;
+$btnBordersColor: $darkGreen;
+
+
+//--
+
+//----FONTS----
+$RobotoCondensed-Bold: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf';
+$RobotoCondensed-BoldItalic: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf';
+$RobotoCondensed-Regular: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf';
+$RobotoCondensed-Light: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf';
+$RobotoCondensed-Italic: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf';
+$RobotoCondensed-LightItalic: '/_app_files/fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf';
+
+$OpenSans-Bold: '/_app_files/fonts/Open_Sans/OpenSans-Bold.ttf';
+$OpenSans-BoldItalic: '/_app_files/fonts/Open_Sans/OpenSans-BoldItalic.ttf';
+$OpenSans-Regular: '/_app_files/fonts/Open_Sans/OpenSans-Regular.ttf';
+$OpenSans-Light: '/_app_files/fonts/Open_Sans/OpenSans-Light.ttf';
+$OpenSans-Italic: '/_app_files/fonts/Open_Sans/OpenSans-Italic.ttf';
+$OpenSans-LightItalic: '/_app_files/fonts/Open_Sans/OpenSans-LightItalic.ttf';
+
+$RupsterFontEOT: "/_app_files/fonts/RupsterScriptFree/RupsterScriptFree.eot?#iefix";
+$RupsterFontWOFF: "/_app_files/fonts/RupsterScriptFree/RupsterScriptFree.woff";
+$RupsterFontTTF: "/_app_files/fonts/RupsterScriptFree/RupsterScriptFree.ttf";
+$RupsterFontSVG: "/_app_files/fonts/RupsterScriptFree/RupsterScriptFree.svg#RupsterScriptFree";
+
+@mixin fontCreatorTTF($fontPath, $fontName, $fontStyle, $fontWeight){
+  @font-face {
+    font-family: $fontName;
+    src: url($fontPath) format("truetype");
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+  }
+};
+
+@mixin fontCreatorEOT($fontPath, $fontName, $fontStyle, $fontWeight){
+  @font-face {
+    font-family: $fontName;
+    src: url($fontPath) format("embedded-opentype");
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+  }
+};
+
+@mixin fontCreatorSVG($fontPath, $fontName, $fontStyle, $fontWeight){
+  @font-face {
+    font-family: $fontName;
+    src: url($fontPath) format("svg");
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+  }
+};
+
+@mixin fontCreatorWOFF($fontPath, $fontName, $fontStyle, $fontWeight){
+  @font-face {
+    font-family: $fontName;
+    src: url($fontPath) format("woff");
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+  }
+};
+
+
+//----  Подключение шрифтов
+$OpenSans: 'OpenSans';
+@include fontCreatorTTF($OpenSans-Bold, $OpenSans, normal, bold);
+@include fontCreatorTTF($OpenSans-Regular, $OpenSans, normal, normal);
+@include fontCreatorTTF($OpenSans-Italic, $OpenSans, italic, normal);
+@include fontCreatorTTF($OpenSans-BoldItalic, $OpenSans, italic, bold);
+
+$RobotoCondensed: 'RobotoCondensed';
+@include fontCreatorTTF($RobotoCondensed-Bold, $RobotoCondensed, normal, bold);
+@include fontCreatorTTF($RobotoCondensed-Regular, $RobotoCondensed, normal, normal);
+@include fontCreatorTTF($RobotoCondensed-Italic, $RobotoCondensed, italic, normal);
+
+$Rupster: 'Rupster';
+@include fontCreatorTTF($RupsterFontTTF, $Rupster, normal, normal);
+
+//---- Определение роли шрифтов
+$bodyFont: $RobotoCondensed, sans-serif;
+$headersFont: $OpenSans, sans-serif;
+$handwritingFont: $Rupster;
+
+
+@mixin gradient($start-color, $end-color, $orientation)
+{
+  background: $start-color;
+  @if $orientation == vertical
+  {
+    // vertical
+    background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+    background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+  }
+  @else if $orientation == horizontal
+  {
+    // horizontal
+    background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  }
+  @else
+  {
+    // radial
+    background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  }
+}
+

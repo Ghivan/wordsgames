@@ -1,0 +1,299 @@
+@import "../../../_app_files/_includes/scss_config/_config.scss";
+
+body{
+  cursor: default;
+
+  font-family: $bodyFont;
+  background-image: url("/_app_files/images/background.png");
+}
+
+.container{
+  border-left: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  background-color: hsla(0,0,80%, 0.2);
+  min-width: 440px;
+}
+
+.player-info{
+  min-height: 100vh;
+  padding: 15px;
+
+
+  img.avatar{
+    max-width: 80%;
+    margin-bottom: 30px;
+  }
+
+  h2{
+    font-family: $handwritingFont;
+    text-align: center;
+  }
+
+  .tablescore{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    div{
+      min-width: 45%;
+      text-align: center;
+      font-style: italic;
+
+      span{
+        font-size: 1.2em;
+        font-weight: bold;
+        font-style: normal;
+      }
+      @media all and (max-width: 500px){
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .progress {
+    background-color: $gray;
+    .progress-bar{
+      background-color: $iceBlue;
+    }
+    > span {
+      z-index: 999;
+      position: absolute;
+      color: #000;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.8em;
+      @media all and (max-width: 500px){
+        font-size: 0.8em;
+        line-height: 1.7em;
+      }
+    }
+  }
+
+  .menus{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .label{
+      text-align: center;
+      font-size: 1.2em;
+      cursor: pointer;
+      @media all and (max-width: 500px){
+        font-size: 0.8em;
+        line-height: 1.7em;
+      }
+    }
+
+    >div{
+      margin: 10px;
+      @media all and (max-width: 500px){
+        margin: 5px;
+      }
+      .label{
+        display: block;
+      }
+    }
+
+    .tips .btn-group-sm, .level-map-box .btn-group-sm{
+      display: none;
+      position: absolute;
+      padding: 5px;
+      border-radius: 15px;
+      width: 100%;
+      background-color: hsla(0,0,80%, 0.7);
+      flex-wrap: wrap;
+      justify-content: center;
+
+      >.btn{
+        margin: 5px;
+        &:hover{
+          cursor: pointer;
+        }
+        &.disabled:hover{
+          cursor: default;
+      }
+    }
+  }
+
+  .tips:hover>.label, .level-map-box:hover>.label{
+    box-shadow: inset 2px 2px #808080;
+  }
+
+  .tips:hover>.btn-group-sm{
+    display: flex;
+    right: 0;
+  }
+
+  .level-map-box:hover>.btn-group-sm{
+    display: flex;
+    left: 0;
+  }
+
+
+
+  .tips .btn{
+    width: 20%;
+    min-width: 40px;
+    padding: 0;
+    img{
+      max-width: 80%;
+    }
+  }
+}
+}
+
+.gamefield{
+  border-left: 2px solid #FFF;
+  box-shadow: inset 5px 0 5px $gray;
+  min-height: 100vh;
+  background-color: hsla(0,0,80%, 0.4);
+  padding: 15px;
+
+
+  .missions{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
+
+    img{
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      @media all and (max-width: 500px){
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+      }
+    }
+  }
+
+  #user-input-word{
+    text-align: center;
+    text-transform: uppercase;
+    min-height: 2.5em;
+    font-size: 2.5em;
+    font-family: $handwritingFont;
+    @media all and (max-width: 500px){
+      font-size: 1.5em;
+      line-height: 25px;
+      height: 25px;
+    }
+  }
+
+  #level-main-word{
+    text-align: center;
+
+    >span{
+      user-select: none;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 5px;
+      font-size: 1.5em;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid gray;
+      margin: 5px;
+      @media all and (max-width: 500px){
+        font-size: 1em;
+        line-height: 25px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    >span.active{
+      background-color: #2e6da4;
+      color: $TextColor;
+    }
+  }
+
+  #user-found-words-box{
+    padding: 15px;
+    .found-word{
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid black;
+      display: inline-block;
+      border-radius: 5px;
+      @media all and (max-width: 500px){
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.rotate{
+  animation-name: rotateLetters;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotateLetters {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+    font-weight: normal;
+    background-color: inherit;
+    color: black;
+  }
+}
+
+#loader{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0,0,0, 0.8);
+
+  img{
+    display: block;
+    width: 50px;
+  }
+}
+
+.alreadyFound{
+  animation-name: alreadyFound;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes alreadyFound {
+  from {
+    background-color: $iceBlue;
+    transform: scale(1.2,1.2);
+  }
+  to {
+    background-color: transparent;
+    transform: none;
+  }
+}
+.found-words-subcontainer-label{
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+#float-message{
+  position: absolute;
+  width: 36%;
+  border-radius: 10em;
+  left: 32%;
+  top: 10vh;
+  text-align: center;
+}

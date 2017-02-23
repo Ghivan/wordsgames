@@ -1,0 +1,48 @@
+
+ ------------------------------------- 
+Thu, 23 Feb 17 01:35:48 +0300
+Executing script: /login/server_scenarios/index.php
+File: /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php
+Line: 97
+Stack Trace: 
+#0 /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php(45): DBUserRegistrator::addNewPlayerToDB('Master2', '$2y$10$qK6bGUQH...', NULL)
+#1 /var/www/html/login/server_scenarios/index.php(14): DBUserRegistrator::register('Master2', '123123')
+#2 {main}
+ErrorCode: 0
+Message: Ошибка запроса к базе данных (Логин игрока: Master2)
+
+ ------------------------------------- 
+Thu, 23 Feb 17 01:42:44 +0300
+Executing script: /login/server_scenarios/index.php
+File: /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php
+Line: 97
+Stack Trace: 
+#0 /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php(45): DBUserRegistrator::addNewPlayerToDB('Master2', '$2y$10$0of9F1Uk...', NULL)
+#1 /var/www/html/login/server_scenarios/index.php(14): DBUserRegistrator::register('Master2', '123123')
+#2 {main}
+ErrorCode: 0
+Message: Ошибка запроса к базе данных (Логин игрока: Master2, хэш: $2y$10$0of9F1Uk.DXRmVDZUWOPwOOXCjYjiUs/mCHEweW24fMXaB6Gfimei, email: )
+
+ ------------------------------------- 
+Thu, 23 Feb 17 01:44:20 +0300
+Executing script: /login/server_scenarios/index.php
+File: /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php
+Line: 98
+Stack Trace: 
+#0 /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php(45): DBUserRegistrator::addNewPlayerToDB('Master2', '$2y$10$fRfhwOnl...', '')
+#1 /var/www/html/login/server_scenarios/index.php(14): DBUserRegistrator::register('Master2', '123123')
+#2 {main}
+ErrorCode: 0
+Message: Ошибка запроса к базе данных (Логин игрока: Master2, хэш: $2y$10$fRfhwOnlBsiOt4BhP.gGYeNqbLZw3oR3AKoSnQE71AOkzUQn8HMoS, email: )
+
+ ------------------------------------- 
+Thu, 23 Feb 17 01:45:02 +0300
+Executing script: /login/server_scenarios/index.php
+File: /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php
+Line: 97
+Stack Trace: 
+#0 /var/www/html/login/server_scenarios/_includes/classes/DBUserRegistrator.php(45): DBUserRegistrator::addNewPlayerToDB('Master2', '$2y$10$zwyEQE1Y...', NULL)
+#1 /var/www/html/login/server_scenarios/index.php(14): DBUserRegistrator::register('Master2', '123123')
+#2 {main}
+ErrorCode: 0
+Message: Ошибка запроса к базе данных (Логин игрока: Master2, хэш: $2y$10$zwyEQE1YnnGiLb.sZJDdYeizH8XyCIVKTrLE1UKVAZmuN/4jnCGti, email: )

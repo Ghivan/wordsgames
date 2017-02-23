@@ -584,10 +584,10 @@ var Controller = (function () {
         this.showNewFoundWord(data.word);
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
-        if (data.score > this.model.tipsCost.wordDefinition) {
+        if (data.score >= this.model.tipsCost.wordDefinition) {
             this.view.enableTip('wordDefinition');
         }
-        if (data.score > this.model.tipsCost.holeWord) {
+        if (data.score >= this.model.tipsCost.holeWord) {
             this.view.enableTip('holeWord');
         }
         for (var prop in data.missions) {

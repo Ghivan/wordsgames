@@ -1,0 +1,100 @@
+@import "../../_app_files/_includes/scss_config/_config.scss";
+
+body{
+  font-family: $bodyFont;
+  background-image: url("/_app_files/images/background.png");
+  color: $TextColor;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  .panel-container{
+    margin: auto;
+    width: 45%;
+    @media only screen and (max-width: 700px){
+      width: 90%;
+    }
+  }
+}
+
+//---- Панель входа/регистрации. Общий вид
+
+.panel {
+  width: 100%;
+  padding: 20px;
+  background: hsla(0,0%,100%,.3);
+  overflow: hidden;
+  border: none;
+  box-shadow: 5px 5px 5px $HeadersColor;
+  border-top-left-radius: 0;
+
+}
+
+
+//---- Управляющие кнопки
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  //border: 3px solid #FFF;
+  //margin-bottom: -3px;
+  border: none;
+  background: hsla(0,0%,100%,.3);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#login-button{
+  margin-top: 5px;
+  width: 55%;
+  background-color: $btnColor;
+  border-color: $btnBordersColor;
+}
+
+#register-button{
+  margin-top: 5px;
+  width: 75%;
+  background-color: $iceBlue;
+  border-color: $waterBlue;
+}
+
+
+//---- Заголовок
+h1{
+  font-family: $handwritingFont;
+  color: $HeadersColor;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 3em;
+}
+
+//----Панель входа/регистрации
+.tab-content{
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  .form-group{
+    margin: auto;
+    width: 75%;
+
+    @media (max-width:500px) {
+      width: 100%;
+    }
+    input{
+      font-style: italic;
+    }
+
+    label{
+      color: #555;
+    }
+
+    .help-block{
+      min-height: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+}

@@ -1,8 +1,11 @@
 <?php
-function class_autoloader($class) {
+define('MAIN_DIR', $_SERVER['DOCUMENT_ROOT']);
+
+function wfw_class_autoloader($class) {
     include $_SERVER['DOCUMENT_ROOT'] . '/games/wordsFromWord/server_scenarios/classes/' . $class . '.php';
 }
-spl_autoload_register('class_autoloader');
+include_once MAIN_DIR . '/_app_files/_includes/autoloaders.php';
+spl_autoload_register('wfw_class_autoloader');
 if (session_status() !== PHP_SESSION_ACTIVE){
     session_start();
 }

@@ -5,19 +5,19 @@ session_start();
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/_libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Слова из слова</title>
 
 </head>
 <body>
 <div id="loader">
-    <img src="/files/images/loading.gif" alt="Загрузка...">
+    <img src="/_app_files/images/loading.gif" alt="Загрузка...">
 </div>
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-sm-3 player-info">
-            <img src="/files/images/players/no_avatar.png" alt="Ваш аватар" class="img-responsive img-circle center-block avatar" id="userAvatar">
+            <img src="/_app_files/players_avatars/no_avatar.png" alt="Ваш аватар" class="img-responsive img-circle center-block avatar" id="userAvatar">
             <h2 id="userLoginLabel">Игрок</h2>
 
             <div class="tablescore">
@@ -97,6 +97,6 @@ session_start();
 </div>
 </body>
 </html>
-<script src="/_libraries/jquery-3.1.1.min.js"></script>
-<script src="/_libraries/bootstrap/bootstrap.min.js"></script>
+<script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
+<script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
 <script src="js/app.js?ver=4.2"></script>

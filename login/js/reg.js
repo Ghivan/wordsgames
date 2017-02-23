@@ -3,8 +3,8 @@ var Model = (function () {
         this.LOGIN_REG_EXP = /^[a-z0-9а-я_-]{3,16}$/i;
         this.PASSWORD_REG_EXP = /^[a-z0-9а-я_-]{6,18}$/i;
         this.EMAIL_REG_EXP = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        this.URL_LOGIN = '/login/includes/login.php';
-        this.URL_REGISTER = '/login/includes/register.php';
+        this.URL_LOGIN = 'server_scenarios/index.php';
+        this.URL_REGISTER = 'server_scenarios/index.php';
         this.errors = new Errors();
     }
     Model.prototype.getError = function (type) {
@@ -34,10 +34,11 @@ var Model = (function () {
         };
         if (checking.login.state && checking.password.state) {
             var data = {
+                action: 'login',
                 login: login,
                 pswrd: password,
-                submit: true
             };
+            console.log(data);
             this.sendRequest(this.URL_LOGIN, data, success, error);
         }
         else {
@@ -63,12 +64,13 @@ var Model = (function () {
             checking.email.state &&
             (information.password === information.confirmPassword)) {
             var data = {
+                action: 'register',
                 login: information.login,
                 pswrd: information.password,
                 cpswrd: information.confirmPassword,
-                email: (information.email) ? information.email : '',
-                submit: true
+                email: (information.email) ? information.email : ''
             };
+            console.log(data);
             this.sendRequest(this.URL_REGISTER, data, success, error);
         }
         else {
@@ -105,7 +107,7 @@ var Model = (function () {
                     error();
                 }
             },
-            error: function () {
+            error: function (data) {
                 errors.addError('global', 'Ошибка соединения с сервером.');
                 error();
             }

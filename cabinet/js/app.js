@@ -1,10 +1,10 @@
 var Model = (function () {
     function Model(login, email) {
-        this.urlChangeLogin = 'includes/change_scripts/change_login.php';
-        this.urlChangeEmail = 'includes/change_scripts/change_email.php';
-        this.urlChangePassword = 'includes/change_scripts/change_password.php';
-        this.urlChangeAvatar = 'includes/change_scripts/change_avatar.php';
-        this.urlSendFeedback = 'includes/change_scripts/send_feedback.php';
+        this.urlChangeLogin = 'server_scenarios/index.php';
+        this.urlChangeEmail = 'server_scenarios/index.php';
+        this.urlChangePassword = 'server_scenarios/index.php';
+        this.urlChangeAvatar = 'server_scenarios/index.php';
+        this.urlSendFeedback = 'server_scenarios/index.php';
         this.PASSWORD_REG_EXP = /^[a-z0-9а-я_-]{6,18}$/i;
         this.LOGIN_REG_EXP = /^[a-z0-9а-я_-]{3,16}$/i;
         this.EMAIL_REG_EXP = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -43,7 +43,8 @@ var Model = (function () {
             return;
         }
         var data = {
-            login: newLogin
+            login: newLogin,
+            action: 'changeLogin'
         }, user = this.user;
         $.ajax({
             url: this.urlChangeLogin,
@@ -93,7 +94,8 @@ var Model = (function () {
             return;
         }
         var data = {
-            email: newEmail
+            email: newEmail,
+            action: 'changeEmail'
         }, user = this.user;
         $.ajax({
             url: this.urlChangeEmail,
@@ -142,6 +144,7 @@ var Model = (function () {
             error(checking.message);
             return;
         }
+        data.action = 'changePassword';
         $.ajax({
             url: this.urlChangePassword,
             type: 'POST',
@@ -200,6 +203,7 @@ var Model = (function () {
         }
         var data = new FormData();
         data.append('userAvatar', file);
+        data.append('action', 'changeAvatar');
         $.ajax({
             url: this.urlChangeAvatar,
             type: 'POST',
@@ -496,12 +500,27 @@ var Controller = (function () {
             e.preventDefault();
             e.cancelBubble = true;
             e.stopImmediatePropagation();
-            $.post("/login/includes/unregister.php", function (data) {
-                if (data.state) {
-                    window.location.href = '/login/';
-                }
-                else {
+            $.ajax({
+                url: 'server_scenarios/index.php',
+                type: 'POST',
+                success: function (data) {
+                    if (data.state) {
+                        if (data.state) {
+                            window.location.href = '/login/';
+                        }
+                        else {
+                            alert('Нет соединения с сервером!');
+                        }
+                    }
+                    else {
+                        alert('Нет соединения с сервером!');
+                    }
+                },
+                error: function () {
                     alert('Нет соединения с сервером!');
+                },
+                data: {
+                    'action': 'logOut'
                 }
             });
         });
