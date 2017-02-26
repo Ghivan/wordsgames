@@ -7,10 +7,26 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css?ver=19">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Слова из слова">
+    <meta name="twitter:description" content="Необходимо составлять слова из букв показанного на экране слова. Для перехода на следующий этап необходимо отгадать не менее 30% вариантов слов текущего.
+Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются.">
+    <meta name="twitter:image" content="https://www.wordsgames.by/_app_files/images/favicon/android-chrome-256x256.jpg">
+    <meta name="twitter:creator" content="@bgR8QMqXAIc0ZOW">
+    <meta name="twitter:site" content="@bgR8QMqXAIc0ZOW">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Игры со словами" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.wordsgames.by/games/wordsFromWord/" />
+    <meta property="og:image" content="https://www.wordsgames.by/_app_files/images/favicon/android-chrome-256x256.png" />
+    <meta property="og:description" content="Необходимо составлять слова из букв показанного на экране слова. Для перехода на следующий этап необходимо отгадать не менее 30% вариантов слов текущего.
+Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются." />
+    <meta property="fb:app_id" content="763828750438528" />
     <title>Слова из слова</title>
     <meta name="description" content="Необходимо составлять слова из букв показанного на экране слова. Для перехода на следующий этап необходимо отгадать не менее 30% вариантов слов текущего.
 Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются." />
-    <title>Слова из слова</title>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,11 +37,15 @@ session_start();
         ga('send', 'pageview');
 
     </script>
+    <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
 </head>
+
 <body>
+<noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
 <div id="loader">
     <img src="/_app_files/images/loading.gif" alt="Загрузка...">
 </div>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-sm-3 player-info">
@@ -72,9 +92,9 @@ session_start();
                 <img id="mission3-icon" src="images/missions/incomplete.png" alt="Третья звезда" title="Отгадать 100% слов">
             </div>
 
-            <div id="help-button"><a href="#help" data-toggle="modal"><span class="glyphicon glyphicon-question-sign"></span></a> </div>
+            <div id="help-button"><a href="#help-box" data-toggle="modal"><span class="glyphicon glyphicon-question-sign"></span></a> </div>
             <!--Блок помощи-->
-            <div id="help" class="modal fade">
+            <div id="help-box" class="modal fade">
 
                 <!-- Модальное окно -->
                 <div class="modal-dialog">
@@ -110,11 +130,11 @@ session_start();
                                 </div>
                                 <h2>Подсказки</h2>
                                 <div>
-                                    <img src="images/tips/definition.png">
+                                    <img src="images/tips/definition.png" alt="Показать определение неотгаданного слова.">
                                     <p>Показать определение неотгаданного слова. Стоимость подсказки: 100 очков</p>
                                 </div>
                                 <div>
-                                    <img src="images/tips/word.png">
+                                    <img src="images/tips/word.png" alt="Показать неотгаданное слово целиком.">
                                     <p>Показать неотгаданное слово. Стоимость подсказки: 250 очков.</p>
                                 </div>
                             </div>
@@ -151,7 +171,7 @@ session_start();
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 id="message-modal-header"></h4>
+                    <h4 id="message-modal-header">Подсказка</h4>
                 </div>
 
                 <!-- Основное содержимое модального окна -->
@@ -169,9 +189,9 @@ session_start();
 
     </div>
     <!--Конец окно сообщений-->
+    <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
+    <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
+    <script src="js/app.js?ver=19"></script>
 </div>
 </body>
 </html>
-<script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
-<script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/app.js?ver=19"></script>

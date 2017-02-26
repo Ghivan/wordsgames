@@ -7,28 +7,28 @@ if (Authorization::check()) {
 }
 ?>
 <!DOCTYPE html>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "WebSite",
-  "description": "Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.",
-  "url": "https://wordsgames.by/login/",
-  "author" : {
-  "@type": "Person",
-  "email": "admin@wordsgames.by"
-  }
-}
-</script>
 <html>
 
 <head>
     <?php include_once MAIN_DIR . '/_app_files/_includes/head_meta_tags.php' ?>
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/login/css/style.css?ver=19">
+    <link rel="stylesheet" href="/login/css/style.css?ver=21">
+    <title>Игры со словами</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса. За дополнительной информацией обращайтесь по электронной почте: admin@wordsgames.by" />
-    <title>Игры со словами</title>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "description": "Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.",
+    "url": "https://wordsgames.by/login/",
+    "author" : {
+    "@type": "Person"
+    "email": "admin@wordsgames.by"
+    }
+    }
+    </script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,14 +39,22 @@ if (Authorization::check()) {
         ga('create', 'UA-91641758-1', 'auto');
         ga('send', 'pageview');
     </script>
-
     <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
-    <noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
-
 </head>
-
 <body>
-
+<noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=763828750438528";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?139"></script>
+<script type="text/javascript">
+    VK.init({apiId: 5897034, onlyWidgets: true});
+</script>
 <!--Контейнер-->
 <div class="container">
     <div class="panel-container">
@@ -104,6 +112,7 @@ if (Authorization::check()) {
 
                         <!--Кнопка входа-->
                         <input type="button" class="btn center-block" id="login-button" value="Войти">
+
 
                     </form>
 
@@ -174,14 +183,43 @@ if (Authorization::check()) {
                 <!--Режим О проекте-->
                 <div class="tab-pane fade" id="about">
 
-                   <p>Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. </p>
-                   <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
+                    <p>Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. </p>
+                    <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
                     <p>Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.</p>
                     <p>За дополнительной информацией обращайтесь по электронной почте: <a href="mailto:admin@wordsgames.by">admin@wordsgames.by</a></p>
                     <p>Пример игры (без возможности сохранения результатов в базе данных ресурса): <a href="/demo/wfw/index.html">Игра "Слова из слова"</a></p>
 
                 </div>
                 <!--Конец о проекте-->
+                <div class="social-buttons">
+
+                    <div class="fb-share-button" data-href="https://wordsgames.by/login/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwordsgames.by%2Flogin%2F&amp;src=sdkpreparse">Поделиться</a></div>
+                    <a class="twitter-share-button"
+                       href="https://twitter.com/intent/tweet?text=Сайт%20Игры%20со%20словами&url=https%3A%2F%2Fwordsgames.by%2F"
+                       data-size="small">
+                        Tweet</a>
+                    <div id="vk_like"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Like("vk_like", {type: "mini", verb: 1, height: 20});
+                    </script>
+
+                </div>
+                <script>window.twttr = (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            t = window.twttr || {};
+                        if (d.getElementById(id)) return t;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "https://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+
+                        t._e = [];
+                        t.ready = function(f) {
+                            t._e.push(f);
+                        };
+
+                        return t;
+                    }(document, "script", "twitter-wjs"));</script>
             </div>
             <!--Конец содержимого панели (основного)-->
 
@@ -191,13 +229,13 @@ if (Authorization::check()) {
 
 </div>
 <!--Конец контейнера-->
-
+<script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
+<script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
+<script src="js/reg.js?ver=19"></script>
 
 </body>
 
 </html>
 
-<script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
-<script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/reg.js?ver=19"></script>
+
 

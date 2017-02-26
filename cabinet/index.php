@@ -21,9 +21,7 @@ header('Cache-Control: max-age=0, must-revalidate');
 $controller = new Controller();
 ?>
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/_app_files/_includes/head_meta_tags.php' ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,9 +31,6 @@ $controller = new Controller();
     <link rel="stylesheet" href="/cabinet/css/style.css?ver=19">
 
     <title>Личный кабинет</title>
-    <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
-    <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/app.js?ver=19"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -46,9 +41,10 @@ $controller = new Controller();
         ga('send', 'pageview');
 
     </script>
+    <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
 </head>
-
 <body>
+<noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
 <div id="loader">
     <img src="/_app_files/images/loading.gif" alt="Загрузка...">
 </div>
@@ -101,5 +97,8 @@ $controller = new Controller();
             <?php Templator::includeTab('feedback'); ?>
         </div>
     </div>
+    <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
+    <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
+    <script src="js/app.js?ver=19"></script>
 </body>
 </html>

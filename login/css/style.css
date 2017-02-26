@@ -57,6 +57,7 @@ body {
         width: 90%; } }
 
 .panel {
+  position: relative;
   width: 100%;
   padding: 20px;
   background: rgba(255, 255, 255, 0.3);
@@ -127,5 +128,15 @@ h1 {
   transform-origin: bottom right;
   border-bottom-left-radius: .5em;
   box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15); }
+
+.social-buttons {
+  padding: 15px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap; }
+  .social-buttons > * {
+    margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */
