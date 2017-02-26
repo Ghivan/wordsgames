@@ -98,3 +98,24 @@ h1{
   }
 
 }
+
+#about{
+  background-color: rgba(100,100,100,.3);
+  background: linear-gradient(-150deg, transparent 1.5em, rgba(100,100,100,.3) 0);
+  padding: 10px;
+  padding-top: 1.5em;
+  position: relative;
+  border-radius: .5em;
+}
+
+#about::before{
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 1.73em; height: 3em;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+  transform: translateY(-1.3em) rotate(-30deg);
+  transform-origin: bottom right;
+  border-bottom-left-radius: .5em;
+  box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15)
+}

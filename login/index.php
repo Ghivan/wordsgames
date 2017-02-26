@@ -13,7 +13,7 @@ if (Authorization::check()) {
 <head>
     <?php include_once MAIN_DIR . '/_app_files/_includes/head_meta_tags.php' ?>
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/login/css/style.css?ver2.34">
+    <link rel="stylesheet" href="/login/css/style.css?ver=19">
 
     <meta property="og:url" content="http://www.wordsgames.by/" />
     <meta property="og:image" content="http://www.wordsgames.by/favicon/android-chrome-192x192.png" />
@@ -160,7 +160,7 @@ if (Authorization::check()) {
                    <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм. А также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
                     <p>Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.</p>
                     <p>За дополнительной информацией обращайтесь по электронной почте: <a href="mailto:admin@wordsgames.by">admin@wordsgames.by</a></p>
-                    <p>Пример игры (без возможности сохранения результатов в базе данных ресурса), доступной на ресурсе: <a href="/demo/wfw/index.html">Игра "Слова из слова"</a></p>
+                    <p>Пример игры (без возможности сохранения результатов в базе данных ресурса): <a href="/demo/wfw/index.html">Игра "Слова из слова"</a></p>
 
                 </div>
                 <!--Конец о проекте-->
@@ -181,7 +181,7 @@ if (Authorization::check()) {
 
 <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
 <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/reg.js"></script>
+<script src="js/reg.js?ver=19"></script>
 <script>(function(d,e,j,h,f,c,b){d.GoogleAnalyticsObject=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)},d[f].l=1*new Date();c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create","UA-91641758-1","auto");ga("send","pageview");</script>
 <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
 <noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>

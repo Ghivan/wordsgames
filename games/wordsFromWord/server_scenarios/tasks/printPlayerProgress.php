@@ -3,7 +3,7 @@ header('Content-Type: text/html');
 
 if (!defined('PLAYER_ID')) exit();
 echo "<table class='table table-responsive'><thead><tr><th>Этап</th><th>Отгадано слов</th><th>Достигнутые цели</th></tr></thead><tbody>";
-$totalPassedLevels = DBPlayerProgress::getPassedLvlQuantity(PLAYER_ID);
+$totalPassedLevels = DBGameInfo::getLevelsQuantity();
 
 for ($i = 0; $i < $totalPassedLevels; $i++){
     $lvl = $i+1;

@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?ver=19">
     <title>Слова из слова</title>
 
 </head>
@@ -82,7 +82,7 @@ session_start();
                             <div id="help">
                                 <h2>Правила</h2>
                                 <div class='textGuide'>
-                                    <p>Необходимо составлять слова из показанного на экране слова. Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются. Минимальная длина слова&nbsp;&mdash;&nbsp;3&nbsp;буквы.</p>
+                                    <p>Необходимо составлять слова из показанного на экране слова. Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются. Минимальная длина слова&nbsp;&mdash;&nbsp;3&nbsp;буквы. Для перехода на следующий этап необходимо отгадать не менее 30% вариантов слов текущего.</p>
                                 </div>
                                 <h2>Управление</h2>
                                 <div class='textGuide'>
@@ -162,4 +162,4 @@ session_start();
 </html>
 <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
 <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/app.js?ver=4.2"></script>
+<script src="js/app.js?ver=19"></script>

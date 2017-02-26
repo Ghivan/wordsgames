@@ -29,12 +29,12 @@ $controller = new Controller();
     <meta name="description" content="Личный кабинет игрока. Доступ к каталогу игр и настройкам профиля" />
     <meta property="og:type" content="Личный кабинет пользователя" />
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/cabinet/css/style.css?ver=17">
+    <link rel="stylesheet" href="/cabinet/css/style.css?ver=19">
 
     <title>Личный кабинет</title>
     <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
     <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-    <script src="js/app.js?ver=17"></script>
+    <script src="js/app.js?ver=19"></script>
 </head>
 
 <body>
