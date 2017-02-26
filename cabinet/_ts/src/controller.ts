@@ -71,14 +71,59 @@ class Controller{
 
         this.view.sendFeedbackBox.form.on('submit', this.sendFeedback.bind(this));
 
+        $('a[href="#game-1-records"]').on('click', function () {
+            let box = $('#game-1-records');
+            if (box.hasClass('active')) return;
+            box.html('<img src="/_app_files/images/loading.gif" class="center-block" style="width: 40px" alt="Загрузка...">');
+           $.ajax({
+                url: '/games/wordsFromWord/server_scenarios/index.php',
+
+                type: 'POST',
+
+                success: function(data){
+                    box.html(data);
+                },
+
+                error:function(){
+                    box.html('<p class="text-danger">Соединение с сервером отсутствует!</p>');
+                },
+
+                data: {
+                    'action' : 'getRecordTable'
+                }
+            })
+
+        });
+
+        $('a[href="#game-1-progress"]').on('click', function () {
+            let box = $('#game-1-progress');
+            if (box.hasClass('active')) return;
+            box.html('<img src="/_app_files/images/loading.gif" class="center-block" style="width: 40px" alt="Загрузка...">');
+            $.ajax({
+                url: '/games/wordsFromWord/server_scenarios/index.php',
+
+                type: 'POST',
+
+                success: function(data){
+                    box.html(data);
+                },
+
+                error:function(){
+                    box.html('<p class="text-danger">Соединение с сервером отсутствует!</p>');
+                },
+
+                data: {
+                    'action' : 'getPlayerProgress'
+                }
+            })
+        })
     }
 
     public sendFeedback(e: Event){
         e.preventDefault();
         this.view.loader.show();
-        let data = $(e.target).serialize().split("&").reduce(function(prev, curr) {
-            let p = curr.split("=");
-            prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]).trim();
+        let data = $(e.target).serializeArray().reduce(function(prev, curr) {
+            prev[curr.name] = curr.value;
             return prev;
         }, {});
         this.model.sendFeedBackMessage(data, this.onSuccessFeedback.bind(this), this.onFailFeedback.bind(this));
@@ -88,6 +133,7 @@ class Controller{
     private onSuccessFeedback(message){
         this.view.loader.hide();
         this.view.sendFeedbackBox.displaySuccessMessage(message);
+        document.forms[0].reset();
     }
 
     private onFailFeedback(message: string){

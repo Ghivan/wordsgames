@@ -1,8 +1,8 @@
 var Model = (function () {
     function Model(success, error, lvl) {
         this.tipsCost = {
-            holeWord: 100,
-            wordDefinition: 50
+            holeWord: 250,
+            wordDefinition: 100
         };
         this.userWord = '';
         this.dictionary = {};
@@ -199,6 +199,8 @@ var PlayerInfo = (function () {
             var tipClick = new CustomEvent('tipClick', { detail: 'wordDefinition' });
             document.dispatchEvent(tipClick);
         });
+        this.tipHoleWord.tooltip();
+        this.tipWordDefinition.tooltip();
     }
     PlayerInfo.prototype.setNewAvatar = function (src) {
         this.avatar.attr('src', src + '?' + Date.now());
@@ -276,6 +278,8 @@ var Gamefield = (function () {
         this.star1mission = $('#mission1-icon');
         this.star2mission = $('#mission2-icon');
         this.star3mission = $('#mission3-icon');
+        this.star1mission.tooltip({ placement: 'bottom' });
+        this.star3mission.tooltip({ placement: 'bottom' });
         this.userInputWord = $('#user-input-word');
         this.levelMainWord = $('#level-main-word');
         this.userFoundWordsBox = $('#user-found-words-box');
@@ -392,7 +396,9 @@ var Gamefield = (function () {
                         }
                     }
                 }
-                this.star2mission.attr('title', 'Отгадайте ' + quantity + ' на букву ' + letter);
+                var title = 'Отгадать ' + quantity + ' на букву ' + '"' + letter.toUpperCase() + '"';
+                this.star2mission.attr('data-original-title', title);
+                this.star2mission.tooltip({ placement: 'bottom' });
             }
         }
     };
@@ -506,6 +512,8 @@ var Controller = (function () {
         $(document).on('letterClick', this.onLetterClick.bind(this));
         $(document).on('foundWordClick', this.getWordDefinition.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
+        $('#clear-letter-btn').on('click', this.removeLastLetter.bind(this));
+        $('#clear-word-btn').on('click', this.clearUserInput.bind(this));
     }
     Controller.prototype.freeze = function () {
         this.freezeState = true;
@@ -579,8 +587,8 @@ var Controller = (function () {
         }
     };
     Controller.prototype.onNewFoundWord = function (data) {
-        var message = 'Заработано опыта &mdash;&nbsp;' + data.experience +
-            ', очков &mdash;&nbsp;' + data.points + '.<br>';
+        var message = 'Заработано опыта&nbsp;&mdash;&nbsp;' + data.experience +
+            ', очков&nbsp;&mdash;&nbsp;' + data.points + '.<br>';
         this.showNewFoundWord(data.word);
         this.view.updateProgress(data.foundWordsNumber);
         this.view.updateScore(data.score);
@@ -602,7 +610,7 @@ var Controller = (function () {
         if (data.lvl_status) {
             var nextLevel = this.model.getCurrentLevel() + 1;
             this.view.activateLevelLink(nextLevel);
-            message += 'Открыт ' + nextLevel + '-й уровень.';
+            this.view.showMessageInModalBox('Новый этап!', 'Открыт ' + nextLevel + '-й этап.');
         }
         this.view.showFloatMessage(message, 'success');
     };

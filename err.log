@@ -2556,3 +2556,71 @@ Stack trace:
 #1 /var/www/html/cabinet/server_scenarios/index.php(39): include_once('/var/www/html/c...')
 #2 {main}
   thrown in /var/www/html/_app_files/_includes/classes/InputValidator.php on line 10
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[24-Feb-2017 00:20:52 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP Warning:  include_once(/var/www/html_app_files/_includes/head_meta_tags.php): failed to open stream: No such file or directory in /var/www/html/cabinet/index.php on line 27
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP Warning:  include_once(): Failed opening '/var/www/html_app_files/_includes/head_meta_tags.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/cabinet/index.php on line 27
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP Stack trace:
+[24-Feb-2017 00:46:22 Europe/Minsk] PHP   1. {main}() /var/www/html/cabinet/index.php:0
+[25-Feb-2017 14:16:50 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; StringReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 48
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; FileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 84
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; CachedFileReader has a deprecated constructor in /usr/share/php/php-gettext/streams.php on line 145
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; gettext_reader has a deprecated constructor in /usr/share/php/php-gettext/gettext.php on line 36
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   1. {main}() /usr/share/phpmyadmin/index.php:0
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   2. require_once() /usr/share/phpmyadmin/index.php:13
+[25-Feb-2017 14:16:51 Europe/Minsk] PHP   3. require_once() /usr/share/phpmyadmin/libraries/common.inc.php:77
+[25-Feb-2017 14:24:43 Europe/Minsk] PHP Fatal error:  Class 'DB' not found in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 3
+[25-Feb-2017 14:24:43 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:24:43 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php:0
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP ParseError:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 86
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/test.php:0
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP   2. spl_autoload_call() /var/www/html/games/wordsFromWord/server_scenarios/test.php:13
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP   3. wfw_class_autoloader() /var/www/html/games/wordsFromWord/server_scenarios/test.php:13
+[25-Feb-2017 14:43:39 Europe/Minsk] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 86
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP ParseError:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 86
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP Stack trace:
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/server_scenarios/test.php:0
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP   2. spl_autoload_call() /var/www/html/games/wordsFromWord/server_scenarios/test.php:13
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP   3. wfw_class_autoloader() /var/www/html/games/wordsFromWord/server_scenarios/test.php:13
+[25-Feb-2017 14:43:41 Europe/Minsk] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /var/www/html/games/wordsFromWord/server_scenarios/classes/DBGameInfo.php on line 86
+[26-Feb-2017 01:36:57 Europe/Minsk] PHP Error:  Class 'Controller' not found in /var/www/html/games/wordsFromWord/index.php on line 83
+[26-Feb-2017 01:36:57 Europe/Minsk] PHP Stack trace:
+[26-Feb-2017 01:36:57 Europe/Minsk] PHP   1. {main}() /var/www/html/games/wordsFromWord/index.php:0
+[26-Feb-2017 01:36:57 Europe/Minsk] PHP Fatal error:  Uncaught Error: Class 'Controller' not found in /var/www/html/games/wordsFromWord/index.php:83
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/games/wordsFromWord/index.php on line 83

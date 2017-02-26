@@ -29,7 +29,10 @@ class PlayerInfo{
         this.tipWordDefinition.on('click', function (e) {
             let tipClick = new CustomEvent('tipClick',{detail: 'wordDefinition'});
             document.dispatchEvent(tipClick);
-        })
+        });
+
+        this.tipHoleWord.tooltip();
+        this.tipWordDefinition.tooltip();
     }
 
     public setNewAvatar(src: string): void{

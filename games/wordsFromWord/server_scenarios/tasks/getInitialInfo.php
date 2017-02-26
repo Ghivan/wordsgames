@@ -1,6 +1,6 @@
 <?php
-
-if (!defined('PLAYER_ID') || !defined('CURRENT_LEVEL')) exit;
+if (!defined('PLAYER_ID') || !defined('CURRENT_LEVEL')) exit();
+header('Content-Type: application/json');
 
 $playerGlobalInfo = DBPlayerGlobalInfo::getGlobalInfo(PLAYER_ID);
 $playerProgressInfo = DBPlayerProgress::getProgressOnLvl(PLAYER_ID, CURRENT_LEVEL);

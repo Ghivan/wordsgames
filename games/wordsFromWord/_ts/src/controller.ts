@@ -12,6 +12,9 @@ class Controller{
         $(document).on('letterClick', this.onLetterClick.bind(this));
         $(document).on('foundWordClick',this.getWordDefinition.bind(this));
         $(document).on('keydown', this.keyControls.bind(this));
+
+        $('#clear-letter-btn').on('click', this.removeLastLetter.bind(this));
+        $('#clear-word-btn').on('click', this.clearUserInput.bind(this));
     }
 
     private freeze():void{
@@ -63,7 +66,7 @@ class Controller{
     private changeLevel(e: CustomEvent): void{
         let lvl = e.detail;
         if (lvl != this.model.getCurrentLevel()){
-            this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl)
+            this.model = new Model(this.onReceiveInitialData.bind(this), this.onError.bind(this), lvl);
         }
     }
 
@@ -93,8 +96,8 @@ class Controller{
     }
 
     private onNewFoundWord(data: ServerAnswerCheckWord): void{
-        let message = 'Заработано опыта &mdash;&nbsp;' + data.experience +
-            ', очков &mdash;&nbsp;' + data.points + '.<br>';
+        let message = 'Заработано опыта&nbsp;&mdash;&nbsp;' + data.experience +
+            ', очков&nbsp;&mdash;&nbsp;' + data.points + '.<br>';
 
         this.showNewFoundWord(data.word);
 
@@ -119,7 +122,7 @@ class Controller{
         if (data.lvl_status){
             let nextLevel = this.model.getCurrentLevel() + 1;
             this.view.activateLevelLink(nextLevel);
-            message += 'Открыт ' + nextLevel + '-й уровень.';
+            this.view.showMessageInModalBox('Новый этап!','Открыт ' + nextLevel + '-й этап.');
         }
 
         this.view.showFloatMessage(message, 'success');

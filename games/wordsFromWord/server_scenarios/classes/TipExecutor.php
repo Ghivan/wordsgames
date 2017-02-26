@@ -2,8 +2,8 @@
 
 class TipExecutor
 {
-    const WORD_DEFINITION_COST = 50;
-    const HOLE_WORD_COST = 100;
+    const WORD_DEFINITION_COST = 100;
+    const HOLE_WORD_COST = 250;
     const AVAILABLE_TIPS = ['holeWord', 'wordDefinition'];
 
     private $playerId;

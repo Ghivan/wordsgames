@@ -18,7 +18,7 @@ if (DBPlayerSettingsChanger::updateLogin(PLAYER_ID, $_POST['login'])){
 } else {
     echo json_encode(array(
             'state' => false,
-            'message' => 'Пользователь с таким логином почтой уже зарегистрирован'
+            'message' => 'Пользователь с таким логином уже зарегистрирован'
         )
     );
 }

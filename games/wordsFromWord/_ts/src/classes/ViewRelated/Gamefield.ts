@@ -10,6 +10,9 @@ class Gamefield{
         this.star1mission = $('#mission1-icon');
         this.star2mission = $('#mission2-icon');
         this.star3mission = $('#mission3-icon');
+        this.star1mission.tooltip({placement: 'bottom'});
+        this.star3mission.tooltip({placement: 'bottom'});
+
         this.userInputWord = $('#user-input-word');
         this.levelMainWord = $('#level-main-word');
         this.userFoundWordsBox = $('#user-found-words-box')
@@ -140,7 +143,9 @@ class Gamefield{
                         }
                     }
                 }
-                this.star2mission.attr('title', 'Отгадайте ' + quantity + ' на букву ' + letter);
+                let title = 'Отгадать ' + quantity + ' на букву ' + '"' + letter.toUpperCase() + '"';
+                this.star2mission.attr('data-original-title', title);
+                this.star2mission.tooltip({placement: 'bottom'});
             }
         }
     }

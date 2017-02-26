@@ -137,6 +137,27 @@ body {
     margin-bottom: 15px; }
   .game-catalog > .container-fluid .game-search {
     margin: 30px auto; }
+  .game-catalog .panel .panel-body {
+    background-color: #f7f7f7; }
+  .game-catalog .table {
+    margin: auto; }
+    .game-catalog .table > thead > tr > th, .game-catalog .table > tbody > tr > td {
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap; }
+      @media all and (max-width: 768px) {
+        .game-catalog .table > thead > tr > th, .game-catalog .table > tbody > tr > td {
+          white-space: normal; } }
+      @media all and (max-width: 768px) {
+        .game-catalog .table > thead > tr > th, .game-catalog .table > tbody > tr > td {
+          font-size: .7em; } }
+  .game-catalog div[id$=records] .table > tbody > tr:nth-child(1) {
+    background-color: #ffd700;
+    font-weight: bold; }
+  .game-catalog div[id$=records] .table > tbody > tr:nth-child(2) {
+    background-color: #C0C0C0; }
+  .game-catalog div[id$=records] .table > tbody > tr:nth-child(3) {
+    background-color: #cd7f32; }
   .game-catalog .btn-gameinfo-block {
     position: relative; }
     .game-catalog .btn-gameinfo-block ul {

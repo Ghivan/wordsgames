@@ -1,7 +1,7 @@
 class Model{
     readonly tipsCost = {
-        holeWord: 100,
-        wordDefinition: 50
+        holeWord: 250,
+        wordDefinition: 100
     };
     private login: string;
     private avatar: string;

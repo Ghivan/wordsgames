@@ -97,6 +97,41 @@ body{
     }
   }
 
+  .panel .panel-body{
+    background-color: #f7f7f7;
+
+  }
+
+
+  .table{
+    margin: auto;
+    >thead>tr>th,>tbody>tr>td{
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      @media all and (max-width: 768px){
+        white-space: normal;
+      }
+
+      @media all and (max-width: 768px){
+        font-size: .7em;
+      }
+    }
+  }
+
+  div[id$=records] .table >tbody>tr{
+    &:nth-child(1){
+      background-color: #ffd700;
+      font-weight: bold;
+    }
+    &:nth-child(2){
+      background-color: #C0C0C0;
+    }
+    &:nth-child(3){
+      background-color: #cd7f32;
+    }
+  }
+
   .btn-gameinfo-block{
     position: relative;
     ul{

@@ -48,6 +48,13 @@ body {
   border-right: 2px solid #FFF;
   background-color: rgba(204, 204, 204, 0.2);
   min-width: 440px; }
+  .container .tooltip .tooltip-inner {
+    background-color: #99D3DF;
+    font-weight: bolder; }
+  .container .tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #99D3DF; }
+  .container .tooltip.top .tooltip-arrow {
+    border-top-color: #99D3DF; }
 
 .player-info {
   min-height: 100vh;
@@ -57,6 +64,8 @@ body {
     margin-bottom: 30px; }
   .player-info h2 {
     font-family: "Rupster";
+    text-align: center; }
+  .player-info .link-to-cabinet {
     text-align: center; }
   .player-info .tablescore {
     display: flex;
@@ -90,55 +99,40 @@ body {
         .player-info .progress > span {
           font-size: 0.8em;
           line-height: 1.7em; } }
-  .player-info .menus {
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    flex-wrap: wrap; }
-    .player-info .menus .label {
+  .player-info .level-map-box, .player-info .tips {
+    margin-bottom: 20px; }
+    .player-info .level-map-box .label, .player-info .tips .label {
+      font-size: 1em;
+      padding: 5px;
+      display: block;
+      margin: auto;
       text-align: center;
-      font-size: 1.2em;
       cursor: pointer; }
       @media all and (max-width: 500px) {
-        .player-info .menus .label {
+        .player-info .level-map-box .label, .player-info .tips .label {
           font-size: 0.8em;
           line-height: 1.7em; } }
-    .player-info .menus > div {
-      margin: 10px; }
-      @media all and (max-width: 500px) {
-        .player-info .menus > div {
-          margin: 5px; } }
-      .player-info .menus > div .label {
-        display: block; }
-    .player-info .menus .tips .btn-group-sm, .player-info .menus .level-map-box .btn-group-sm {
+    .player-info .level-map-box .btn-group-sm, .player-info .tips .btn-group-sm {
       display: none;
       position: absolute;
       padding: 5px;
       border-radius: 15px;
       width: 100%;
-      background-color: rgba(204, 204, 204, 0.7);
+      background-color: rgba(204, 204, 204, 0.9);
+      z-index: 10000;
       flex-wrap: wrap;
       justify-content: center; }
-      .player-info .menus .tips .btn-group-sm > .btn, .player-info .menus .level-map-box .btn-group-sm > .btn {
+      .player-info .level-map-box .btn-group-sm > .btn, .player-info .tips .btn-group-sm > .btn {
         margin: 5px; }
-        .player-info .menus .tips .btn-group-sm > .btn:hover, .player-info .menus .level-map-box .btn-group-sm > .btn:hover {
+        .player-info .level-map-box .btn-group-sm > .btn:hover, .player-info .tips .btn-group-sm > .btn:hover {
           cursor: pointer; }
-        .player-info .menus .tips .btn-group-sm > .btn.disabled:hover, .player-info .menus .level-map-box .btn-group-sm > .btn.disabled:hover {
+        .player-info .level-map-box .btn-group-sm > .btn.disabled:hover, .player-info .tips .btn-group-sm > .btn.disabled:hover {
           cursor: default; }
-    .player-info .menus .tips:hover > .label, .player-info .menus .level-map-box:hover > .label {
-      box-shadow: inset 2px 2px #808080; }
-    .player-info .menus .tips:hover > .btn-group-sm {
-      display: flex;
-      right: 0; }
-    .player-info .menus .level-map-box:hover > .btn-group-sm {
+    .player-info .level-map-box:hover > .btn-group-sm, .player-info .tips:hover > .btn-group-sm {
       display: flex;
       left: 0; }
-    .player-info .menus .tips .btn {
-      width: 20%;
-      min-width: 40px;
-      padding: 0; }
-      .player-info .menus .tips .btn img {
-        max-width: 80%; }
+    .player-info .level-map-box:hover > .label, .player-info .tips:hover > .label {
+      box-shadow: inset 2px 2px #808080; }
 
 .gamefield {
   border-left: 2px solid #FFF;
@@ -146,14 +140,27 @@ body {
   min-height: 100vh;
   background-color: rgba(204, 204, 204, 0.4);
   padding: 15px; }
+  .gamefield #help-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    height: 45px;
+    width: 45px;
+    background-color: #88BBD6;
+    border-radius: 5px;
+    box-shadow: 2px 2px gray; }
+    .gamefield #help-button .glyphicon {
+      font-size: 35px;
+      color: white; }
   .gamefield .missions {
     display: flex;
     justify-content: center;
     margin-bottom: 15%; }
     .gamefield .missions img {
-      width: 50px;
-      height: 50px;
-      margin: 10px; }
+      width: 35px;
+      height: 35px;
+      margin: 5px; }
       @media all and (max-width: 500px) {
         .gamefield .missions img {
           width: 25px;
@@ -164,16 +171,38 @@ body {
     text-transform: uppercase;
     min-height: 2.5em;
     font-size: 2.5em;
-    font-family: "Rupster"; }
+    font-family: "RobotoCondensed", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.2em; }
     @media all and (max-width: 500px) {
       .gamefield #user-input-word {
         font-size: 1.5em;
         line-height: 25px;
         height: 25px; } }
+  .gamefield #user-input-controls-btn {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: bold;
+    user-select: none; }
+    .gamefield #user-input-controls-btn div {
+      background-color: #99D3DF;
+      color: white;
+      padding: 5px;
+      margin: 0 15px 15px 0;
+      border-radius: 15px;
+      border: 1px solid #4FBDDF;
+      cursor: pointer; }
+      .gamefield #user-input-controls-btn div:hover {
+        background-color: #88BBD6; }
+      .gamefield #user-input-controls-btn div:active {
+        box-shadow: inset 2px 2px gray; }
   .gamefield #level-main-word {
     text-align: center; }
     .gamefield #level-main-word > span {
       user-select: none;
+      box-shadow: 5px 5px 3px gray;
       cursor: pointer;
       display: inline-block;
       border-radius: 5px;
@@ -193,7 +222,8 @@ body {
           height: 25px; } }
     .gamefield #level-main-word > span.active {
       background-color: #2e6da4;
-      color: #FFF; }
+      color: #FFF;
+      box-shadow: 1px 1px gray; }
   .gamefield #user-found-words-box {
     padding: 15px; }
     .gamefield #user-found-words-box .found-word {
@@ -256,10 +286,15 @@ body {
 
 #float-message {
   position: absolute;
-  width: 36%;
+  width: 58%;
   border-radius: 10em;
-  left: 32%;
+  left: 21%;
   top: 10vh;
   text-align: center; }
+
+#help img {
+  display: inline-block; }
+#help img + p {
+  display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

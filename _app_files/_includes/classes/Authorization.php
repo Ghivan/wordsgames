@@ -22,6 +22,7 @@ class Authorization
             session_start();
         }
         unset($_SESSION['pl_id']);
+        unset($_SESSION['cur_level']);
     }
 
     public static function getAuthorizedPlayerId(){

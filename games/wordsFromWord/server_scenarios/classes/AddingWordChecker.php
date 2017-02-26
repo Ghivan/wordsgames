@@ -1,7 +1,7 @@
 <?php
 class AddingWordChecker
 {
-    const POINTS_PER_LETTER = 10;
+    const POINTS_PER_LETTER = 4;
     const EXPERIENCE_PER_WORD = 1;
 
     const POINTS_FOR_LEVEL_COMPLETE = 150;
@@ -13,7 +13,7 @@ class AddingWordChecker
     const POINTS_FOR_SECOND_STAR = 500;
     const EXPERIENCE_FOR_SECOND_STAR = 30;
 
-    const POINTS_FOR_THIRD_STAR = 5000;
+    const POINTS_FOR_THIRD_STAR = 10000;
     const EXPERIENCE_FOR_THIRD_STAR = 250;
 
     const PERCENT_FOUND_FOR_LEVEL_COMPLETE = 0.3;
@@ -130,8 +130,8 @@ class AddingWordChecker
                 break;
         }
 
-        $this->addPoints($points);
-        $this->addExperience($experience);
+        $this->addPoints(floor($points));
+        $this->addExperience(floor($experience));
     }
 
     private function checkLvlStatus(){

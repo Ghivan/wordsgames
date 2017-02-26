@@ -107,3 +107,4 @@ class DBGameInfo extends DB
 
     }
 }
+
