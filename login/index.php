@@ -7,7 +7,18 @@ if (Authorization::check()) {
 }
 ?>
 <!DOCTYPE html>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "description": "Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.",
+  "url": "https://wordsgames.by/login/",
+  "author" : {
+  "@type": "Person",
+  "email": "admin@wordsgames.by"
+  }
+}
+</script>
 <html>
 
 <head>
@@ -15,15 +26,22 @@ if (Authorization::check()) {
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/login/css/style.css?ver=19">
 
-    <meta property="og:url" content="http://www.wordsgames.by/" />
-    <meta property="og:image" content="http://www.wordsgames.by/favicon/android-chrome-192x192.png" />
-    <meta property="og:description" content="Тематический сборник различных игр, направленных на развитие словарного запаса и расширение кругозора." />
-    <meta property="og:site_name" content="Игровой сайт 'Игры со словами'" />
-    <meta property="og:type" content="Страница авторизации" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Регистрация на игровом сайте 'Игра со словами'." />
-    <title>Регистрация</title>
+    <meta name="description" content="Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса. За дополнительной информацией обращайтесь по электронной почте: admin@wordsgames.by" />
+    <title>Игры со словами</title>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-91641758-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
+    <noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
 
 </head>
 
@@ -157,7 +175,7 @@ if (Authorization::check()) {
                 <div class="tab-pane fade" id="about">
 
                    <p>Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. </p>
-                   <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм. А также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
+                   <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
                     <p>Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.</p>
                     <p>За дополнительной информацией обращайтесь по электронной почте: <a href="mailto:admin@wordsgames.by">admin@wordsgames.by</a></p>
                     <p>Пример игры (без возможности сохранения результатов в базе данных ресурса): <a href="/demo/wfw/index.html">Игра "Слова из слова"</a></p>
@@ -182,6 +200,4 @@ if (Authorization::check()) {
 <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
 <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
 <script src="js/reg.js?ver=19"></script>
-<script>(function(d,e,j,h,f,c,b){d.GoogleAnalyticsObject=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)},d[f].l=1*new Date();c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create","UA-91641758-1","auto");ga("send","pageview");</script>
-<script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
-<noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
+

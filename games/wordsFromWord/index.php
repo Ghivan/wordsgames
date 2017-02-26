@@ -8,7 +8,19 @@ session_start();
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css?ver=19">
     <title>Слова из слова</title>
+    <meta name="description" content="Необходимо составлять слова из букв показанного на экране слова. Для перехода на следующий этап необходимо отгадать не менее 30% вариантов слов текущего.
+Слово должно быть нарицательным именем существительным в единственном числе. Уменьшительно-ласкательные формы, а также сокращения не принимаются." />
+    <title>Слова из слова</title>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+        ga('create', 'UA-91641758-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 <body>
 <div id="loader">
@@ -88,7 +100,7 @@ session_start();
                                 <div class='textGuide'>
                                     <p>Чтобы выбрать букву, кликните мышкой. Повторный клик по последней выбранной букве снимает выделение.</p>
                                     <p>Клавиша <kbd>Esc</kbd> отменяет ввод всего слова.</p>
-                                    <p>Клавиша <kbd>Backspace &#8592;</kbd>  отменяет ввод последней буквы.</p>
+                                    <p>Клавиша <kbd>Backspace&nbsp;&#8592;&nbsp;</kbd>  отменяет ввод последней буквы.</p>
                                 </div>
                                 <h2>Цели этапов</h2>
                                 <div class="textGuide">
