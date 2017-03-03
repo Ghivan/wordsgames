@@ -40,8 +40,6 @@ body{
 //---- Управляющие кнопки
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  //border: 3px solid #FFF;
-  //margin-bottom: -3px;
   border: none;
   background: hsla(0,0%,100%,.3);
   font-weight: bold;
@@ -101,8 +99,8 @@ h1{
 }
 
 #about{
-  background-color: rgba(100,100,100,.3);
-  background: linear-gradient(-150deg, transparent 1.5em, rgba(100,100,100,.3) 0);
+  background-color: rgba(138,187,214,.6);
+  background: linear-gradient(-150deg, transparent 1.5em, rgba(136,187,214,.6) 0);
   padding: 10px;
   padding-top: 1.5em;
   position: relative;

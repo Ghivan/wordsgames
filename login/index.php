@@ -11,6 +11,13 @@ if (Authorization::check()) {
 
 <head>
     <?php include_once MAIN_DIR . '/_app_files/_includes/head_meta_tags.php' ?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M34HVNK');</script>
+    <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/login/css/style.css?ver=21">
     <title>Игры со словами</title>
@@ -24,7 +31,7 @@ if (Authorization::check()) {
     "description": "Игровой сайт «Игры со словами» представляет собой платформу для размещения игр соответствующей тематики. Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач. Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.",
     "url": "https://wordsgames.by/login/",
     "author" : {
-    "@type": "Person"
+    "@type": "Person",
     "email": "admin@wordsgames.by"
     }
     }
@@ -42,7 +49,13 @@ if (Authorization::check()) {
     <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
 </head>
 <body>
-<noscript><div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div></noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34HVNK"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <!-- End Google Tag Manager (noscript) -->
+    <div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div>
+</noscript>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -187,7 +200,7 @@ if (Authorization::check()) {
                     <p>Зарегистрированные игроки имеют доступ к имеющимся на ресурсе играм, а также участвуют в рейтинге, формируемом на основе игрового уровня пользователя. Опыт набирается в результате прохождения различных игр и выполнения определенных задач.</p>
                     <p>Администрация ресурса рассматривает возможность некоммерческого сотрудничества с разработчиками, желающими поучаствовать в развитиии ресурса либо продемонстрировать свои наработки, соответствующие тематике ресурса.</p>
                     <p>За дополнительной информацией обращайтесь по электронной почте: <a href="mailto:admin@wordsgames.by">admin@wordsgames.by</a></p>
-                    <p>Пример игры (без возможности сохранения результатов в базе данных ресурса): <a href="/demo/wfw/index.html">Игра "Слова из слова"</a></p>
+                    <p>Пример игры (без возможности сохранения результатов в базе данных ресурса): <a href="/demo/wfw/index.html" target="_blank">Игра "Слова из слова"</a></p>
 
                 </div>
                 <!--Конец о проекте-->
