@@ -68,8 +68,16 @@ h1{
   padding: 20px 0;
   text-align: center;
   font-size: 3em;
-}
 
+
+}
+span.version{
+  display: block;
+  float: right;
+  font-family: $RobotoCondensed;
+  font-style: italic;
+  color: $HeadersColor;
+}
 //----Панель входа/регистрации
 .tab-content{
   padding-top: 10px;
@@ -105,6 +113,10 @@ h1{
   padding-top: 1.5em;
   position: relative;
   border-radius: .5em;
+  color: #555;
+  text-align: justify;
+  text-indent: 1em;
+  font-size: 1.1em;
 }
 
 #about::before{

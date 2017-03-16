@@ -19,7 +19,7 @@ if (Authorization::check()) {
         })(window,document,'script','dataLayer','GTM-M34HVNK');</script>
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/login/css/style.css?ver=21">
+    <link rel="stylesheet" href="/login/css/style.css?ver=28">
     <title>Игры со словами</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -233,6 +233,8 @@ if (Authorization::check()) {
 
                         return t;
                     }(document, "script", "twitter-wjs"));</script>
+                <span class="version">v1.0.1</span>
+
             </div>
             <!--Конец содержимого панели (основного)-->
 
