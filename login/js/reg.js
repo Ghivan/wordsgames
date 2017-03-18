@@ -38,7 +38,6 @@ var Model = (function () {
                 login: login,
                 pswrd: password,
             };
-            console.log(data);
             this.sendRequest(this.URL_LOGIN, data, success, error);
         }
         else {
@@ -70,7 +69,6 @@ var Model = (function () {
                 cpswrd: information.confirmPassword,
                 email: (information.email) ? information.email : ''
             };
-            console.log(data);
             this.sendRequest(this.URL_REGISTER, data, success, error);
         }
         else {
@@ -226,6 +224,7 @@ var View = (function () {
         this.registration = new Registration();
         this.globalErrorMessage = $('#global-error-message');
         this.globalErrorMessageBox = this.globalErrorMessage.parent();
+        this.loader = new Loader();
     }
     View.prototype.showError = function (context, message) {
         if (context.pane === 'global') {
@@ -342,6 +341,18 @@ var Registration = (function () {
     };
     return Registration;
 }());
+var Loader = (function () {
+    function Loader() {
+        this.box = $('#loader');
+    }
+    Loader.prototype.show = function () {
+        this.box.show();
+    };
+    Loader.prototype.hide = function () {
+        this.box.hide();
+    };
+    return Loader;
+}());
 var Controller = (function () {
     function Controller() {
         this.model = new Model();
@@ -400,17 +411,20 @@ var Controller = (function () {
             pane: 'registration',
             field: 'email'
         }));
+        this.view.loader.hide();
     }
     Controller.prototype.authorize = function () {
         var model = this.model, authPanel = this.view.auth, login = authPanel.getInputVal('login'), password = authPanel.getInputVal('password');
-        this.view.reset();
         model.removeErrors();
+        this.view.loader.show();
         model.login(login, password, this.onAuthSuccess, this.onAuthFail.bind(this));
     };
     Controller.prototype.onAuthSuccess = function () {
         window.location.href = '/cabinet/';
     };
     Controller.prototype.onAuthFail = function () {
+        this.view.reset();
+        this.view.loader.hide();
         if (this.model.getError('global')) {
             this.view.showError({ pane: 'global' }, this.model.getError('global'));
         }
@@ -428,11 +442,13 @@ var Controller = (function () {
             confirmPassword: regPanel.getInputVal('confirmPassword'),
             email: regPanel.getInputVal('email')
         };
-        this.view.reset();
+        this.view.loader.show();
         model.removeErrors();
         model.register(data, this.onAuthSuccess, this.onRegFail.bind(this));
     };
     Controller.prototype.onRegFail = function () {
+        this.view.reset();
+        this.view.loader.hide();
         if (this.model.getError('global')) {
             this.view.showError({ pane: 'global' }, this.model.getError('global'));
         }

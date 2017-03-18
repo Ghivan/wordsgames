@@ -117,6 +117,8 @@ class Controller{
             )
         );
 
+        this.view.loader.hide();
+
     }
 
     public authorize(): void{
@@ -125,10 +127,9 @@ class Controller{
             login: string = authPanel.getInputVal('login'),
             password: string = authPanel.getInputVal('password');
 
-        this.view.reset();
         model.removeErrors();
-        model.login(login, password,this.onAuthSuccess, this.onAuthFail.bind(this))
-
+        this.view.loader.show();
+        model.login(login, password,this.onAuthSuccess, this.onAuthFail.bind(this));
     }
 
     private onAuthSuccess(): void{
@@ -136,6 +137,8 @@ class Controller{
     }
 
     private onAuthFail(){
+        this.view.reset();
+        this.view.loader.hide();
         if (this.model.getError('global')){
             this.view.showError({pane: 'global'}, this.model.getError('global'))
         }
@@ -158,12 +161,14 @@ class Controller{
                 confirmPassword: regPanel.getInputVal('confirmPassword'),
                 email: regPanel.getInputVal('email')
             };
-        this.view.reset();
+        this.view.loader.show();
         model.removeErrors();
         model.register(data, this.onAuthSuccess, this.onRegFail.bind(this))
     }
 
     private onRegFail(){
+        this.view.reset();
+        this.view.loader.hide();
         if (this.model.getError('global')){
             this.view.showError({pane: 'global'}, this.model.getError('global'))
         }

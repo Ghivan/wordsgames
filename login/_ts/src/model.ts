@@ -48,7 +48,6 @@ class Model{
                 login: login,
                 pswrd: password,
             };
-            console.log(data);
             this.sendRequest(this.URL_LOGIN, data, success, error)
         } else {
             if (!checking.login.state){
@@ -84,7 +83,6 @@ class Model{
                 cpswrd: information.confirmPassword,
                 email: (information.email) ? information.email : ''
             };
-            console.log(data);
             this.sendRequest(this.URL_REGISTER, data, success, error)
         } else {
             if (!checking.login.state){

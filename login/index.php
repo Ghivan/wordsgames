@@ -19,7 +19,7 @@ if (Authorization::check()) {
         })(window,document,'script','dataLayer','GTM-M34HVNK');</script>
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" href="/_app_files/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/login/css/style.css?ver=28">
+    <link rel="stylesheet" href="/login/css/style.css?ver=30">
     <title>Игры со словами</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,38 +36,15 @@ if (Authorization::check()) {
     }
     }
     </script>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-91641758-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34HVNK"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    <!-- End Google Tag Manager (noscript) -->
-    <div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div>
-</noscript>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=763828750438528";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?139"></script>
 <script type="text/javascript">
     VK.init({apiId: 5897034, onlyWidgets: true});
 </script>
+<div id="loader">
+    <img src="/_app_files/images/loading.gif" alt="Загрузка...">
+</div>
 <!--Контейнер-->
 <div class="container">
     <div class="panel-container">
@@ -246,7 +223,35 @@ if (Authorization::check()) {
 <!--Конец контейнера-->
 <script src="/_app_files/libraries/jquery-3.1.1.min.js"></script>
 <script src="/_app_files/libraries/bootstrap/bootstrap.min.js"></script>
-<script src="js/reg.js?ver=19"></script>
+<script src="js/reg.js?ver=21"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-91641758-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type=text/javascript>(function(g,a,i){(a[i]=a[i]||[]).push(function(){try{a.yaCounter42700799=new Ya.Metrika({id:42700799,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(c){}});var h=g.getElementsByTagName("script")[0],b=g.createElement("script"),e=function(){h.parentNode.insertBefore(b,h)};b.type="text/javascript";b.async=true;b.src="https://mc.yandex.ru/metrika/watch.js";if(a.opera=="[object Opera]"){g.addEventListener("DOMContentLoaded",e,false)}else{e()}})(document,window,"yandex_metrika_callbacks");</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M34HVNK"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <!-- End Google Tag Manager (noscript) -->
+    <div><img src=https://mc.yandex.ru/watch/42700799 style=position:absolute;left:-9999px alt /></div>
+</noscript>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8&appId=763828750438528";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 
 </body>
 

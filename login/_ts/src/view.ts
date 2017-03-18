@@ -4,12 +4,14 @@ class View{
     public registration: Registration;
     private globalErrorMessageBox: JQuery;
     private globalErrorMessage: JQuery;
+    public loader: Loader;
 
     constructor(){
         this.auth = new Authorisation();
         this.registration = new Registration();
         this.globalErrorMessage = $('#global-error-message');
         this.globalErrorMessageBox = this.globalErrorMessage.parent();
+        this.loader = new Loader();
     }
 
     public showError(context: PanelContext, message: string){
@@ -149,7 +151,8 @@ class Registration{
         this.emailErrorBox = $('#register-email-error');
         this.emailGlyphError = this.emailInputGroup.children('.glyphicon.glyphicon-alert');
 
-        this.registerBtn = $('#register-button')
+        this.registerBtn = $('#register-button');
+
     }
 
     public displayError(type: string, message: string){
@@ -182,5 +185,21 @@ class Registration{
         this.setInputVal('password', '');
         this.setInputVal('confirmPassword', '');
         this.setInputVal('email', '');
+    }
+}
+
+class Loader{
+    private box: JQuery;
+
+    constructor(){
+        this.box = $('#loader');
+    }
+
+    public show():void{
+        this.box.show();
+    }
+
+    public hide():void{
+        this.box.hide();
     }
 }
